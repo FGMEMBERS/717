@@ -104,7 +104,7 @@ var engineLoop = func(engine_no)
   }
  elsif (props.globals.getNode(engineOutTree ~ "running").getBoolValue())
   {
-  if (getprop("autopilot/locks/speed") == "speed-to-ga")
+  if (getprop("autopilot/settings/speed") == "speed-to-ga")
    {
    setprop(engineCtlTree ~ "throttle-lever", 1);
    }
