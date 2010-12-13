@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Boeing 717-200 for FlightGear -->
+<!-- Radio Frequencies Panel -->
+
+<PropertyList>
+
+	<path>Radiopanel.ac</path>
+
+	<!-- ANIMATIONS -->
+	<!-- Lighting -->
+	<animation>
+		<name>Cockpit illumination</name>
+		<type>material</type>
+		<object-name>Panel</object-name>
+		<object-name>Text</object-name>
+		<object-name>NAV1Knb</object-name>
+		<object-name>NAV1Swap</object-name>
+		<object-name>COM1Knb</object-name>
+		<object-name>COM1Swap</object-name>
+		<object-name>ADFKnb</object-name>
+		<emission>
+			<red>0.5</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+			<factor-prop>controls/lighting/dome-norm</factor-prop>
+		</emission>
+	</animation>
+
+	<!-- NAV1 -->
+	<animation>
+		<name>NAV1 active 100's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Act100</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 active 10's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Act10</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 active 1's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Act1</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 active .1's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Act.1</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 active .01's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Act.01</object-name>
+		<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>NAV1 active/standby swap</name>
+		<type>pick</type>
+		<object-name>NAV1Swap</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-swap</command>
+				<property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+				<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>NAV1 standby 100's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Stb100</object-name>
+		<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 standby 10's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Stb10</object-name>
+		<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 standby 1's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Stb1</object-name>
+		<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 standby .1's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Stb.1</object-name>
+		<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>NAV1 standby .01's</name>
+		<type>textranslate</type>
+		<object-name>NAV1Stb.01</object-name>
+		<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>NAV1 small step knob</name>
+		<type>pick</type>
+		<object-name>NAV1SmKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+				<step>0.05</step>
+				<max>117.95</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+				<step>-0.05</step>
+				<min>108</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>NAV1 big step knob</name>
+		<type>pick</type>
+		<object-name>NAV1BgKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+				<step>1</step>
+				<max>117.95</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+				<step>-1</step>
+				<min>108</min>
+			</binding>
+		</action>
+	</animation>
+
+	<!-- COM1 -->
+	<animation>
+		<name>COM1 active 100's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act100</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 active 10's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act10</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 active 1's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act1</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 active .1's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act.1</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 active .01's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act.01</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 active .001's</name>
+		<type>textranslate</type>
+		<object-name>COM1Act.001</object-name>
+		<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+		<factor>100</factor>
+		<step>0.001</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>COM1 active/standby swap</name>
+		<type>pick</type>
+		<object-name>COM1Swap</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-swap</command>
+				<property>instrumentation/comm[0]/frequencies/selected-mhz</property>
+				<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>COM1 standby 100's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb100</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 standby 10's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb10</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 standby 1's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb1</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 standby .1's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb.1</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 standby .01's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb.01</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>COM1 standby .001's</name>
+		<type>textranslate</type>
+		<object-name>COM1Stb.001</object-name>
+		<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+		<factor>100</factor>
+		<step>0.001</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>COM small step knob</name>
+		<type>pick</type>
+		<object-name>COM1SmKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+				<step>0.005</step>
+				<max>136.975</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+				<step>-0.005</step>
+				<min>118</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>COM big step knob</name>
+		<type>pick</type>
+		<object-name>COM1BgKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+				<step>1</step>
+				<max>136.975</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+				<step>-1</step>
+				<min>118</min>
+			</binding>
+		</action>
+	</animation>
+
+	<!-- ADF -->
+	<animation>
+		<name>ADF 1000's</name>
+		<type>textranslate</type>
+		<object-name>ADF1000</object-name>
+		<property>instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>ADF 100's</name>
+		<type>textranslate</type>
+		<object-name>ADF100</object-name>
+		<property>instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>ADF 10's</name>
+		<type>textranslate</type>
+		<object-name>ADF10</object-name>
+		<property>instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<name>ADF 1's</name>
+		<type>textranslate</type>
+		<object-name>ADF1</object-name>
+		<property>instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+
+	<animation>
+		<name>ADF small step knob</name>
+		<type>pick</type>
+		<object-name>ADFSmKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/frequencies/selected-khz</property>
+				<step>1</step>
+				<max>1720</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/frequencies/selected-khz</property>
+				<step>-1</step>
+				<min>150</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>ADF big step knob</name>
+		<type>pick</type>
+		<object-name>ADFBgKnb</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/frequencies/selected-khz</property>
+				<step>100</step>
+				<max>1720</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/frequencies/selected-khz</property>
+				<step>-100</step>
+				<min>150</min>
+			</binding>
+		</action>
+	</animation>
+
+</PropertyList>
