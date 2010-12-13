@@ -5,7 +5,7 @@
 	<sim>
 		<description>Boeing 717-200</description>
 		<author>Malik Guest (3d), Skyop (3d, FDM, systems, etc.), Gary Neely (3d cockpit shell)</author>
-		<status>Development</status>
+		<status>beta</status>
 		<flight-model>yasim</flight-model>
 		<aero>717-200</aero>
 
