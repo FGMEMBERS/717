@@ -250,13 +250,10 @@
 		<type>select</type>
 		<object-name>APToGa</object-name>
 		<condition>
-			<and>
-				<property>autopilot/settings/autothrottle</property>
-				<equals>
-					<property>autopilot/settings/speed</property>
-					<value>speed-to-ga</value>
-				</equals>
-			</and>
+			<equals>
+				<property>autopilot/settings/speed</property>
+				<value>speed-to-ga</value>
+			</equals>
 		</condition>
 	</animation>
 
