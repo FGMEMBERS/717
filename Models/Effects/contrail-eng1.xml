@@ -22,6 +22,7 @@
          <property>environment/temperature-degc</property>
          <value>-40</value>
        </less-than>
+       <property>engines/engine[0]/running</property>
      </and>
    </condition>
 
