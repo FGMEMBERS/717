@@ -14,11 +14,14 @@
 		<type>material</type>
 		<object-name>Panel</object-name>
 		<object-name>Text</object-name>
-		<object-name>NAV1Knb</object-name>
+		<object-name>NAV1SmKnb</object-name>
+		<object-name>NAV1BgKnb</object-name>
 		<object-name>NAV1Swap</object-name>
-		<object-name>COM1Knb</object-name>
+		<object-name>COM1SmKnb</object-name>
+		<object-name>COM1BgKnb</object-name>
 		<object-name>COM1Swap</object-name>
-		<object-name>ADFKnb</object-name>
+		<object-name>ADFSmKnb</object-name>
+		<object-name>ADFBgKnb</object-name>
 		<emission>
 			<red>0.5</red>
 			<green>0.5</green>

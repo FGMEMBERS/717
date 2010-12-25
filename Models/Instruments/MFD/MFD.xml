@@ -80,7 +80,8 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">TAS %3.0f</format>
-		<property>velocities/airspeed-kt</property>
+		<property>velocities/uBody-fps</property>
+		<scale>0.5924838</scale>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.008</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>

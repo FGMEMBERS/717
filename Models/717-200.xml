@@ -248,6 +248,10 @@
 		<name>Left flap</name>
 		<type>rotate</type>
 		<object-name>FlapL</object-name>
+		<object-name>FairingL1</object-name>
+		<object-name>FairingL2</object-name>
+		<object-name>FairingL3</object-name>
+		<object-name>FairingL4</object-name>
 		<property>surface-positions/flap-pos-norm</property>
 		<factor>40</factor>
 		<axis>
@@ -263,6 +267,10 @@
 		<name>Right flap</name>
 		<type>rotate</type>
 		<object-name>FlapR</object-name>
+		<object-name>FairingR1</object-name>
+		<object-name>FairingR2</object-name>
+		<object-name>FairingR3</object-name>
+		<object-name>FairingR4</object-name>
 		<property>surface-positions/flap-pos-norm</property>
 		<factor>40</factor>
 		<axis>
@@ -552,16 +560,16 @@
 			<z-m>-2.763</z-m>
 		</center>
 	</animation>
-<!--	<animation>
+	<animation>
 		<name>Left main gear door retraction</name>
 		<type>rotate</type>
-		<object-name>LGMDoorInL</object-name>
-		<object-name>LGMDoorInIntL</object-name>
+		<object-name>GearLDoor</object-name>
+		<object-name>GearLDoorInt</object-name>
 		<property>gear/gear[1]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>90</dep></entry>
-			<entry><ind>0.8</ind><dep>90</dep></entry>
+			<entry><ind>0.2</ind><dep>75</dep></entry>
+			<entry><ind>0.8</ind><dep>75</dep></entry>
 			<entry><ind>1.0</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
@@ -572,9 +580,9 @@
 		<center>
 			<x-m>0</x-m>
 			<y-m>-0.2</y-m>
-			<z-m>1.163</z-m>
+			<z-m>-3.388</z-m>
 		</center>
-	</animation>-->
+	</animation>
 
 	<!-- Right main gear -->
 	<animation>
@@ -645,16 +653,16 @@
 			<z-m>-2.763</z-m>
 		</center>
 	</animation>
-<!--	<animation>
+	<animation>
 		<name>Right main gear door retraction</name>
 		<type>rotate</type>
-		<object-name>LGMDoorInR</object-name>
-		<object-name>LGMDoorInIntR</object-name>
+		<object-name>GearRDoor</object-name>
+		<object-name>GearRDoorInt</object-name>
 		<property>gear/gear[2]/position-norm</property>
 		<interpolation>
 			<entry><ind>0.0</ind><dep>0</dep></entry>
-			<entry><ind>0.2</ind><dep>90</dep></entry>
-			<entry><ind>0.8</ind><dep>90</dep></entry>
+			<entry><ind>0.2</ind><dep>75</dep></entry>
+			<entry><ind>0.8</ind><dep>75</dep></entry>
 			<entry><ind>1.0</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
@@ -665,9 +673,9 @@
 		<center>
 			<x-m>0</x-m>
 			<y-m>0.2</y-m>
-			<z-m>1.163</z-m>
+			<z-m>-3.388</z-m>
 		</center>
-	</animation>-->
+	</animation>
 
 	<!-- Nose gear steering -->
 	<animation>
