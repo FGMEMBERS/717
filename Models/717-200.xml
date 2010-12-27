@@ -155,6 +155,42 @@
 	</model>
 
 	<!-- ANIMATIONS -->
+	<!-- Engine fan disks -->
+	<animation>
+		<name>Engine 1 fan rotate</name>
+		<type>spin</type>
+		<object-name>FandiskTurbofanL</object-name>
+		<factor>-67</factor>
+		<property>engines/engine[0]/rpm</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-2.898</y-m>
+			<z-m>-1.126</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Engine 2 fan rotate</name>
+		<type>spin</type>
+		<object-name>FandiskTurbofanR</object-name>
+		<factor>-67</factor>
+		<property>engines/engine[1]/rpm</property>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>2.898</y-m>
+			<z-m>-1.126</z-m>
+		</center>
+	</animation>
+
 	<!-- Ailerons -->
 	<animation>
 		<name>Left aileron</name>
@@ -573,15 +609,13 @@
 			<entry><ind>1.0</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			<x1-m>0.35</x1-m>
+			<y1-m>-0.2</y1-m>
+			<z1-m>-3.425</z1-m>
+			<x2-m>1.61</x2-m>
+			<y2-m>-0.2</y2-m>
+			<z2-m>-3.35</z2-m>
 		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>-0.2</y-m>
-			<z-m>-3.388</z-m>
-		</center>
 	</animation>
 
 	<!-- Right main gear -->
@@ -643,15 +677,13 @@
 			<entry><ind>1.0</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
+			<x1-m>1.61</x1-m>
+			<y1-m>0.2</y1-m>
+			<z1-m>-3.35</z1-m>
+			<x2-m>0.35</x2-m>
+			<y2-m>0.2</y2-m>
+			<z2-m>-3.425</z2-m>
 		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>1.911</y-m>
-			<z-m>-2.763</z-m>
-		</center>
 	</animation>
 	<animation>
 		<name>Right main gear door retraction</name>
