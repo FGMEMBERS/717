@@ -7,7 +7,7 @@
 (http://www.xpgoodwayteam.org/site_xpushback/) -->
 
   <model>
-    <path>Models/Airport/Pushback/warning-light.xml</path>
+    <path>Models/Airport/Pushback/Goldhofert-warning-light.xml</path>
     <offsets>
       <x-m>1.45</x-m>
       <y-m>0</y-m>
