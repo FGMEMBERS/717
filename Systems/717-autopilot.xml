@@ -109,13 +109,33 @@
 	<!-- Heading hold -->
 	<!-- Magnetic heading -->
 	<logic>
-		<name>Magnetic heading hold logic</name>
+		<name>Magnetic heading hold stage 1 logic</name>
+		<input>
+			<and>
+				<equals>
+					<property>/autopilot/settings/heading</property>
+					<value>dg-heading-hold</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/heading-mode</property>
+					<value>magnetic</value>
+				</equals>
+			</and>
+		</input>
+		<output>/autopilot/internal/heading-hold-deg-stage1</output>
+	</logic>
+	<logic>
+		<name>Magnetic heading hold stage 2 logic</name>
 		<input>
 			<and>
 				<property>/autopilot/settings/engaged</property>
 				<equals>
 					<property>/autopilot/settings/heading</property>
 					<value>dg-heading-hold</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/heading-mode</property>
+					<value>magnetic</value>
 				</equals>
 			</and>
 		</input>
@@ -125,8 +145,8 @@
 		<name>Magnetic heading hold stage 1</name>
 		<debug type="bool">false</debug>
 		<enable>
-			<prop>/autopilot/settings/heading</prop>
-			<value>dg-heading-hold</value>
+			<prop>/autopilot/internal/heading-hold-deg-stage1</prop>
+			<value type="bool">true</value>
 		</enable>
 		<input>
 			<prop>/autopilot/internal/fdm-heading-bug-error-deg</prop>
@@ -144,12 +164,8 @@
 			<gamma>0</gamma>
 			<Ti>10</Ti>
 			<Td>0.00001</Td>
-			<u_min>
-				<prop>/autopilot/settings/minimum-bank-deg</prop>
-			</u_min>
-			<u_max>
-				<prop>/autopilot/settings/maximum-bank-deg</prop>
-			</u_max>
+			<u_min>-25</u_min>
+			<u_max>25</u_max>
 		</config>
 	</pid-controller>
 	<pid-controller>
@@ -175,6 +191,117 @@
 			<gamma>0</gamma>
 			<Ti>10</Ti>
 			<Td>0.00001</Td>
+			<u_min>-1</u_min>
+			<u_max>1</u_max>
+		</config>
+	</pid-controller>
+
+	<!-- Ground track hold -->
+	<logic>
+		<name>Ground track heading hold stage 1 logic</name>
+		<input>
+			<and>
+				<equals>
+					<property>/autopilot/settings/heading</property>
+					<value>dg-heading-hold</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/heading-mode</property>
+					<value>track</value>
+				</equals>
+			</and>
+		</input>
+		<output>/autopilot/internal/heading-hold-deg-stage1</output>
+	</logic>
+	<logic>
+		<name>Ground track heading hold stage 2 logic</name>
+		<input>
+			<and>
+				<property>/autopilot/settings/engaged</property>
+				<equals>
+					<property>/autopilot/settings/heading</property>
+					<value>dg-heading-hold</value>
+				</equals>
+				<equals>
+					<property>/autopilot/settings/heading-mode</property>
+					<value>track</value>
+				</equals>
+			</and>
+		</input>
+		<output>/autopilot/internal/heading-hold-deg</output>
+	</logic>
+	<filter>
+		<name>Ground track error computer/normalizer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<property>/autopilot/settings/heading-bug-deg</property>
+			<offset>
+				<property>/orientation/track-magnetic-deg</property>
+				<scale>-1</scale>
+			</offset>
+		</input>
+		<output>/autopilot/internal/fdm-track-bug-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
+	</filter>
+	<pid-controller>
+		<name>Ground track hold stage 1</name>
+		<debug type="bool">false</debug>
+		<enable>
+			<prop>/autopilot/internal/heading-hold-track-stage1</prop>
+			<value type="bool">true</value>
+		</enable>
+		<input>
+			<prop>/autopilot/internal/fdm-track-bug-error-deg</prop>
+		</input>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>
+			<prop>/autopilot/internal/target-roll-deg</prop>
+		</output>
+		<config>
+			<Kp>-1.5</Kp>
+			<beta>1</beta>
+			<alpha>0.1</alpha>
+			<gamma>0</gamma>
+			<Ti>15</Ti>
+			<Td>0.000000001</Td>
+			<u_min>
+				<prop>/autopilot/settings/minimum-bank-deg</prop>
+			</u_min>
+			<u_max>
+				<prop>/autopilot/settings/maximum-bank-deg</prop>
+			</u_max>
+		</config>
+	</pid-controller>
+	<pid-controller>
+		<name>Ground track hold stage 2</name>
+		<debug type="bool">false</debug>
+		<enable>
+			<prop>/autopilot/internal/heading-hold-track</prop>
+			<value type="bool">true</value>
+		</enable>
+		<input>
+			<prop>/orientation/roll-deg</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/internal/target-roll-deg</prop>
+		</reference>
+		<output>
+			<prop>/controls/flight/aileron</prop>
+		</output>
+		<config>
+			<Kp>0.01</Kp>
+			<beta>1</beta>
+			<alpha>0.1</alpha>
+			<gamma>0</gamma>
+			<Ti>10</Ti>
+			<Td>0.000000001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>
@@ -218,10 +345,10 @@
 			<Ti>15</Ti>
 			<Td>0.000000001</Td>
 			<u_min>
-					<prop>/autopilot/settings/minimum-bank-deg</prop>
+				<prop>/autopilot/settings/minimum-bank-deg</prop>
 			</u_min>
 			<u_max>
-					<prop>/autopilot/settings/maximum-bank-deg</prop>
+				<prop>/autopilot/settings/maximum-bank-deg</prop>
 			</u_max>
 		</config>
 	</pid-controller>
@@ -538,5 +665,35 @@
 			<u_max>25</u_max>
 		</config>
 	</pid-controller>
+	<filter>
+		<name>Flight director pitch computer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/autopilot/internal/target-pitch-deg</property>
+					<property>/orientation/pitch-deg</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/autopilot/internal/flight-director-pitch-deg</output>
+	</filter>
+	<filter>
+		<name>Flight director roll computer</name>
+		<debug type="bool">false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/autopilot/internal/target-roll-deg</property>
+					<property>/orientation/roll-deg</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/autopilot/internal/flight-director-roll-deg</output>
+	</filter>
 
 </PropertyList>

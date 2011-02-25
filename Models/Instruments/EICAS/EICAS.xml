@@ -571,11 +571,10 @@
 		<type>select</type>
 		<object-name>APUStart</object-name>
 		<condition>
-			<not>
-				<property>systems/electrical/APU/running</property>
-			</not>
-			<property>controls/electric/APU-generator</property>
-			<property>controls/APU/fuel-pump</property>
+			<equals>
+				<property>controls/APU/off-start-run</property>
+				<value>1</value>
+			</equals>
 		</condition>
 	</animation>
 	<animation>
@@ -583,7 +582,7 @@
 		<type>select</type>
 		<object-name>APURun</object-name>
 		<condition>
-			<property>systems/electrical/APU/running</property>
+			<property>engines/apu/running</property>
 		</condition>
 	</animation>
 

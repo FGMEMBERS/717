@@ -153,6 +153,18 @@
 			<z-m>-1.244</z-m>
 		</offsets>
 	</model>
+	<model>
+		<name>APU fire</name>
+		<path>Aircraft/717/Models/Effects/enginefire.xml</path>
+		<condition>
+			<property>engines/apu/on-fire</property>
+		</condition>
+		<offsets>
+			<x-m>13</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.6</z-m>
+		</offsets>
+	</model>
 
 	<!-- ANIMATIONS -->
 	<!-- Engine fan disks -->
@@ -266,7 +278,6 @@
 		<name>Rudder</name>
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
-		<object-name>Rudder2</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
 		<factor>20</factor>
 		<axis>
@@ -700,15 +711,13 @@
 			<entry><ind>1.0</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
+			<x1-m>1.61</x1-m>
+			<y1-m>0.2</y1-m>
+			<z1-m>-3.35</z1-m>
+			<x2-m>0.35</x2-m>
+			<y2-m>0.2</y2-m>
+			<z2-m>-3.425</z2-m>
 		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0.2</y-m>
-			<z-m>-3.388</z-m>
-		</center>
 	</animation>
 
 	<!-- Nose gear steering -->
@@ -883,6 +892,22 @@
 			<factor-prop>controls/lighting/interior</factor-prop>
 		</emission>
 	</animation>
+
+	<!-- Lightmap effect -->
+	<effect>
+		<inherits-from>Effects/lightmap</inherits-from>
+		<parameters>
+			<texture n="1">
+				<image>Aircraft/717/Models/Effects/lightmap.png</image>
+			</texture>
+			<condition>
+				<use>controls/lighting/logo-lights</use>
+			</condition>
+		</parameters>
+		<object-name>Fuselage</object-name>
+		<object-name>Vstab</object-name>
+		<object-name>Rudder</object-name>
+	</effect>
 
 	<!-- LIVERY SELECT -->
 	<!-- Animations (note: wings and horizontal stabilizers not included) -->

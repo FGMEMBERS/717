@@ -3,8 +3,8 @@
 <PropertyList include="717-main.xml">
 
 	<sim>
-		<description>Boeing 717-200 (Basic Gross Weight)</description>
-		<aero>717-200</aero>
+		<description>Boeing 717-200 (High Gross Weight)</description>
+		<aero>717-200HGW</aero>
 	</sim>
 
 </PropertyList>

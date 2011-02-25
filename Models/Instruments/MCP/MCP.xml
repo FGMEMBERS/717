@@ -264,6 +264,22 @@
 
 	<!-- Heading hold -->
 	<animation>
+		<name>Magnetic heading/ground track toggle</name>
+		<type>pick</type>
+		<object-name>HDG-TRK</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>autopilot/settings/heading-mode</property>
+				<value>magnetic</value>
+				<value>track</value>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
 		<name>Heading setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APhdg100</object-name>
@@ -301,11 +317,25 @@
 	</animation>
 
 	<animation>
+		<name>Heading setting select</name>
+		<type>select</type>
+		<object-name>APhdg</object-name>
+		<condition>
+			<equals>
+				<property>autopilot/settings/heading-mode</property>
+				<value>magnetic</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
 		<name>Track setting select</name>
 		<type>select</type>
 		<object-name>APtrk</object-name>
 		<condition>
-			<property>sim/model/B717/unimplemented-controls</property>
+			<equals>
+				<property>autopilot/settings/heading-mode</property>
+				<value>track</value>
+			</equals>
 		</condition>
 	</animation>
 

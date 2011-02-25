@@ -171,6 +171,41 @@
 		</group>
 
 		<group>
+			<layout>hbox</layout>
+
+			<button>
+				<legend>Switch</legend>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>property-cycle</command>
+					<property>autopilot/settings/heading-mode</property>
+					<value>magnetic</value>
+					<value>track</value>
+				</binding>
+			</button>
+			<text>
+				<label>[HDG]</label>
+				<visible>
+					<equals>
+						<property>autopilot/settings/heading-mode</property>
+						<value>magnetic</value>
+					</equals>
+				</visible>
+			</text>
+			<text>
+				<label>[TRK]</label>
+				<visible>
+					<equals>
+						<property>autopilot/settings/heading-mode</property>
+						<value>track</value>
+					</equals>
+				</visible>
+			</text>
+		</group>
+
+		<group>
 			<layout>table</layout>
 
 			<text>

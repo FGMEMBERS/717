@@ -49,6 +49,52 @@ setlistener("controls/switches/no-smoking-sign", func
 # engines/engine[X]/failed			When triggered the engine is "failed" and cannot be restarted
 # engines/engine[X]/on-fire			Self-explanatory
 
+# APU loop function
+var apuLoop = func
+ {
+ if (props.globals.getNode("engines/apu/on-fire").getBoolValue())
+  {
+  props.globals.getNode("engines/apu/serviceable").setBoolValue(0);
+  }
+ if (props.globals.getNode("controls/APU/fire-switch").getBoolValue())
+  {
+  props.globals.getNode("engines/apu/on-fire").setBoolValue(0);
+  }
+
+ var setting = getprop("controls/APU/off-start-run");
+
+ if (props.globals.getNode("engines/apu/serviceable").getBoolValue() and setting != 0)
+  {
+  if (setting == 1)
+   {
+   var rpm = getprop("engines/apu/rpm");
+   rpm += getprop("sim/time/delta-realtime-sec") * 25;
+   if (rpm >= 100)
+    {
+    rpm = 100;
+    }
+   setprop("engines/apu/rpm", rpm);
+   }
+  elsif (setting == 2 and getprop("engines/apu/rpm") == 100)
+   {
+   props.globals.getNode("engines/apu/running").setBoolValue(1);
+   }
+  }
+ else
+  {
+  props.globals.getNode("engines/apu/running").setBoolValue(0);
+
+  var rpm = getprop("engines/apu/rpm");
+  rpm -= getprop("sim/time/delta-realtime-sec") * 30;
+  if (rpm < 0)
+   {
+   rpm = 0;
+   }
+  setprop("engines/apu/rpm", rpm);
+  }
+
+ settimer(apuLoop, 0);
+ };
 # engine loop function
 var engineLoop = func(engine_no)
  {
@@ -83,12 +129,12 @@ var engineLoop = func(engine_no)
   props.globals.getNode(engineOutTree ~ "started").setBoolValue(0);
   setprop(engineCtlTree ~ "throttle-lever", 0);
   }
- elsif (props.globals.getNode(engineCtlTree ~ "starter").getBoolValue() and props.globals.getNode("systems/electrical/APU/running").getBoolValue())
+ elsif (props.globals.getNode(engineCtlTree ~ "starter").getBoolValue() and props.globals.getNode("engines/apu/running").getBoolValue())
   {
   props.globals.getNode(engineCtlTree ~ "cutoff").setBoolValue(0);
 
   var rpm = getprop(engineOutTree ~ "rpm");
-  rpm += getprop("sim/time/delta-realtime-sec") * 3.0;
+  rpm += getprop("sim/time/delta-realtime-sec") * 3;
   setprop(engineOutTree ~ "rpm", rpm);
 
   if (rpm >= getprop(engineOutTree ~ "n1"))
@@ -121,43 +167,6 @@ var engineLoop = func(engine_no)
   engineLoop(engine_no);
   }, 0);
  };
-# APU loop function
-var apuLoop = func()
- {
- var apuOutTree = "systems/electrical/APU/";
-
- if (props.globals.getNode("controls/electric/APU-generator").getBoolValue() and props.globals.getNode("controls/APU/fuel-pump").getBoolValue())
-  {
-  var rpm = getprop(apuOutTree ~ "rpm");
-  rpm += getprop("sim/time/delta-realtime-sec") * 15;
-  if (rpm > 99)
-   {
-   props.globals.getNode(apuOutTree ~ "running").setBoolValue(1);
-   }
-  if (rpm > 100)
-   {
-   rpm = 100;
-   }
-  setprop(apuOutTree ~ "rpm", rpm);
-  }
- else
-  {
-  props.globals.getNode(apuOutTree ~ "running").setBoolValue(0);
-
-  var rpm = getprop(apuOutTree ~ "rpm");
-  rpm -= getprop("sim/time/delta-realtime-sec") * 20;
-  if (rpm < 0)
-   {
-   rpm = 0;
-   }
-  setprop(apuOutTree ~ "rpm", rpm);
-  }
-
- settimer(func
-  {
-  apuLoop();
-  }, 0);
- };
 # start the loops 2 seconds after the FDM initializes
 setlistener("sim/signals/fdm-initialized", func
  {
@@ -172,42 +181,44 @@ setlistener("sim/signals/fdm-initialized", func
 # startup/shutdown functions
 var startup = func
  {
- setprop("controls/APU/fuel-pump", 1);
+ setprop("controls/APU/off-start-run", 1);
  setprop("controls/electric/APU-generator", 1);
+ setprop("controls/electric/battery-switch", 1);
+ setprop("controls/electric/engine[0]/generator", 1);
+ setprop("controls/electric/engine[1]/generator", 1);
  setprop("controls/engines/engine[0]/cutoff", 0);
  setprop("controls/engines/engine[1]/cutoff", 0);
  setprop("controls/engines/engine[0]/starter", 1);
  setprop("controls/engines/engine[1]/starter", 1);
-# no avionics switch on the 717?
-# setprop("controls/electric/avionics-switch", 1);
- setprop("controls/electric/battery-switch", 1);
 
- # turn off APU when engines are started
- var APUlistener = setlistener("engines/engine[0]/rpm", func
+ var listener1 = setlistener("engines/apu/rpm", func
   {
-  var rpm = getprop("engines/engine[0]/rpm");
-  var n1 = getprop("engines/engine[0]/n1");
-  if (rpm >= n1)
+  if (getprop("engines/apu/rpm") >= 100)
+   {
+   setprop("controls/APU/off-start-run", 2);
+   removelistener(listener1);
+   }
+  }, 0, 0);
+ var listener2 = setlistener("engines/engine[0]/rpm", func
+  {
+  if (getprop("engines/engine[0]/rpm") >= getprop("engines/engine[0]/n1"))
    {
    settimer(func
     {
-    setprop("controls/APU/fuel-pump", 0);
+    setprop("controls/APU/off-start-run", 0);
     setprop("controls/electric/APU-generator", 0);
+    setprop("controls/electric/battery-switch", 0);
     }, 2);
-
-   removelistener(APUlistener);
+   removelistener(listener2);
    }
   }, 0, 0);
  };
 var shutdown = func
  {
- setprop("controls/APU/fuel-pump", 0);
- setprop("controls/electric/APU-generator", 0);
+ setprop("controls/electric/engine[0]/generator", 0);
+ setprop("controls/electric/engine[1]/generator", 0);
  setprop("controls/engines/engine[0]/cutoff", 1);
  setprop("controls/engines/engine[1]/cutoff", 1);
-# no avionics switch on the 717?
-# setprop("controls/electric/avionics-switch", 0);
- setprop("controls/electric/battery-switch", 0);
  };
 
 # listener to activate these functions accordingly
@@ -498,31 +509,6 @@ setlistener("controls/flight/speedbrake-lever", func
 
 ## AUTOPILOT
 ############
-
-# flight director pitch/roll computer
-var flightDirectorLoop = func
- {
- var apPitch = getprop("autopilot/internal/target-pitch-deg");
- var acPitch = getprop("orientation/pitch-deg");
- if (apPitch and acPitch)
-  {
-  setprop("autopilot/internal/flight-director-pitch-deg", apPitch - acPitch);
-  }
-
- var apRoll = getprop("autopilot/internal/target-roll-deg");
- var acRoll = getprop("orientation/roll-deg");
- if (apRoll and acRoll)
-  {
-  setprop("autopilot/internal/flight-director-roll-deg", apRoll - acRoll);
-  }
-
- settimer(flightDirectorLoop, 0.05);
- };
-# start the loop 2 seconds after the FDM initializes
-setlistener("sim/signals/fdm-initialized", func
- {
- settimer(flightDirectorLoop, 2);
- });
 
 # set the vertical speed setting if the altitude setting is higher/lower than the current altitude
 var APVertSpeedSet = func

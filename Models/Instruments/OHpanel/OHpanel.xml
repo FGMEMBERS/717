@@ -8,63 +8,41 @@
 	<path>OHpanel.ac</path>
 
 	<!-- ANIMATIONS -->
-	<!-- APU fuel pump switch -->
+	<!-- APU switch -->
 	<animation>
-		<name>APU fuel pump switch pick</name>
-		<type>pick</type>
-		<object-name>APUAirSwtch</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>property-toggle</command>
-				<property>controls/APU/fuel-pump</property>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<name>APU fuel pump switch rotate</name>
-		<type>rotate</type>
-		<object-name>APUAirSwtch</object-name>
-		<property>controls/APU/fuel-pump</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>30</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>-0.029</z-m>
-		</center>
-	</animation>
-
-	<!-- APU generator switch -->
-	<animation>
-		<name>APU generator switch pick</name>
+		<name>APU knob pick</name>
 		<type>pick</type>
 		<object-name>APUMasterSwtch</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-				<command>property-toggle</command>
-				<property>controls/electric/APU-generator</property>
+				<command>property-adjust</command>
+				<property>controls/APU/off-start-run</property>
+				<step type="int">1</step>
+				<max>3</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/APU/off-start-run</property>
+				<step type="int">-1</step>
+				<min>0</min>
 			</binding>
 		</action>
 	</animation>
 	<animation>
-		<name>APU generator switch rotate</name>
+		<name>APU switch rotate</name>
 		<type>rotate</type>
 		<object-name>APUMasterSwtch</object-name>
-		<property>controls/electric/APU-generator</property>
+		<property>controls/APU/off-start-run</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>-30</dep></entry>
 			<entry><ind>1</ind><dep>30</dep></entry>
+			<entry><ind>2</ind><dep>0</dep></entry>
 		</interpolation>
 		<axis>
 			<x>0</x>
@@ -75,6 +53,43 @@
 			<x-m>0</x-m>
 			<y-m>0</y-m>
 			<z-m>-0.091</z-m>
+		</center>
+	</animation>
+
+	<!-- APU fire switch -->
+	<animation>
+		<name>APU fire switch pick</name>
+		<type>pick</type>
+		<object-name>APUFire1Swtch</object-name>
+		<object-name>APUFire2Swtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/APU/fire-switch</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>APU generator switch rotate</name>
+		<type>rotate</type>
+		<object-name>APUFire1Swtch</object-name>
+		<object-name>APUFire2Swtch</object-name>
+		<property>controls/APU/fire-switch</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.038</z-m>
 		</center>
 	</animation>
 
@@ -110,6 +125,307 @@
 			<x-m>0</x-m>
 			<y-m>0</y-m>
 			<z-m>-0.007</z-m>
+		</center>
+	</animation>
+
+	<!-- Generator 1 controls -->
+	<animation>
+		<name>Generator 1 bus tie pick</name>
+		<type>pick</type>
+		<object-name>DCBusLSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[0]/bus-tie</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Generator 1 bus tie rotate</name>
+		<type>rotate</type>
+		<object-name>DCBusLSwtch</object-name>
+		<property>controls/electric/engine[0]/bus-tie</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.046</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Generator 1 pick</name>
+		<type>pick</type>
+		<object-name>DCGenLSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[0]/generator</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Generator 1 rotate</name>
+		<type>rotate</type>
+		<object-name>DCGenLSwtch</object-name>
+		<property>controls/electric/engine[0]/generator</property>
+		<factor>30</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.109</z-m>
+		</center>
+	</animation>
+
+	<!-- APU generator -->
+	<animation>
+		<name>APU generator pick</name>
+		<type>pick</type>
+		<object-name>DC1Swtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/APU-generator</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>APU generator rotate</name>
+		<type>rotate</type>
+		<object-name>DC1Swtch</object-name>
+		<property>controls/electric/APU-generator</property>
+		<factor>30</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.109</z-m>
+		</center>
+	</animation>
+
+	<!-- Generator 2 controls -->
+	<animation>
+		<name>Generator 2 bus tie pick</name>
+		<type>pick</type>
+		<object-name>DCBusRSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[1]/bus-tie</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Generator 2 bus tie rotate</name>
+		<type>rotate</type>
+		<object-name>DCBusRSwtch</object-name>
+		<property>controls/electric/engine[1]/bus-tie</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.046</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Generator 2 pick</name>
+		<type>pick</type>
+		<object-name>DCGenRSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/engine[1]/generator</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Generator 2 rotate</name>
+		<type>rotate</type>
+		<object-name>DCGenRSwtch</object-name>
+		<property>controls/electric/engine[1]/generator</property>
+		<factor>30</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.109</z-m>
+		</center>
+	</animation>
+
+	<!-- Anti-ice controls -->
+	<animation>
+		<name>Pitot heat pick</name>
+		<type>pick</type>
+		<object-name>PitotHeatSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/pitot-heat</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Pitot heat rotate</name>
+		<type>rotate</type>
+		<object-name>PitotHeatSwtch</object-name>
+		<property>controls/anti-ice/pitot-heat</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.079</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Wing anti-ice pick</name>
+		<type>pick</type>
+		<object-name>WingDeiceSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/wing-heat</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Wing anti-ice rotate</name>
+		<type>rotate</type>
+		<object-name>WingDeiceSwtch</object-name>
+		<property>controls/anti-ice/wing-heat</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.147</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Engine 1 anti-ice pick</name>
+		<type>pick</type>
+		<object-name>Eng1DeiceSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/engine[0]/inlet-heat</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Engine 1 anti-ice rotate</name>
+		<type>rotate</type>
+		<object-name>Eng1DeiceSwtch</object-name>
+		<property>controls/anti-ice/engine[0]/inlet-heat</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.147</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Engine 2 anti-ice pick</name>
+		<type>pick</type>
+		<object-name>Eng2DeiceSwtch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/engine[1]/inlet-heat</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Engine 2 anti-ice rotate</name>
+		<type>rotate</type>
+		<object-name>Eng2DeiceSwtch</object-name>
+		<property>controls/anti-ice/engine[1]/inlet-heat</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>30</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.147</z-m>
 		</center>
 	</animation>
 
