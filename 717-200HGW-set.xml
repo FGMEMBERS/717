@@ -7,4 +7,13 @@
 		<aero>717-200HGW</aero>
 	</sim>
 
+	<instrumentation>
+		<cdu>
+			<ident>
+				<model>717-200HGW</model>
+				<engines>BR715-C1-30</engines>
+			</ident>
+		</cdu>
+	</instrumentation>
+
 </PropertyList>

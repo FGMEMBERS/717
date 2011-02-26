@@ -36,6 +36,19 @@
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
+	<model>
+		<name>Pilot Control Display Unit</name>
+		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+		<overlay>
+			<texture>boeing_grey.png</texture>
+		</overlay>
+		<offsets>
+			<x-m>-1.67</x-m>
+			<y-m>-0.164</y-m>
+			<z-m>0.721</z-m>
+			<pitch-deg>-75</pitch-deg>
+		</offsets>
+	</model>
 
 	<model>
 		<name>Copilot Primary Flight Display</name>
@@ -65,6 +78,19 @@
 			<y-m>0.101</y-m>
 			<z-m>0.9</z-m>
 			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Copilot Control Display Unit</name>
+		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+		<overlay>
+			<texture>boeing_grey.png</texture>
+		</overlay>
+		<offsets>
+			<x-m>-1.67</x-m>
+			<y-m>0.164</y-m>
+			<z-m>0.721</z-m>
+			<pitch-deg>-75</pitch-deg>
 		</offsets>
 	</model>
 

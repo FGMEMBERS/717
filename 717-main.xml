@@ -50,6 +50,10 @@
 			</autopilot>
 		</systems>
 
+		<instrumentation>
+			<path>Aircraft/717/Systems/instrumentation.xml</path>
+		</instrumentation>
+
 		<view n="0">
 			<name>Pilot View</name>
 			<internal archive="y">true</internal>
@@ -355,6 +359,20 @@
 	</gear>
 
 	<instrumentation>
+		<!-- See http://wiki.flightgear.org/index.php/Howto:_Implement_a_Control_Display_Unit -->
+		<cdu>
+			<display>IDENT</display>
+			<input />
+			<serviceable type="bool">true</serviceable>
+		</cdu>
+		<fmc>
+			<to-flap type="double">5</to-flap>
+			<vspeeds>
+				<V1 type="double">0</V1>
+				<VR type="double">0</VR>
+				<V2 type="double">0</V2>
+			</vspeeds>
+		</fmc>
 		<!-- See http://wiki.flightgear.org/index.php/GPWS -->
 		<mk-viii>
 			<serviceable>true</serviceable>
@@ -383,6 +401,21 @@
 				<volume>0.4</volume>
 			</speaker>
 		</mk-viii>
+		<!-- See http://wiki.flightgear.org/index.php/TCAS -->
+		<tcas>
+			<serviceable type="bool">true</serviceable>
+			<inputs>
+				<mode type="int">3</mode>
+			</inputs>
+			<voice>
+				<file-prefix>Sounds/tcas/female/</file-prefix>
+			</voice>
+			<speaker>
+				<max-dist>2</max-dist>
+				<reference-dist>1</reference-dist>
+				<volume>1</volume>
+			</speaker>
+		</tcas>
 	</instrumentation>
 
 	<input>
@@ -565,6 +598,12 @@
 		<tyresmoke>
 			<file>Aircraft/717/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
+		<v-speeds>
+			<file>Aircraft/717/Nasal/v-speeds.nas</file>
+		</v-speeds>
+		<cdu>
+			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
+		</cdu>
 	</nasal>
 
 	<aircraft>
