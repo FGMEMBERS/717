@@ -89,14 +89,14 @@
 	<jet x="-7.342" y="2.915" z="-1.257" mass="4912.0" thrust="18500.0" afterburner="0.0" rotate="0.0" n1-idle="33.0" n1-max="102.0" n2-idle="53.0" n2-max="103.0" tsfc="0.4" egt="1050.0" epr="3.0" exhaust-speed="1555.0" spool-time="3.0">
 		<control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST" />
-		<control-output control="REVERSE_THRUST" prop="/surface-positions/left-reverser-pos-norm" />
+		<control-output control="REVERSE_THRUST" prop="/engines/engine[0]/reverser-pos-norm" />
 		<control-speed control="REVERSE_THRUST" transition-time="1.0" />
 		<actionpt x="-10.746" y="2.915" z="-1.242" />
 	</jet>
 	<jet x="-7.342" y="-2.915" z="-1.257" mass="4912.0" thrust="18500.0" afterburner="0.0" rotate="0.0" n1-idle="33.0" n1-max="102.0" n2-idle="53.0" n2-max="103.0" tsfc="0.4" egt="1050.0" epr="3.0" exhaust-speed="1555.0" spool-time="3.0">
 		<control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST" />
-		<control-output control="REVERSE_THRUST" prop="/surface-positions/right-reverser-pos-norm" />
+		<control-output control="REVERSE_THRUST" prop="/engines/engine[1]/reverser-pos-norm" />
 		<control-speed control="REVERSE_THRUST" transition-time="1.0" />
 		<actionpt x="-10.746" y="-2.915" z="-1.242" />
 	</jet>
@@ -133,13 +133,13 @@
 	</gear>
 
 	<!-- FUEL AND PAYLOAD -->
-	<!-- Total fuel capacity: 3,670 gallons (24,919 pounds) -->
+	<!-- Total fuel capacity: 3,670 gallons (22,754 pounds) -->
 	<!-- Left wing fuel tank -->
-	<tank x="-1.05" y="6.75" z="-2.2" jet="true" capacity="8306" />
+	<tank x="-1.05" y="6.75" z="-2.2" jet="true" capacity="7584" />
 	<!-- Right wing fuel tank -->
-	<tank x="-1.05" y="-6.75" z="-2.2" jet="true" capacity="8306" />
+	<tank x="-1.05" y="-6.75" z="-2.2" jet="true" capacity="7585" />
 	<!-- Main fuel tank -->
-	<tank x="0.85" y="0.0" z="-2.15" jet="true" capacity="8306" />
+	<tank x="0.85" y="0.0" z="-2.15" jet="true" capacity="7584" />
 
 	<!-- Ballast to adjust center of gravity -->
 	<ballast x="16.0" y="0.0" z="-2.0" mass="10000.0" />

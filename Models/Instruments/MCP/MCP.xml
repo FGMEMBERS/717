@@ -412,15 +412,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 var node = props.globals.getNode("/autopilot/settings/heading", 1);
-				 if (node.getValue() == "true-heading-hold")
-				  {
-				  node.setValue("dg-heading-hold");
-				  }
-				 else
-				  {
-				  node.setValue("true-heading-hold");
-				  }
+				 autopilot.set_heading("true-heading-hold");
 				</script>
 			</binding>
 		</action>
@@ -436,15 +428,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 var node = props.globals.getNode("/autopilot/settings/heading", 1);
-				 if (node.getValue() == "nav1-hold")
-				  {
-				  node.setValue("dg-heading-hold");
-				  }
-				 else
-				  {
-				  node.setValue("nav1-hold");
-				  }
+				 autopilot.set_heading("nav1-hold");
 				</script>
 			</binding>
 		</action>
@@ -461,19 +445,8 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-				 var hdgNode = props.globals.getNode("/autopilot/settings/heading", 1);
-				 var altNode = props.globals.getNode("/autopilot/settings/altitude", 1);
-
-				 if (altNode.getValue() == "gs1-hold")
-				  {
-				  hdgNode.setValue("dg-heading-hold");
-				  altNode.setValue("altitude-hold");
-				  }
-				 else
-				  {
-				  hdgNode.setValue("nav1-hold");
-				  altNode.setValue("gs1-hold");
-				  }
+				 autopilot.set_pitch("gs1-hold");
+				 autopilot.set_heading("nav1-hold");
 				</script>
 			</binding>
 		</action>

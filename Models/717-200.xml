@@ -799,7 +799,7 @@
 		<name>Left reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpL</object-name>
-		<property>surface-positions/left-reverser-pos-norm</property>
+		<property>engines/engine[0]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
@@ -816,7 +816,7 @@
 		<name>Left thrust down</name>
 		<type>rotate</type>
 		<object-name>ReverserDownL</object-name>
-		<property>surface-positions/left-reverser-pos-norm</property>
+		<property>engines/engine[0]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
@@ -834,7 +834,7 @@
 		<name>Right reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpR</object-name>
-		<property>surface-positions/right-reverser-pos-norm</property>
+		<property>engines/engine[1]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
@@ -852,7 +852,7 @@
 		<name>Right reverse thrust down</name>
 		<type>rotate</type>
 		<object-name>ReverserDownR</object-name>
-		<property>surface-positions/right-reverser-pos-norm</property>
+		<property>engines/engine[1]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>

@@ -30,13 +30,21 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </adf>
 
+  <adf>
+    <name>adf</name>
+    <number>1</number>
+  </adf>
+
   <airspeed-indicator>
     <name>airspeed-indicator</name>
     <number>0</number>
     <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
     <static-pressure>/systems/static/pressure-inhg</static-pressure>
   </airspeed-indicator>
-
+  <adf>
+    <name>adf</name>
+    <number>0</number>
+  </adf>
   <altimeter>
     <name>altimeter</name>
     <number>0</number>

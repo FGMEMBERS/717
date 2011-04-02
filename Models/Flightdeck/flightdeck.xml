@@ -479,22 +479,20 @@
 
 	<!-- Throttle quadrant -->
 	<animation>
-		<name>Throttle reverser pick</name>
+		<name>Left throttle reverser pick</name>
 		<type>pick</type>
 		<object-name>ThrottleRevL</object-name>
-		<object-name>ThrottleRevR</object-name>
 		<action>
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>
-				 reversethrust.togglereverser();
+				 B717.engine1.reverse_thrust();
 				</script>
 			</binding>
 		</action>
 	</animation>
-
 	<animation>
 		<name>Left throttle pick</name>
 		<type>pick</type>
@@ -558,6 +556,21 @@
 		</center>
 	</animation>
 
+	<animation>
+		<name>Right throttle reverser pick</name>
+		<type>pick</type>
+		<object-name>ThrottleRevR</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 B717.engine2.reverse_thrust();
+				</script>
+			</binding>
+		</action>
+	</animation>
 	<animation>
 		<name>Right throttle pick</name>
 		<type>pick</type>

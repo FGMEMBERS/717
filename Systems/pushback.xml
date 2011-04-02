@@ -20,7 +20,7 @@
 				<property>/gear/gear[0]/wow</property>
 			</and>
 		</input>
-		<output>/systems/pushback/linked</output>
+		<output>/sim/model/pushback/linked</output>
 	</logic>
 	<filter>
 		<name>Pushback cancel force logic</name>
@@ -29,7 +29,7 @@
 		<debug type="bool">false</debug>
 		<enable>
 			<not>
-				<property>/systems/pushback/linked</property>
+				<property>/sim/model/pushback/linked</property>
 			</not>
 		</enable>
 		<input>
@@ -41,7 +41,7 @@
 		<name>Pushback controller</name>
 		<debug type="bool">false</debug>
 		<enable>
-			<prop>/systems/pushback/linked</prop>
+			<prop>/sim/model/pushback/linked</prop>
 			<value type="bool">true</value>
 		</enable>
 		<input>

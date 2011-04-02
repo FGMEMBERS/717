@@ -32,6 +32,10 @@
 		</startup>
 
 		<systems>
+			<!-- Disable the generic electrical system -->
+			<electrical>
+				<path></path>
+			</electrical>
 			<autopilot>
 				<name>Autopilot</name>
 				<path>Aircraft/717/Systems/717-autopilot.xml</path>
@@ -318,22 +322,24 @@
 
 	<engines>
 		<apu>
-			<rpm type="double">0</rpm>
 			<on-fire type="bool">false</on-fire>
+			<rpm type="double">0</rpm>
 			<running type="bool">false</running>
 			<serviceable type="bool">true</serviceable>
 		</apu>
 		<engine n="0">
-			<rpm type="double">0</rpm>
 			<failed type="bool">false</failed>
 			<on-fire type="bool">false</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
+			<rpm type="double">0</rpm>
 			<running type="bool">false</running>
 			<started type="bool">false</started>
 		</engine>
 		<engine n="1">
-			<rpm type="double">0</rpm>
 			<failed type="bool">false</failed>
 			<on-fire type="bool">false</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
+			<rpm type="double">0</rpm>
 			<running type="bool">false</running>
 			<started type="bool">false</started>
 		</engine>
@@ -426,7 +432,8 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 reversethrust.togglereverser();
+					 B717.engine1.reverse_thrust();
+					 B717.engine2.reverse_thrust();
 					</script>
 				</binding>
 			</key>
@@ -465,15 +472,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 var node = props.globals.getNode("/autopilot/settings/speed", 1);
-					 if (node.getValue() == "speed-to-ga")
-					  {
-					  node.setValue("");
-					  }
-					 else
-					  {
-					  node.setValue("speed-to-ga");
-					  }
+					 autopilot.set_speed("speed-to-ga");
 					</script>
 				</binding>
 			</key>
@@ -510,19 +509,8 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 var hdgNode = props.globals.getNode("/autopilot/settings/heading", 1);
-					 var altNode = props.globals.getNode("/autopilot/settings/altitude", 1);
-
-					 if (altNode.getValue() == "gs1-hold")
-					  {
-					  hdgNode.setValue("dg-heading-hold");
-					  altNode.setValue("altitude-hold");
-					  }
-					 else
-					  {
-					  hdgNode.setValue("nav1-hold");
-					  altNode.setValue("gs1-hold");
-					  }
+					 autopilot.set_pitch("gs1-hold");
+					 autopilot.set_heading("nav1-hold");
 					</script>
 				</binding>
 			</key>
@@ -541,15 +529,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 var node = props.globals.getNode("/autopilot/settings/heading", 1);
-					 if (node.getValue() == "nav1-hold")
-					  {
-					  node.setValue("dg-heading-hold");
-					  }
-					 else
-					  {
-					  node.setValue("nav1-hold");
-					  }
+					 autopilot.set_heading("nav1-hold");
 					</script>
 				</binding>
 			</key>
@@ -559,15 +539,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 var node = props.globals.getNode("/autopilot/settings/heading", 1);
-					 if (node.getValue() == "true-heading-hold")
-					  {
-					  node.setValue("dg-heading-hold");
-					  }
-					 else
-					  {
-					  node.setValue("true-heading-hold");
-					  }
+					 autopilot.set_heading("true-heading-hold");
 					</script>
 				</binding>
 			</key>
@@ -577,8 +549,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
-					 autopilot.open();
+					 autopilot.open_dialog();
 					</script>
 				</binding>
 			</key>
@@ -586,21 +557,15 @@
 	</input>
 
 	<nasal>
-		<systems>
-			<file>Aircraft/717/Nasal/systems.nas</file>
-		</systems>
-		<electrical>
+		<B717>
+			<file>Aircraft/717/Nasal/engines.nas</file>
 			<file>Aircraft/717/Nasal/electrical.nas</file>
-		</electrical>
-		<reversethrust>
-			<file>Aircraft/717/Nasal/reversethrust.nas</file>
-		</reversethrust>
-		<tyresmoke>
-			<file>Aircraft/717/Nasal/tyresmoke.nas</file>
-		</tyresmoke>
-		<v-speeds>
 			<file>Aircraft/717/Nasal/v-speeds.nas</file>
-		</v-speeds>
+			<file>Aircraft/717/Nasal/systems.nas</file>
+		</B717>
+		<autopilot>
+			<file>Aircraft/717/Nasal/autopilot.nas</file>
+		</autopilot>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>
