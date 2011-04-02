@@ -228,10 +228,6 @@
 				<name>Ctrl-o</name>
 				<desc>toggle autothrottle TO/GA hold</desc>
 			</key>
-			<key>
-				<name>w</name>
-				<desc>walk forward toward view direction</desc>
-			</key>
 			<line>Autobrake help:</line>
 			<line>-------------------------</line>
 			<line>RTO........activate emergency brake if throttles are idle during takeoff</line>
