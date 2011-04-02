@@ -568,12 +568,12 @@
 	</nasal>
 
 	<aircraft>
-		<jetway-pos>
-			<x-tra>0.5</x-tra>
-			<y-rot>-5</y-rot>
-			<z-rot>21.5</z-rot>
-			<hood-rot>5</hood-rot>
-		</jetway-pos>
+		<door>
+			<x-m>18.166</x-m>
+			<y-m>10.047</y-m>
+			<z-m>2.282</z-m>
+		</door>
+		<jetway-hood-deg type="double">3</jetway-hood-deg>
 	</aircraft>
 
 </PropertyList>

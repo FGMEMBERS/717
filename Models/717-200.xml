@@ -109,6 +109,15 @@
 			<z-m>-4.245</z-m>
 		</offsets>
 	</model>
+        <model>
+                <name>rain-n</name>
+                <path>Aircraft/Generic/Effects/rain-nose.xml</path>
+                <offsets>
+                        <x-m>-16.67</x-m>
+                        <y-m>0</y-m>
+                        <z-m>-4.245</z-m>
+                </offsets>
+        </model>
 	<model>
 		<name>tyre-smoke-p</name>
 		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
@@ -118,6 +127,15 @@
 			<z-m>-4.412</z-m>
 		</offsets>
 	</model>
+        <model>
+                <name>rain-p</name>
+                <path>Aircraft/Generic/Effects/rain-port.xml</path>
+                <offsets>
+                        <x-m>0.99</x-m>
+                        <y-m>-2.125</y-m>
+                        <z-m>-4.412</z-m>
+                </offsets>
+        </model>
 	<model>
 		<name>tyre-smoke-s</name>
 		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
@@ -127,6 +145,15 @@
 			<z-m>-4.412</z-m>
 		</offsets>
 	</model>
+        <model>
+                <name>rain-s</name>
+                <path>Aircraft/Generic/Effects/rain-stbd.xml</path>
+                <offsets>
+                        <x-m>0.99</x-m>
+                        <y-m>2.125</y-m>
+                        <z-m>-4.412</z-m>
+                </offsets>
+        </model>
 
 	<!-- Engine fire -->
 	<model>
