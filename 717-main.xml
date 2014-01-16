@@ -213,7 +213,7 @@
 				<desc>cycle speedbrake setting</desc>
 			</key>
 			<key>
-				<name>Tab</name>
+				<name>=</name>
 				<desc>cycle autobrake setting</desc>
 			</key>
 			<key>
@@ -444,8 +444,8 @@
 					<value>2</value>
 				</binding>
 			</key>
-			<key n="9">
-				<name>Tab</name>
+			<key n="61">
+				<name>=</name>
 				<desc>Cycle autobrake setting</desc>
 				<binding>
 					<command>property-cycle</command>
