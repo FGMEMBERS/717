@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Boeing 717-200 for FlightGear -->
+<!-- Engine Crew Indication and Alerting System -->
+
+<PropertyList>
+
+	<path>EICAS.ac</path>
+
+	<!-- 3D TEXT -->
+	<text>
+		<name>TAT</name>
+		<offsets>
+			<x-m>0.0002</x-m>
+			<y-m>0.063</y-m>
+			<z-m>0.1</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">TAT %2.0f°C</format>
+		<property>instrumentation/total-air-temperature-degc</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>EPR</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>0.075</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">EPR</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>EPR L</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>-0.041</y-m>
+			<z-m>0.065</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%1.2f</format>
+		<property>engines/engine[0]/epr</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>EPR R</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>0.041</y-m>
+			<z-m>0.065</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%1.2f</format>
+		<property>engines/engine[1]/epr</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>N1</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>0.042</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">N1</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>N1 L</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>-0.041</y-m>
+			<z-m>0.032</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%2.1f</format>
+		<property>engines/engine[0]/rpm</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>N1 R</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>0.041</y-m>
+			<z-m>0.032</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%2.1f</format>
+		<property>engines/engine[1]/rpm</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>TGT</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>0.009</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">TGT</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>N2</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.024</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">N2</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>N2 L</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>-0.041</y-m>
+			<z-m>-0.034</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%2.1f</format>
+		<property>engines/engine[0]/n2</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>N2 R</name>
+		<offsets>
+			<x-m>0.0003</x-m>
+			<y-m>0.041</y-m>
+			<z-m>-0.034</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%2.1f</format>
+		<property>engines/engine[1]/n2</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>FF</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.044</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">FF</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>FF Units</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.05</z-m>
+		</offsets>
+		<alignment>center-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">KG/HR</format>
+		<property>systems/electrical/outputs/efis</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.006</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>FF L</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>-0.048</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.0f</format>
+		<property>engines/engine[0]/fuel-flow-gph</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+	<text>
+		<name>FF R</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>0.04</y-m>
+			<z-m>-0.048</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">%3.0f</format>
+		<property>engines/engine[1]/fuel-flow-gph</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<text>
+		<name>Total fuel</name>
+		<offsets>
+			<x-m>0.0001</x-m>
+			<y-m>-0.095</y-m>
+			<z-m>-0.08</z-m>
+		</offsets>
+		<alignment>left-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">number-value</type>
+		<format type="string">TOTAL FUEL: %5.1f LBS</format>
+		<property>consumables/fuel/total-fuel-lbs</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.008</character-size>
+		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+	</text>
+
+	<!-- Emission animations -->
+	<animation>
+		<name>White text</name>
+		<type>material</type>
+		<object-name>TAT</object-name>
+		<object-name>EPR</object-name>
+		<object-name>EPR L</object-name>
+		<object-name>EPR R</object-name>
+		<object-name>N1</object-name>
+		<object-name>N1 L</object-name>
+		<object-name>N1 R</object-name>
+		<object-name>TGT</object-name>
+		<object-name>N2</object-name>
+		<object-name>N2 L</object-name>
+		<object-name>N2 R</object-name>
+		<object-name>FF</object-name>
+		<object-name>FF Units</object-name>
+		<object-name>FF L</object-name>
+		<object-name>FF R</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	<animation>
+		<name>Blue text</name>
+		<type>material</type>
+		<object-name>Total fuel</object-name>
+		<emission>
+			<red>0.32</red>
+			<green>0.66</green>
+			<blue>0.91</blue>
+		</emission>
+	</animation>
+
+	<!-- ANIMATIONS -->
+	<!-- Lighting -->
+	<animation>
+		<name>Cockpit illumination</name>
+		<type>material</type>
+		<object-name>Border</object-name>
+		<object-name>Off</object-name>
+		<emission>
+			<red>0.5</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+			<factor-prop>controls/lighting/dome-norm</factor-prop>
+		</emission>
+	</animation>
+
+	<!-- Power on/off -->
+	<animation>
+		<name>Power on/off</name>
+		<type>select</type>
+		<object-name>Off</object-name>
+		<condition>
+			<less-than>
+				<property>systems/electrical/outputs/efis</property>
+				<value>15</value>
+			</less-than>
+		</condition>
+	</animation>
+
+	<!-- EPR -->
+	<animation>
+		<name>Left EPR</name>
+		<type>rotate</type>
+		<object-name>EPRLPtr</object-name>
+		<property>engines/engine[0]/epr</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>63</dep></entry>
+			<entry><ind>3</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.074</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Left EPR throttle</name>
+		<type>rotate</type>
+		<object-name>EPRLThr</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>1</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.074</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right EPR</name>
+		<type>rotate</type>
+		<object-name>EPRRPtr</object-name>
+		<property>engines/engine[1]/epr</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>63</dep></entry>
+			<entry><ind>3</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.04</y-m>
+			<z-m>0.074</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right EPR throttle</name>
+		<type>rotate</type>
+		<object-name>EPRRThr</object-name>
+		<property>controls/engines/engine[1]/throttle</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>1</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.04</y-m>
+			<z-m>0.074</z-m>
+		</center>
+	</animation>
+
+	<!-- N1 -->
+	<animation>
+		<name>Left N1</name>
+		<type>rotate</type>
+		<object-name>N1LPtr</object-name>
+		<property>engines/engine[0]/rpm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>100</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.041</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right N1</name>
+		<type>rotate</type>
+		<object-name>N1RPtr</object-name>
+		<property>engines/engine[1]/rpm</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>100</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.04</y-m>
+			<z-m>0.041</z-m>
+		</center>
+	</animation>
+
+	<!-- N2 -->
+	<animation>
+		<name>Left N2</name>
+		<type>rotate</type>
+		<object-name>N2LPtr</object-name>
+		<property>engines/engine[0]/n2</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>100</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>-0.025</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right N2</name>
+		<type>rotate</type>
+		<object-name>N2RPtr</object-name>
+		<property>engines/engine[1]/n2</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>63</dep></entry>
+			<entry><ind>100</ind><dep>-140</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.04</y-m>
+			<z-m>-0.025</z-m>
+		</center>
+	</animation>
+
+	<!-- APU status indicators -->
+	<animation>
+		<name>APU starting</name>
+		<type>select</type>
+		<object-name>APUStart</object-name>
+		<condition>
+			<equals>
+				<property>controls/APU/off-start-run</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<name>APU runing</name>
+		<type>select</type>
+		<object-name>APURun</object-name>
+		<condition>
+			<property>engines/apu/running</property>
+		</condition>
+	</animation>
+
+</PropertyList>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList include="717-main.xml">
+
+	<sim>
+		<description>Boeing 717-200 (Basic Gross Weight)</description>
+		<aero>717-200</aero>
+	</sim>
+
+	<instrumentation>
+		<cdu>
+			<ident>
+				<model>717-200BGW</model>
+				<engines>BR715-A1-30</engines>
+			</ident>
+		</cdu>
+	</instrumentation>
+
+</PropertyList>

@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+
+	<path>flightdeck.ac</path>
+
+	<!-- EXTRA MODELS -->
+	<!-- Instruments -->
+	<model>
+		<name>Pilot Primary Flight Display</name>
+		<path>Aircraft/717/Models/Instruments/PFD/PFD.xml</path>
+		<offsets>
+			<x-m>-1.789</x-m>
+			<y-m>-0.627</y-m>
+			<z-m>0.844</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Pilot Multi-Function Display</name>
+		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>-0.384</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Pilot Engine Crew Indication and Alerting System</name>
+		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>-0.141</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Pilot Control Display Unit</name>
+		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+		<overlay>
+			<texture>boeing_grey.png</texture>
+		</overlay>
+		<offsets>
+			<x-m>-1.67</x-m>
+			<y-m>-0.164</y-m>
+			<z-m>0.721</z-m>
+			<pitch-deg>-75</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Copilot Primary Flight Display</name>
+		<path>Aircraft/717/Models/Instruments/PFD/PFD.xml</path>
+		<offsets>
+			<x-m>-1.789</x-m>
+			<y-m>0.607</y-m>
+			<z-m>0.844</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Copilot Multi-Function Display</name>
+		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>0.364</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Copilot Engine Crew Indication and Alerting System</name>
+		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>0.101</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Copilot Control Display Unit</name>
+		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
+		<overlay>
+			<texture>boeing_grey.png</texture>
+		</overlay>
+		<offsets>
+			<x-m>-1.67</x-m>
+			<y-m>0.164</y-m>
+			<z-m>0.721</z-m>
+			<pitch-deg>-75</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Mode Control Panel</name>
+		<path>Aircraft/717/Models/Instruments/MCP/MCP.xml</path>
+		<offsets>
+			<x-m>-1.551</x-m>
+			<y-m>0</y-m>
+			<z-m>1.16</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Standby Attitude Indicator</name>
+		<path>Aircraft/717/Models/Instruments/Stby-AI/stby-ai.xml</path>
+		<offsets>
+			<x-m>-1.736</x-m>
+			<y-m>0</y-m>
+			<z-m>0.7</z-m>
+			<pitch-deg>-45</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Overhead panel</name>
+		<path>Aircraft/717/Models/Instruments/OHpanel/OHpanel.xml</path>
+		<offsets>
+			<x-m>-1.25</x-m>
+			<y-m>0</y-m>
+			<z-m>1.59</z-m>
+			<pitch-deg>61</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Radio frequencies panel</name>
+		<path>Aircraft/717/Models/Instruments/Radiopanel/Radiopanel.xml</path>
+		<offsets>
+			<x-m>-1.16</x-m>
+			<y-m>0</y-m>
+			<z-m>0.6295</z-m>
+			<pitch-deg>-75</pitch-deg>
+		</offsets>
+	</model>
+
+	<!-- ANIMATIONS -->
+	<!-- Cockpit illumination -->
+	<animation>
+		<name>Cockpit illumination</name>
+		<type>material</type>
+		<object-name>CDUCasings</object-name>
+		<object-name>CDUs</object-name>
+		<object-name>EngCutoffL</object-name>
+		<object-name>EngCutoffR</object-name>
+		<object-name>FDFloorCarpet</object-name>
+		<object-name>FDFloorFwd</object-name>
+		<object-name>FDFloorMetal</object-name>
+		<object-name>FlapLever</object-name>
+		<object-name>FlightDeck</object-name>
+		<object-name>FlightDeckBulkhead</object-name>
+		<object-name>FlightDeckDoor</object-name>
+		<object-name>GearInd</object-name>
+		<object-name>GlareShield</object-name>
+		<object-name>LGLever</object-name>
+		<object-name>PanelMain</object-name>
+		<object-name>PedalCover</object-name>
+		<object-name>PedalL</object-name>
+		<object-name>PedalR</object-name>
+		<object-name>PedalRodL</object-name>
+		<object-name>PedalRodR</object-name>
+		<object-name>PedestalBase</object-name>
+		<object-name>PedestalDrum</object-name>
+		<object-name>SeatCP</object-name>
+		<object-name>SeatCushionsCP</object-name>
+		<object-name>SeatCushionsP</object-name>
+		<object-name>SeatP</object-name>
+		<object-name>SideConsoles</object-name>
+		<object-name>ThrottleL</object-name>
+		<object-name>ThrottleR</object-name>
+		<object-name>ThrottleRevL</object-name>
+		<object-name>ThrottleRevR</object-name>
+		<object-name>YokeBase</object-name>
+		<object-name>YokeColL</object-name>
+		<object-name>YokeColR</object-name>
+		<object-name>YokeL</object-name>
+		<object-name>YokeR</object-name>
+		<object-name>YokeTrimL</object-name>
+		<object-name>YokeTrimR</object-name>
+		<object-name>Overhead panel</object-name>
+		<emission>
+			<red>0.5</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+			<factor-prop>controls/lighting/dome-norm</factor-prop>
+		</emission>
+	</animation>
+
+	<!-- Gear indicator lights -->
+	<animation>
+		<name>Left main gear locked light</name>
+		<type>select</type>
+		<object-name>GearLLocked</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>gear/gear[1]/position-norm</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>gear/gear[1]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<name>Left main gear in-transit light</name>
+		<type>select</type>
+		<object-name>GearLTransit</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>gear/gear[1]/position-norm</property>
+					<value>0</value>
+				</greater-than>
+				<less-than>
+					<property>gear/gear[1]/position-norm</property>
+					<value>1</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<name>Nose gear locked light</name>
+		<type>select</type>
+		<object-name>GearNLocked</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>gear/gear[0]/position-norm</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>gear/gear[0]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<name>Nose gear in-transit light</name>
+		<type>select</type>
+		<object-name>GearNTransit</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>gear/gear[0]/position-norm</property>
+					<value>0</value>
+				</greater-than>
+				<less-than>
+					<property>gear/gear[0]/position-norm</property>
+					<value>1</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<name>Right main gear locked light</name>
+		<type>select</type>
+		<object-name>GearRLocked</object-name>
+		<condition>
+			<or>
+				<equals>
+					<property>gear/gear[2]/position-norm</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>gear/gear[2]/position-norm</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</condition>
+	</animation>
+	<animation>
+		<name>Right main gear in-transit light</name>
+		<type>select</type>
+		<object-name>GearRTransit</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>gear/gear[2]/position-norm</property>
+					<value>0</value>
+				</greater-than>
+				<less-than>
+					<property>gear/gear[2]/position-norm</property>
+					<value>1</value>
+				</less-than>
+			</and>
+		</condition>
+	</animation>
+
+	<!-- Yokes -->
+	<animation>
+		<name>Yoke elevator</name>
+		<type>rotate</type>
+		<object-name>YokeColL</object-name>
+		<object-name>YokeL</object-name>
+		<object-name>YokeColR</object-name>
+		<object-name>YokeR</object-name>
+		<property>controls/flight/elevator</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.474</x-m>
+			<y-m>0</y-m>
+			<z-m>0.19</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Left yoke aileron</name>
+		<type>rotate</type>
+		<object-name>YokeL</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>90</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>0.857</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right yoke aileron</name>
+		<type>rotate</type>
+		<object-name>YokeR</object-name>
+		<property>controls/flight/aileron</property>
+		<factor>90</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.5</y-m>
+			<z-m>0.857</z-m>
+		</center>
+	</animation>
+
+	<!-- Rudder pedals -->
+	<animation>
+		<name>Left pedals</name>
+		<type>rotate</type>
+		<object-name>PedalRodL</object-name>
+		<object-name>PedalL</object-name>
+		<property>controls/flight/rudder</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>-23</dep></entry>
+			<entry><ind>1</ind><dep>15</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-2.02</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.07</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right pedals</name>
+		<type>rotate</type>
+		<object-name>PedalRodR</object-name>
+		<object-name>PedalR</object-name>
+		<property>controls/flight/rudder</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>15</dep></entry>
+			<entry><ind>1</ind><dep>-23</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-2.02</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.07</z-m>
+		</center>
+	</animation>
+
+	<!-- Gear lever -->
+	<animation>
+		<name>Gear lever pick</name>
+		<type>pick</type>
+		<object-name>LGLever</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/gear-down</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Gear lever</name>
+		<type>rotate</type>
+		<object-name>LGLever</object-name>
+		<property>controls/gear/gear-down</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>72</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.884</x-m>
+			<y-m>0</y-m>
+			<z-m>0.923</z-m>
+		</center>
+	</animation>
+
+	<!-- Speedbrake lever -->
+	<animation>
+		<name>Speedbrake lever pick</name>
+		<type>pick</type>
+		<object-name>SpdBrkLvr</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/speedbrake-lever</property>
+				<step type="double">1</step>
+				<max>2</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/speedbrake-lever</property>
+				<step type="double">-1</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Speedbrake lever</name>
+		<type>rotate</type>
+		<object-name>SpdBrkLvr</object-name>
+		<property>controls/flight/speedbrake-lever</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-34</dep></entry>
+			<entry><ind>1</ind><dep>-14</dep></entry>
+			<entry><ind>2</ind><dep>32</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.42</x-m>
+			<y-m>0</y-m>
+			<z-m>0.63</z-m>
+		</center>
+	</animation>
+
+	<!-- Throttle quadrant -->
+	<animation>
+		<name>Left throttle reverser pick</name>
+		<type>pick</type>
+		<object-name>ThrottleRevL</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 B717.engine1.reverse_thrust();
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Left throttle pick</name>
+		<type>pick</type>
+		<object-name>ThrottleL</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Left throttle</name>
+		<type>rotate</type>
+		<object-name>ThrottleL</object-name>
+		<object-name>ThrottleRevL</object-name>
+		<property>controls/engines/engine[0]/throttle</property>
+		<factor>50</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.421</x-m>
+			<y-m>0</y-m>
+			<z-m>0.654</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Left throttle reverser</name>
+		<type>rotate</type>
+		<object-name>ThrottleRevL</object-name>
+		<property>controls/engines/engine[0]/reverser</property>
+		<factor>40</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.3685</x-m>
+			<y-m>0</y-m>
+			<z-m>0.8357</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Right throttle reverser pick</name>
+		<type>pick</type>
+		<object-name>ThrottleRevR</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 B717.engine2.reverse_thrust();
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Right throttle pick</name>
+		<type>pick</type>
+		<object-name>ThrottleR</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[1]/throttle</property>
+				<step type="double">0.01</step>
+				<max>1</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[1]/throttle</property>
+				<step type="double">-0.01</step>
+				<min>0</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Right throttle</name>
+		<type>rotate</type>
+		<object-name>ThrottleR</object-name>
+		<object-name>ThrottleRevR</object-name>
+		<property>controls/engines/engine[1]/throttle</property>
+		<factor>50</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.421</x-m>
+			<y-m>0</y-m>
+			<z-m>0.654</z-m>
+		</center>
+	</animation>
+	<animation>
+		<name>Right throttle reverser</name>
+		<type>rotate</type>
+		<object-name>ThrottleRevR</object-name>
+		<property>controls/engines/engine[1]/reverser</property>
+		<factor>40</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.3685</x-m>
+			<y-m>0</y-m>
+			<z-m>0.8357</z-m>
+		</center>
+	</animation>
+
+	<!-- Flap lever -->
+	<animation>
+		<name>Flap lever pick</name>
+		<type>pick</type>
+		<object-name>FlapLever</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 controls.flapsDown(1);
+				</script>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+				 controls.flapsDown(-1);
+				</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Flap lever</name>
+		<type>rotate</type>
+		<object-name>FlapLever</object-name>
+		<property>controls/flight/flaps</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.125</ind><dep>28</dep></entry>
+			<entry><ind>0.25</ind><dep>45</dep></entry>
+			<entry><ind>1</ind><dep>67</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.421</x-m>
+			<y-m>0</y-m>
+			<z-m>0.654</z-m>
+		</center>
+	</animation>
+
+	<!-- Engine cutoff levers -->
+	<animation>
+		<name>Engine 1 cutoff lever pick</name>
+		<type>pick</type>
+		<object-name>EngCutoffL</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[0]/cutoff</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Engine 1 cutoff lever</name>
+		<type>rotate</type>
+		<object-name>EngCutoffL</object-name>
+		<property>controls/engines/engine[0]/cutoff</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.326</x-m>
+			<y-m>0</y-m>
+			<z-m>0.7</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<name>Engine 2 cutoff lever pick</name>
+		<type>pick</type>
+		<object-name>EngCutoffR</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[1]/cutoff</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<name>Engine 2 cutoff lever</name>
+		<type>rotate</type>
+		<object-name>EngCutoffR</object-name>
+		<property>controls/engines/engine[1]/cutoff</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>-30</dep></entry>
+			<entry><ind>1</ind><dep>0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-1.326</x-m>
+			<y-m>0</y-m>
+			<z-m>0.7</z-m>
+		</center>
+	</animation>
+
+</PropertyList>
