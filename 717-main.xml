@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
-
 	<sim>
 		<author>Gary Neely (3d, cockpit shell), Skyop (3d, FDM, systems, etc.)</author>
 		<status>beta</status>
@@ -71,7 +70,7 @@
 		<view n="100">
 			<name>Wing View</name>
 			<type>lookfrom</type>
-			<internal archive="y">false</internal>
+			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">2</x-offset-m>
@@ -122,7 +121,10 @@
 		<flaps>
 			<setting>0.000</setting>
 			<setting>0.125</setting>
-			<setting>0.250</setting>
+			<setting>0.200</setting>
+			<setting>0.300</setting>
+			<setting>0.500</setting>
+			<setting>0.700</setting>
 			<setting>1.000</setting>
 		</flaps>
 
@@ -196,10 +198,9 @@
 		</menubar>
 
 		<sound>
-			<path>Aircraft/717/717-sound.xml</path>
-
-                        <no-smoking-sign type="bool">false</no-smoking-sign>
-                        <seatbelt-sign type="bool">false</seatbelt-sign>
+			<path>Aircraft/717/Sounds/717-sound.xml</path>
+			<no-smoking-sign type="bool">false</no-smoking-sign>
+			<seatbelt-sign type="bool">false</seatbelt-sign>
 		</sound>
 
 		<help>
@@ -370,9 +371,9 @@
 		<fmc>
 			<to-flap type="double">5</to-flap>
 			<vspeeds>
-				<V1 type="double">0</V1>
-				<VR type="double">0</VR>
-				<V2 type="double">0</V2>
+				<V1 type="double">120</V1>
+				<VR type="double">135</VR>
+				<V2 type="double">151</V2>
 			</vspeeds>
 		</fmc>
 		<!-- See http://wiki.flightgear.org/index.php/GPWS -->
@@ -575,5 +576,4 @@
 		</door>
 		<jetway-hood-deg type="double">3</jetway-hood-deg>
 	</aircraft>
-
 </PropertyList>
