@@ -5,6 +5,7 @@
 	<sim>
 		<description>Boeing 717-200 (High Gross Weight)</description>
 		<aero>717-200HGW</aero>
+		<variant-of>717-200</variant-of>
 	</sim>
 
 	<instrumentation>
