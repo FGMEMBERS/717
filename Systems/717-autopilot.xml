@@ -185,12 +185,12 @@
 			<prop>/controls/flight/aileron</prop>
 		</output>
 		<config>
-			<Kp>0.01</Kp>
+			<Kp>0.025</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
-			<Ti>11</Ti>
-			<Td>0.00007</Td>
+			<Ti>10</Ti>
+			<Td>0.00001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>
@@ -296,12 +296,12 @@
 			<prop>/controls/flight/aileron</prop>
 		</output>
 		<config>
-			<Kp>0.01</Kp>
+			<Kp>0.025</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
 			<Ti>10</Ti>
-			<Td>0.000000001</Td>
+			<Td>0.00001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
 		</config>
@@ -337,20 +337,17 @@
 		<output>
 			<prop>/autopilot/internal/target-roll-deg</prop>
 		</output>
-		<config>
-			<Kp>-1.5</Kp>
-			<beta>1</beta>
-			<alpha>0.1</alpha>
-			<gamma>0</gamma>
-			<Ti>15</Ti>
-			<Td>0.000000001</Td>
-			<u_min>
-				<prop>/autopilot/settings/minimum-bank-deg</prop>
-			</u_min>
-			<u_max>
-				<prop>/autopilot/settings/maximum-bank-deg</prop>
-			</u_max>
-		</config>
+	<config>
+      <Kp>-1.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>     <!-- derivator time -->
+      <u_min>-20.0</u_min> <!-- minimum output clamp -->
+      <u_max>20.0</u_max>  <!-- maximum output clamp -->
+    </config>
 	</pid-controller>
 	<pid-controller>
 		<name>NAV hold stage 2</name>
@@ -368,16 +365,17 @@
 		<output>
 			<prop>/controls/flight/aileron</prop>
 		</output>
-		<config>
-			<Kp>0.01</Kp>
-			<beta>1</beta>
-			<alpha>0.1</alpha>
-			<gamma>0</gamma>
-			<Ti>10</Ti>
-			<Td>0.000000001</Td>
-			<u_min>-1</u_min>
-			<u_max>1</u_max>
-		</config>
+	<config>
+      <Kp>0.5</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>       <!-- integrator time -->
+      <Td>0.00001</Td>    <!-- derivator time -->
+      <u_min>-1.0</u_min> <!-- minimum output clamp -->
+      <u_max>1.0</u_max>  <!-- maximum output clamp -->
+    </config>
 	</pid-controller>
 
 	<!-- True heading [LNAV] -->
@@ -442,7 +440,7 @@
 			<prop>/controls/flight/aileron</prop>
 		</output>
 		<config>
-			<Kp>0.01</Kp>
+			<Kp>0.025</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
@@ -482,7 +480,7 @@
 			<prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
 		</reference>
 		 <output>
-			<prop>/controls/flight/elevator-trim</prop>
+			<prop>/controls/flight/elevator</prop>
 		</output>
 		<config>
 			<Kp>-0.0075</Kp>
@@ -596,7 +594,7 @@
 			<prop>/autopilot/internal/target-climb-rate-fps</prop>
 		</reference>
 		<output>
-			<prop>/controls/flight/elevator-trim</prop>
+			<prop>/controls/flight/elevator</prop>
 		</output>
 		<config>
 			<Kp>-0.01</Kp>

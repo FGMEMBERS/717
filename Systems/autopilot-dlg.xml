@@ -326,7 +326,6 @@
 					<command>nasal</command>
 					<script>
 					 autopilot.set_pitch("gs1-hold");
-					 autopilot.set_heading("nav1-hold");
 					</script>
 				</binding>
 			</button>
