@@ -14,6 +14,7 @@
 				<engines>BR715-A1-30</engines>
 			</ident>
 		</cdu>
+		
 		<mk-viii>                           <!-- http://wiki.flightgear.org/index.php/GPWS -->
 
      <serviceable>true</serviceable>   <!-- EGPWS_ENABLE -->
