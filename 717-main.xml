@@ -2,7 +2,7 @@
 
 <PropertyList>
 	<sim>
-		<author>Gary Neely (3d, cockpit shell), Skyop (3d, FDM, systems, etc.)</author>
+		<author>Gary Neely (3d, cockpit shell), Skyop (3d, FDM, systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
@@ -250,6 +250,11 @@
 			<line>Autopilot key commands listed here apply to the 717 only.</line>
 			<line>For a full list of autopilot key commands not specific to this aircraft, check the documentation included with FlightGear.</line>
 		</help>
+		
+		<instrument-options>
+			<canvas-popup-enable type="bool">true</canvas-popup-enable>
+		</instrument-options>
+		
 	</sim>
 
 	<consumables>
@@ -560,6 +565,7 @@
 			<file>Aircraft/717/Nasal/electrical.nas</file>
 			<file>Aircraft/717/Nasal/v-speeds.nas</file>
 			<file>Aircraft/717/Nasal/systems.nas</file>
+			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
 		</B717>
 		<autopilot>
 			<file>Aircraft/717/Nasal/autopilot.nas</file>

@@ -17,6 +17,16 @@
 		</offsets>
 	</model>
 	<model>
+		<name>Pilot Nav Display</name>
+		<path>Aircraft/717/Models/Instruments/ND/ND_L.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>-0.384</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<!--model>
 		<name>Pilot Multi-Function Display</name>
 		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
 		<offsets>
@@ -25,7 +35,7 @@
 			<z-m>0.9</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
-	</model>
+	</model-->
 	<model>
 		<name>Pilot Engine Crew Indication and Alerting System</name>
 		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
@@ -61,6 +71,16 @@
 		</offsets>
 	</model>
 	<model>
+		<name>Copilot Nav Display</name>
+		<path>Aircraft/717/Models/Instruments/ND/ND_R.xml</path>
+		<offsets>
+			<x-m>-1.81</x-m>
+			<y-m>0.364</y-m>
+			<z-m>0.9</z-m>
+			<pitch-deg>-11.75</pitch-deg>
+		</offsets>
+	</model>
+	<!--model>
 		<name>Copilot Multi-Function Display</name>
 		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
 		<offsets>
@@ -69,7 +89,7 @@
 			<z-m>0.9</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
-	</model>
+	</model-->
 	<model>
 		<name>Copilot Engine Crew Indication and Alerting System</name>
 		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
