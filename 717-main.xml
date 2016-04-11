@@ -29,6 +29,7 @@
 		<startup>
 		  <splash-texture>Aircraft/717/splash/splash-1.png</splash-texture>
 		  <splash-texture>Aircraft/717/splash/splash-2.png</splash-texture>
+		  <splash-texture>Aircraft/717/splash/splash-3.png</splash-texture>
 		</startup>
 
 		<systems>
