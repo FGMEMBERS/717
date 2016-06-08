@@ -3,6 +3,16 @@
 
 <PropertyList>
 <fx>
+  <apoff>
+   <name>apoff</name>
+   <path>/Aircraft/717/Sounds/apoff.wav</path>
+   <condition>
+     <property>/controls/it2/apoffsound</property>
+   </condition>
+   <volume>
+    <factor>10.0</factor>
+   </volume>
+  </apoff>
   <engine>
     <name>left jet</name>
     <path>Aircraft/717/Sounds/eng/jet.wav</path>

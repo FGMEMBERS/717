@@ -42,6 +42,10 @@
 				<path>Aircraft/717/Systems/717-autopilot.xml</path>
 			</autopilot>
 			<autopilot>
+				<name>Autopilot</name>
+				<path>Aircraft/717/Systems/717-autothrottle.xml</path>
+			</autopilot>
+			<autopilot>
 				<name>Autopilot helpers</name>
 				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
 			</autopilot>
@@ -468,95 +472,6 @@
 					<value>5</value>
 				</binding>
 			</key>
-
-			<!-- Custom autopilot hotkeys -->
-			<key n="15">
-				<name>Ctrl-O</name>
-				<desc>Toggle TO/GA lock</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 autopilot.set_speed("speed-to-ga");
-					</script>
-				</binding>
-			</key>
-			<key n="26">
-				<name>Ctrl-Z</name>
-				<desc>Toggle master autopilot switch</desc>
-				<binding>
-					<command>property-toggle</command>
-					<property>autopilot/settings/engaged</property>
-				</binding>
-			</key>
-			<key n="25">
-				<name>Ctrl-Y</name>
-				<desc>Toggle autothrottle switch</desc>
-				<binding>
-					<command>property-toggle</command>
-					<property>autopilot/settings/autothrottle</property>
-				</binding>
-			</key>
-
-			<!-- Default autopilot hotkeys -->
-			<key n="1">
-				<name>Ctrl-A</name>
-				<desc>toggle autopilot altitude lock</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>autopilot/settings/altitude</property>
-					<value>altitude-hold</value>
-				</binding>
-			</key>
-			<key n="7">
-				<name>Ctrl-G</name>
-				<desc>Toggle autopilot glide slope lock</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 autopilot.set_pitch("gs1-hold");
-					 autopilot.set_heading("nav1-hold");
-					</script>
-				</binding>
-			</key>
-			<key n="8">
-				<name>Ctrl-H</name>
-				<desc>Toggle autopilot heading lock</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>autopilot/settings/heading</property>
-					<value>dg-heading-hold</value>
-				</binding>
-			</key>
-			<key n="14">
-				<name>Ctrl-N</name>
-				<desc>Toggle autopilot nav1 lock</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 autopilot.set_heading("nav1-hold");
-					</script>
-				</binding>
-			</key>
-			<key n="262">
-				<name>F6</name>
-				<desc>Toggle Autopilot Heading Mode</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 autopilot.set_heading("true-heading-hold");
-					</script>
-				</binding>
-			</key>
-			<key n="267">
-				<name>F11</name>
-				<desc>Open autopilot dialog</desc>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 autopilot.open_dialog();
-					</script>
-				</binding>
-			</key>
 		</keyboard>
 	</input>
 
@@ -568,9 +483,10 @@
 			<file>Aircraft/717/Nasal/systems.nas</file>
 			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
 		</B717>
-		<autopilot>
-			<file>Aircraft/717/Nasal/autopilot.nas</file>
-		</autopilot>
+		<it2>
+			<file>Aircraft/717/Nasal/autoflight.nas</file>
+			<file>Aircraft/717/Nasal/autoflight-logic.nas</file>
+		</it2>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>
