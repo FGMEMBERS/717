@@ -39,11 +39,7 @@
 			</electrical>
 			<autopilot>
 				<name>Autopilot</name>
-				<path>Aircraft/717/Systems/717-autopilot.xml</path>
-			</autopilot>
-			<autopilot>
-				<name>Autopilot</name>
-				<path>Aircraft/717/Systems/717-autothrottle.xml</path>
+				<path>Aircraft/717/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autopilot helpers</name>

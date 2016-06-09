@@ -4,7 +4,27 @@ MATERIAL "DefaultWhite.003" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  
 MATERIAL "GlassCockpit.001" rgb 0.8 0.8 0.8  amb 0.5 0.5 0.5  emis 1 1 1  spec 1 1 1  shi 32  trans 0
 MATERIAL "GlassCockpit.002" rgb 0.8 0.8 0.8  amb 1 1 1  emis 1 1 1  spec 1 1 1  shi 32  trans 0
 OBJECT world
-kids 46
+kids 47
+OBJECT poly
+name "VSAlt"
+data 9
+Plane.015
+texture "pfd1.rgb"
+crease 30.000000
+numvert 4
+0.0002 0.0835 -0.025
+0.0002 0.0835 -0.055
+0.0002 0.0925 -0.055
+0.0002 0.0925 -0.025
+numsurf 1
+SURF 0x0
+mat 2
+refs 4
+3 0.673828 0.349609
+0 0.673828 0.322266
+1 0.765625 0.322266
+2 0.765625 0.349609
+kids 0
 OBJECT poly
 name "AGL1"
 data 8
@@ -380,10 +400,10 @@ refs 4
 1 0.765625 0.726563
 kids 0
 OBJECT poly
-name "APLnav"
+name "APLoc"
 data 9
 Plane.013
-texture "pfd.rgb"
+texture "pfd1.rgb"
 crease 30.000000
 numvert 4
 0.0002 0.0925 0.015
@@ -1355,7 +1375,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Off"
-loc 0.0005 1.77487e-005 -5.60582e-005
+loc 0.0005 1.77487e-005 2.58191e-005
 data 12
 Cylinder.014
 texture "ati.rgb"

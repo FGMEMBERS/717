@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
- 
-<!-- Generic Autopilot Configuration -->
 
-<!-- Each component is evaluated in the order specified.  You can make up -->
-<!-- property names to pass the result of one component on to a subsequent -->
-<!-- component. -->
-
+<!-- IT-AUTOFLIGHT -->
 
 <PropertyList>
 
@@ -273,7 +268,7 @@
 			<prop>/autopilot/internal/target-climb-rate-fps</prop>
 		</reference>
 		<output>
-			<prop>/controls/flight/elevator-trim</prop>
+			<prop>/controls/flight/elevator-trim-filter</prop>
 		</output>
 		<config>
 			<Kp>-0.01</Kp>
@@ -304,7 +299,7 @@
       <prop>/instrumentation/nav[0]/gs-rate-of-climb</prop>
     </reference>
      <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>/controls/flight/elevator-trim-filter</prop>
     </output>
     <config>
       <Kp>-0.01</Kp>      <!-- proportional gain -->
@@ -335,7 +330,7 @@
       <scale>0.01667</scale>
     </reference>
     <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>/controls/flight/elevator-trim-filter</prop>
     </output>
     <config>
       <Kp>-0.01</Kp>      <!-- -0.01 proportional gain -->
@@ -441,7 +436,7 @@
       <prop>/autopilot/internal/target-pitch-deg</prop>
     </reference>
     <output>
-      <prop>/controls/flight/elevator-trim</prop>
+      <prop>/controls/flight/elevator-trim-filter</prop>
     </output>
     <config>
       <Kp>-0.015</Kp>
@@ -459,21 +454,21 @@
     </config>
   </pid-controller-->
   
-    <!--filter>
+    <filter>
         <name>Elevator control filter</name>
         <debug>false</debug>
         <feedback-if-disabled>true</feedback-if-disabled>
         <initialize-to>output</initialize-to>
 		<enable>
-			<prop>null/prop>
-			<value>null</value>
+			<prop>/controls/it2/ap_master</prop>
+			<value>1</value>
 		</enable>
         <input>
             <property>/controls/flight/elevator-trim-filter</property>
         </input>
         <output>/controls/flight/elevator-trim</output>
         <type>noise-spike</type>
-        <max-rate-of-change>0.5</max-rate-of-change>
-    </filter-->
+        <max-rate-of-change>0.2</max-rate-of-change>
+    </filter>
 
 </PropertyList>

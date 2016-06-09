@@ -54,8 +54,8 @@
 		<object-name>Autopilot IAS setting</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/speed-mode</property>
-				<value>knots</value>
+				<property>/controls/it2/apthrmode</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -65,8 +65,8 @@
 		<object-name>Autopilot Mach setting</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/speed-mode</property>
-				<value>mach</value>
+				<property>/controls/it2/apthrmode</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -227,7 +227,7 @@
 		<type>select</type>
 		<object-name>APOn</object-name>
 		<condition>
-			<property>autopilot/settings/engaged</property>
+			<property>/controls/it2/ap_master</property>
 		</condition>
 	</animation>
 
@@ -236,13 +236,7 @@
 		<type>select</type>
 		<object-name>APSpd</object-name>
 		<condition>
-			<and>
-				<property>autopilot/settings/autothrottle</property>
-				<equals>
-					<property>autopilot/settings/speed</property>
-					<value></value>
-				</equals>
-			</and>
+			<property>/controls/it2/at_master</property>
 		</condition>
 	</animation>
 	<animation>
@@ -250,10 +244,7 @@
 		<type>select</type>
 		<object-name>APToGa</object-name>
 		<condition>
-			<equals>
-				<property>autopilot/settings/speed</property>
-				<value>speed-to-ga</value>
-			</equals>
+			<property>sim/model/B717/unimplemented-controls</property>
 		</condition>
 	</animation>
 
@@ -263,30 +254,30 @@
 		<object-name>APHdg</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/heading</property>
-				<value>dg-heading-hold</value>
+				<property>/controls/it2/aplatmode</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
 	<animation>
 		<name>Autopilot NAV hold indicator</name>
 		<type>select</type>
-		<object-name>APNav</object-name>
+		<object-name>APLoc</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/heading</property>
-				<value>nav1-hold</value>
+				<property>/controls/it2/aplatmode</property>
+				<value>2</value>
 			</equals>
 		</condition>
 	</animation>
 	<animation>
 		<name>Autopilot LNAV hold indicator</name>
 		<type>select</type>
-		<object-name>APLnav</object-name>
+		<object-name>APNav</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/heading</property>
-				<value>true-heading-hold</value>
+				<property>/controls/it2/aplatmode</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
@@ -297,8 +288,8 @@
 		<object-name>APAlt</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/altitude</property>
-				<value>altitude-hold</value>
+				<property>/controls/it2/apvertmode</property>
+				<value>0</value>
 			</equals>
 		</condition>
 	</animation>
@@ -308,8 +299,19 @@
 		<object-name>APApp</object-name>
 		<condition>
 			<equals>
-				<property>autopilot/settings/altitude</property>
-				<value>gs1-hold</value>
+				<property>/controls/it2/apvertmode</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<name>Autopilot altitude hold indicator</name>
+		<type>select</type>
+		<object-name>VSAlt</object-name>
+		<condition>
+			<equals>
+				<property>/controls/it2/apvertmode</property>
+				<value>1</value>
 			</equals>
 		</condition>
 	</animation>
