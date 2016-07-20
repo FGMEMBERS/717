@@ -7,7 +7,7 @@
    <name>apoff</name>
    <path>/Aircraft/717/Sounds/apoff.wav</path>
    <condition>
-     <property>/controls/it2/apoffsound</property>
+     <property>/it-autoflight/apoffsound</property>
    </condition>
    <volume>
     <factor>10.0</factor>
