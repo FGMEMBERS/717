@@ -45,7 +45,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-cycle</command>
-				<property>/controls/it2/apthrset</property>
+				<property>/it-autoflight/apthrset</property>
 				<value>0</value>
 				<value>1</value>
 			</binding>
@@ -62,7 +62,7 @@
 		<object-name>SPDknb</object-name>
 		<condition>
 			<equals>
-			    <property>/controls/it2/apthrmode</property>
+			    <property>/it-autoflight/apthrmode</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -71,7 +71,7 @@
 		<name>IAS setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APias100</object-name>
-		<property>/autopilot/settings/target-speed-kt</property>
+		<property>/it-autoflight/settings/target-speed-kt</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -83,7 +83,7 @@
 		<name>IAS setting 10's</name>
 		<type>textranslate</type>
 		<object-name>APias10</object-name>
-		<property>/autopilot/settings/target-speed-kt</property>
+		<property>/it-autoflight/settings/target-speed-kt</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -95,7 +95,7 @@
 		<name>IAS setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APias1</object-name>
-		<property>/autopilot/settings/target-speed-kt</property>
+		<property>/it-autoflight/settings/target-speed-kt</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -114,7 +114,7 @@
 		<object-name>MACHknb</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apthrmode</property>
+				<property>/it-autoflight/apthrmode</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -123,7 +123,7 @@
 		<name>Mach setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APmach1</object-name>
-		<property>/autopilot/settings/target-mach</property>
+		<property>/it-autoflight/settings/target-mach</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -135,7 +135,7 @@
 		<name>Mach setting .1's</name>
 		<type>textranslate</type>
 		<object-name>APmach.1</object-name>
-		<property>/autopilot/settings/target-mach</property>
+		<property>/it-autoflight/settings/target-mach</property>
 		<step>0.1</step>
 		<axis>
 			<x>0</x>
@@ -146,7 +146,7 @@
 		<name>Mach setting .01's</name>
 		<type>textranslate</type>
 		<object-name>APmach.01</object-name>
-		<property>/autopilot/settings/target-mach</property>
+		<property>/it-autoflight/settings/target-mach</property>
 		<factor>10</factor>
 		<step>0.01</step>
 		<axis>
@@ -163,7 +163,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/target-speed-kt</property>
+      <property>/it-autoflight/settings/target-speed-kt</property>
       <step>1</step>
       <min>0</min>
       <max>300</max>
@@ -179,7 +179,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/target-speed-kt</property>
+      <property>/it-autoflight/settings/target-speed-kt</property>
       <step>-1</step>
       <min>0</min>
       <max>300</max>
@@ -196,7 +196,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/target-mach</property>
+      <property>/it-autoflight/settings/target-mach</property>
       <step>0.01</step>
       <min>0.60</min>
       <max>0.92</max>
@@ -212,7 +212,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/target-mach</property>
+      <property>/it-autoflight/settings/target-mach</property>
       <step>-0.01</step>
       <min>0.60</min>
       <max>0.92</max>
@@ -225,7 +225,7 @@
 		<name>Speed knob kt rotate</name>
 		<type>rotate</type>
 		<object-name>SPDknb</object-name>
-		<property>/autopilot/settings/target-speed-kt</property>
+		<property>/it-autoflight/settings/target-speed-kt</property>
 		<factor>2</factor>
 		<axis>
 			<x>-1</x>
@@ -242,7 +242,7 @@
 		<name>Speed knob Mach rotate</name>
 		<type>rotate</type>
 		<object-name>SPDknb</object-name>
-		<property>/autopilot/settings/target-speed-mach</property>
+		<property>/it-autoflight/settings/target-speed-mach</property>
 		<factor>2000</factor>
 		<axis>
 			<x>1</x>
@@ -266,7 +266,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-cycle</command>
-				<property>/autopilot/settings/heading-mode</property>
+				<property>/it-autoflight/settings/heading-mode</property>
 				<value>magnetic</value>
 				<value>track</value>
 			</binding>
@@ -277,7 +277,7 @@
 		<name>Heading setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APhdg100</object-name>
-		<property>/autopilot/settings/heading-bug-deg</property>
+		<property>/it-autoflight/settings/heading-bug-deg</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -289,7 +289,7 @@
 		<name>Heading setting 10's</name>
 		<type>textranslate</type>
 		<object-name>APhdg10</object-name>
-		<property>/autopilot/settings/heading-bug-deg</property>
+		<property>/it-autoflight/settings/heading-bug-deg</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -301,7 +301,7 @@
 		<name>Heading setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APhdg1</object-name>
-		<property>/autopilot/settings/heading-bug-deg</property>
+		<property>/it-autoflight/settings/heading-bug-deg</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -316,7 +316,7 @@
 		<object-name>APhdg</object-name>
 		<condition>
 			<equals>
-				<property>/autopilot/settings/heading-mode</property>
+				<property>/it-autoflight/settings/heading-mode</property>
 				<value>magnetic</value>
 			</equals>
 		</condition>
@@ -338,7 +338,7 @@
     <repeatable>true</repeatable>
 	  <binding>
 		<command>property-assign</command>
-		<property>/controls/it2/aplatset</property>
+		<property>/it-autoflight/aplatset</property>
 		<value>0</value>
 	  </binding>
   </action>
@@ -351,7 +351,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/settings/heading-bug-deg</property>
       <step>1</step>
       <min>1</min>
       <max>361</max>
@@ -367,7 +367,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/settings/heading-bug-deg</property>
       <step>-1</step>
       <min>1</min>
       <max>361</max>
@@ -379,7 +379,7 @@
 		<name>Heading knob rotate</name>
 		<type>rotate</type>
 		<object-name>HDGknb</object-name>
-		<property>/autopilot/settings/heading-bug-deg</property>
+		<property>/it-autoflight/settings/heading-bug-deg</property>
 		<factor>3</factor>
 		<axis>
 			<x>-1</x>
@@ -402,7 +402,7 @@
 			<repeatable type="bool">false</repeatable>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/aplatset</property>
+				<property>/it-autoflight/aplatset</property>
 				<value>1</value>
 				</binding>
 		</action>
@@ -418,7 +418,7 @@
 			<repeatable type="bool">false</repeatable>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>2</value>
 				</binding>
 		</action>
@@ -434,12 +434,12 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 			<command>property-assign</command>
-			<property>/controls/it2/at_mastersw</property>
+			<property>/it-autoflight/at_mastersw</property>
 			<value>1</value>
 			</binding>			
 			<binding>
 			<command>property-assign</command>
-			<property>/controls/it2/ap_mastersw</property>
+			<property>/it-autoflight/ap_mastersw</property>
 			<value>1</value>
 			</binding>
 		</action>
@@ -455,12 +455,12 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 			<command>property-assign</command>
-			<property>/controls/it2/ap_mastersw</property>
+			<property>/it-autoflight/ap_mastersw</property>
 			<value>0</value>
 			</binding>
 			<binding>
 			<command>property-assign</command>
-			<property>/controls/it2/at_mastersw</property>
+			<property>/it-autoflight/at_mastersw</property>
 			<value>0</value>
 			</binding>
 		</action>
@@ -483,7 +483,7 @@
 		<name>Altitude setting 10,000's</name>
 		<type>textranslate</type>
 		<object-name>APalt10000</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.00001</factor>
 		<step>10000</step>
 		<axis>
@@ -495,7 +495,7 @@
 		<name>Altitude setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>APalt1000</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<axis>
@@ -507,7 +507,7 @@
 		<name>Altitude setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APalt100</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -519,7 +519,7 @@
 		<name>Altitude setting 10's</name>
 		<type>textranslate</type>
 		<object-name>APalt10</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -531,7 +531,7 @@
 		<name>Altitude setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APalt1</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -549,8 +549,8 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
-				<value>0</value>
+				<property>/it-autoflight/apvertset</property>
+				<value>4</value>
 			</binding>
 		</action>
 		<action>
@@ -558,7 +558,7 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/autopilot/settings/target-altitude-ft</property>
+				<property>/it-autoflight/settings/target-altitude-ft</property>
 				<step type="double">100</step>
 				<max>99999</max>
 			</binding>
@@ -568,7 +568,7 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/autopilot/settings/target-altitude-ft</property>
+				<property>/it-autoflight/settings/target-altitude-ft</property>
 				<step type="double">-100</step>
 				<min>0</min>
 			</binding>
@@ -578,7 +578,7 @@
 		<name>Altitude knob rotate</name>
 		<type>rotate</type>
 		<object-name>ALTknb</object-name>
-		<property>/autopilot/settings/target-altitude-ft</property>
+		<property>/it-autoflight/settings/target-altitude-ft</property>
 		<factor>0.36</factor>
 		<axis>
 			<x>1</x>
@@ -601,7 +601,7 @@
 		<object-name>APvs1</object-name>
 		<condition>
 			<greater-than-equals>
-				<property>/autopilot/settings/vertical-speed-fpm</property>
+				<property>/it-autoflight/settings/vertical-speed-fpm</property>
 				<value>0</value>
 			</greater-than-equals>
 		</condition>
@@ -610,7 +610,7 @@
 		<name>Vertical speed setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>APvs1000</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.0001</factor>
 		<step>1000</step>
 		<axis>
@@ -622,7 +622,7 @@
 		<name>Vertical speed setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APvs100</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.001</factor>
 		<step>100</step>
 		<axis>
@@ -634,7 +634,7 @@
 		<name>Vertical speed setting 10's</name>
 		<type>textranslate</type>
 		<object-name>APvs10</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.01</factor>
 		<step>10</step>
 		<axis>
@@ -646,7 +646,7 @@
 		<name>Vertical speed setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APvs1</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.1</factor>
 		<step>1</step>
 		<axis>
@@ -664,7 +664,7 @@
 		<object-name>APvs-</object-name>
 		<condition>
 			<less-than>
-				<property>/autopilot/settings/vertical-speed-fpm</property>
+				<property>/it-autoflight/settings/vertical-speed-fpm</property>
 				<value>0</value>
 			</less-than>
 		</condition>
@@ -673,7 +673,7 @@
 		<name>Negative vertical speed setting 1,000's</name>
 		<type>textranslate</type>
 		<object-name>APvs-1000</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>-0.0001</factor>
 		<bias>999</bias>
 		<step>1000</step>
@@ -686,7 +686,7 @@
 		<name>Negative vertical speed setting 100's</name>
 		<type>textranslate</type>
 		<object-name>APvs-100</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.001</factor>
 		<step>-100</step>
 		<axis>
@@ -698,7 +698,7 @@
 		<name>Negative vertical speed setting 10's</name>
 		<type>textranslate</type>
 		<object-name>APvs-10</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.01</factor>
 		<step>-10</step>
 		<axis>
@@ -710,7 +710,7 @@
 		<name>Negative vertical speed setting 1's</name>
 		<type>textranslate</type>
 		<object-name>APvs-1</object-name>
-		<property>/autopilot/settings/vertical-speed-fpm</property>
+		<property>/it-autoflight/settings/vertical-speed-fpm</property>
 		<factor>0.1</factor>
 		<step>-1</step>
 		<axis>
@@ -737,13 +737,13 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/autopilot/settings/vertical-speed-fpm</property>
+				<property>/it-autoflight/settings/vertical-speed-fpm</property>
 				<step type="double">100</step>
 				<max>9999</max>
 			</binding>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>1</value>
 				</binding>
 		</action>
@@ -752,13 +752,13 @@
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/autopilot/settings/vertical-speed-fpm</property>
+				<property>/it-autoflight/settings/vertical-speed-fpm</property>
 				<step type="double">-100</step>
 				<min>-9999</min>
 			</binding>
 				<binding>
 				<command>property-assign</command>
-				<property>/controls/it2/apvertset</property>
+				<property>/it-autoflight/apvertset</property>
 				<value>1</value>
 				</binding>
 		</action>

@@ -19,7 +19,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">%3.0f</format>
-		<property>autopilot/settings/target-speed-kt</property>
+		<property>it-autoflight/settings/target-speed-kt</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.01</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
@@ -39,7 +39,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">%1.2f</format>
-		<property>autopilot/settings/target-speed-mach</property>
+		<property>it-autoflight/settings/target-speed-mach</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.01</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
@@ -54,7 +54,7 @@
 		<object-name>Autopilot IAS setting</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apthrmode</property>
+				<property>/it-autoflight/apthrmode</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -65,7 +65,7 @@
 		<object-name>Autopilot Mach setting</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apthrmode</property>
+				<property>/it-autoflight/apthrmode</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -82,7 +82,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
 		<format type="string">%5.0f</format>
-		<property>autopilot/settings/target-altitude-ft</property>
+		<property>it-autoflight/settings/target-altitude-ft</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.01</character-size>
 		<character-aspect-ratio type="double">1.5</character-aspect-ratio>
@@ -227,7 +227,7 @@
 		<type>select</type>
 		<object-name>APOn</object-name>
 		<condition>
-			<property>/controls/it2/ap_master</property>
+			<property>/it-autoflight/ap_master</property>
 		</condition>
 	</animation>
 
@@ -236,7 +236,7 @@
 		<type>select</type>
 		<object-name>APSpd</object-name>
 		<condition>
-			<property>/controls/it2/at_master</property>
+			<property>/it-autoflight/at_master</property>
 		</condition>
 	</animation>
 	<animation>
@@ -254,7 +254,7 @@
 		<object-name>APHdg</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/aplatmode</property>
+				<property>/it-autoflight/aplatmode</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -265,7 +265,7 @@
 		<object-name>APLoc</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/aplatmode</property>
+				<property>/it-autoflight/aplatmode</property>
 				<value>2</value>
 			</equals>
 		</condition>
@@ -276,7 +276,7 @@
 		<object-name>APNav</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/aplatmode</property>
+				<property>/it-autoflight/aplatmode</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -288,7 +288,7 @@
 		<object-name>APAlt</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apvertmode</property>
+				<property>/it-autoflight/apvertmode</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -299,7 +299,7 @@
 		<object-name>APApp</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apvertmode</property>
+				<property>/it-autoflight/apvertmode</property>
 				<value>2</value>
 			</equals>
 		</condition>
@@ -310,7 +310,7 @@
 		<object-name>VSAlt</object-name>
 		<condition>
 			<equals>
-				<property>/controls/it2/apvertmode</property>
+				<property>/it-autoflight/apvertmode</property>
 				<value>1</value>
 			</equals>
 		</condition>
