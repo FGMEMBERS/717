@@ -39,7 +39,7 @@
  <!-- =============================================================== -->
  
 	<filter>
-		<name>IT-TARGET PITCH CONTROLLER</name>
+		<name>IT-TARGET ROLL CONTROLLER</name>
 		<debug>false</debug>
 		<type>gain</type>
 		<enable>
