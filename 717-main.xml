@@ -195,11 +195,20 @@
 							</script>
 						</binding>
 					</item>
-				</menu>
-			</default>
+					<item>
+		      <label>Announcements</label>
+		      <binding>
+					<command>nasal</command>
+					<script>
+						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/717/systems/announcements-dialog.xml");
+						mal.open();
+		       </script>
+		      </binding>
+          </item> 
+		</menu>
+		</default>
 		</menubar>
-
-		<sound>
+         	<sound>
 			<path>Aircraft/717/Sounds/717-sound.xml</path>
 			<no-smoking-sign type="bool">false</no-smoking-sign>
 			<seatbelt-sign type="bool">false</seatbelt-sign>
