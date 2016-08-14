@@ -479,10 +479,10 @@
 			<file>Aircraft/717/Nasal/systems.nas</file>
 			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
 		</B717>
-		<it2>
+		<itaf>
 			<file>Aircraft/717/Nasal/autoflight.nas</file>
 			<file>Aircraft/717/Nasal/autoflight-logic.nas</file>
-		</it2>
+		</itaf>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>

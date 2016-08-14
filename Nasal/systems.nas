@@ -44,7 +44,7 @@ var systems =
 setlistener("sim/signals/fdm-initialized", func
  {
  var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
- it2.ap_init();
+ itaf.ap_init();
  settimer(systems.init, 2);
  }, 0, 0);
 # call init() if the simulator resets
