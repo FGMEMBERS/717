@@ -7,17 +7,17 @@
 	<!-- EXTRA MODELS -->
 	<!-- Instruments -->
 	<model>
-		<name>Pilot Primary Flight Display</name>
+		<name>PFD L</name>
 		<path>Aircraft/717/Models/Instruments/PFD/PFD.xml</path>
 		<offsets>
 			<x-m>-1.789</x-m>
 			<y-m>-0.627</y-m>
-			<z-m>0.844</z-m>
+			<z-m>0.830</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<name>Pilot Nav Display</name>
+		<name>ND L</name>
 		<path>Aircraft/717/Models/Instruments/ND/ND_L.xml</path>
 		<offsets>
 			<x-m>-1.81</x-m>
@@ -26,28 +26,18 @@
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
-	<!--model>
-		<name>Pilot Multi-Function Display</name>
-		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
-		<offsets>
-			<x-m>-1.81</x-m>
-			<y-m>-0.384</y-m>
-			<z-m>0.9</z-m>
-			<pitch-deg>-11.75</pitch-deg>
-		</offsets>
-	</model-->
 	<model>
-		<name>Pilot Engine Crew Indication and Alerting System</name>
-		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
+		<name>EAD 1</name>
+		<path>Aircraft/717/Models/Instruments/EAD/EAD_1.xml</path>
 		<offsets>
 			<x-m>-1.81</x-m>
 			<y-m>-0.141</y-m>
-			<z-m>0.9</z-m>
+			<z-m>0.890</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<name>Pilot Control Display Unit</name>
+		<name>CDU L</name>
 		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
 		<overlay>
 			<texture>boeing_grey.png</texture>
@@ -59,19 +49,18 @@
 			<pitch-deg>-75</pitch-deg>
 		</offsets>
 	</model>
-
 	<model>
-		<name>Copilot Primary Flight Display</name>
+		<name>PFD R</name>
 		<path>Aircraft/717/Models/Instruments/PFD/PFD.xml</path>
 		<offsets>
 			<x-m>-1.789</x-m>
 			<y-m>0.607</y-m>
-			<z-m>0.844</z-m>
+			<z-m>0.830</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<name>Copilot Nav Display</name>
+		<name>ND R</name>
 		<path>Aircraft/717/Models/Instruments/ND/ND_R.xml</path>
 		<offsets>
 			<x-m>-1.81</x-m>
@@ -80,28 +69,18 @@
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
-	<!--model>
-		<name>Copilot Multi-Function Display</name>
-		<path>Aircraft/717/Models/Instruments/MFD/MFD.xml</path>
-		<offsets>
-			<x-m>-1.81</x-m>
-			<y-m>0.364</y-m>
-			<z-m>0.9</z-m>
-			<pitch-deg>-11.75</pitch-deg>
-		</offsets>
-	</model-->
 	<model>
-		<name>Copilot Engine Crew Indication and Alerting System</name>
-		<path>Aircraft/717/Models/Instruments/EICAS/EICAS.xml</path>
+		<name>SD</name>
+		<path>Aircraft/717/Models/Instruments/EAD/EAD_1.xml</path>
 		<offsets>
 			<x-m>-1.81</x-m>
 			<y-m>0.101</y-m>
-			<z-m>0.9</z-m>
+			<z-m>0.890</z-m>
 			<pitch-deg>-11.75</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<name>Copilot Control Display Unit</name>
+		<name>CDU R</name>
 		<path>Aircraft/Instruments-3d/cdu/boeing.xml</path>
 		<overlay>
 			<texture>boeing_grey.png</texture>

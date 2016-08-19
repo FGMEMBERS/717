@@ -11,14 +11,6 @@
 			<livery>
 				<file>TRS</file>
 			</livery>
-			<B717>
-				<heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
-				<heading-bug-deg type="double">0</heading-bug-deg>
-				<nav1-bug-deg type="double">0</nav1-bug-deg>
-				<nav2-bug-deg type="double">0</nav2-bug-deg>
-				<adf-bug-deg type="double">0</adf-bug-deg>
-				<unimplemented-controls type="bool">false</unimplemented-controls>
-			</B717>
 			<pushback>
 				<kp type="double">-0.05</kp>
 				<ti type="double">10</ti>
@@ -53,6 +45,9 @@
 				<name>Pushback</name>
 				<path>Aircraft/717/Systems/pushback.xml</path>
 			</autopilot>
+            <property-rule n="101">
+                <path>Aircraft/717/Systems/PFD.xml</path>
+            </property-rule>
 		</systems>
 
 		<instrumentation>
@@ -132,19 +127,6 @@
 
 		<menubar>
 			<default>
-				<menu n="3">
-					<item>
-						<name>autopilot</name>
-						<label>Autopilot Settings</label>
-						<binding>
-							<command>nasal</command>
-							<script>
-							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
-							 autopilot.open();
-							</script>
-						</binding>
-					</item>
-				</menu>
 				<menu n="100">
 					<label>Boeing 717-200</label>
 					<enabled type="bool">true</enabled>

@@ -454,29 +454,11 @@
 			<button>0</button>
 			<repeatable type="bool">false</repeatable>
 			<binding>
-			<command>property-assign</command>
-			<property>/it-autoflight/ap_mastersw</property>
-			<value>0</value>
-			</binding>
-			<binding>
-			<command>property-assign</command>
-			<property>/it-autoflight/at_mastersw</property>
-			<value>0</value>
+			<command>property-toggle</command>
+			<property>/it-autoflight/afds_ovrdsw</property>
 			</binding>
 		</action>
 	</animation>
-	<!--animation>
-		<name>Autopilot disengage bar</name>
-		<type>translate</type>
-		<object-name>APdis</object-name>
-		<property>/autopilot/disengaged-btn</property>
-		<factor>0.006</factor>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation-->
 
 	<!-- Altitude hold -->
 	<animation>

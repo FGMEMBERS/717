@@ -12,7 +12,7 @@
 -->
 
 <airplane mass="69830">
-	<approach speed="120" aoa="5.0" fuel="0.2">
+	<approach speed="132" aoa="5.0" fuel="0.2">
 		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.6" />
 		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.6" />
 		<control-setting axis="/controls/flight/flaps" value="1.0" />
@@ -42,11 +42,11 @@
 
 	<!-- WINGS -->
 	<wing x="0.609" y="1.45" z="-2.432" length="13.7" chord="4.978" sweep="20.75" taper="0.22" camber="0.09" incidence="3.0" twist="-1.0" idrag="1.0">
-		<stall aoa="15" width="5" peak="0.8" />
-		<flap0 start="0.0195" end="0.584" lift="1.5" drag="2.0" />
-		<flap1 start="0.584" end="0.848" lift="1.3" drag="1.9" />
-		<slat start="0.02" end="0.95" aoa="3.0" drag="1.1" />
-		<spoiler start="0.18" end="0.52" lift="0.0" drag="1.3" />
+		<stall aoa="10" width="2" peak="1.5"/>
+		<flap0 start="0" end="0.597" lift="1.7" drag="2.2"/>
+		<flap1 start="0.597" end="0.824" lift="1.45" drag="1.5"/>
+		<slat start="0" end="1" aoa="3" drag="1.1"/>
+		<spoiler start="0.078" end="0.554" lift="0.7" drag="3.5"/>
 		<control-input axis="/controls/flight/flaps" control="FLAP0" />
 		<control-input axis="/controls/flight/flaps" control="SLAT" src0="0.0" src1="0.111" dst0="0.0" dst1="1.0" />
 		<control-input axis="/controls/flight/aileron" control="FLAP1" split="true" />
@@ -64,8 +64,8 @@
 
 	<!-- ELEVATORS -->
 	<hstab x="-15.729" y="0.22" z="3.694" length="6.5" chord="3.602" twist="-1.0" taper="0.4" sweep="25.0" idrag="1.0" camber="0.09">
-		<stall aoa="20" width="7" peak="1.5" />
-		<flap0 start="0" end="0.93" lift="1.4" drag="1.3" />
+		<stall aoa="15" width="4" peak="1.5"/>
+		<flap0 start="0" end="1" lift="1.3" drag="1.3"/>
 		<control-input axis="/controls/flight/elevator" control="FLAP0" />
 		<control-input axis="/controls/flight/elevator-trim" control="FLAP0" />
 		<control-output control="FLAP0"  prop="/surface-positions/elevator-pos-norm" />
@@ -73,8 +73,8 @@
 
 	<!-- TAIL -->
 	<vstab x="-12.165" y="0.0" z="-0.26" length="6.0" chord="5.0" taper="0.65" sweep="40.0">
-		<stall aoa="15" width="2" peak="1.5" />
-		<flap0 start="0.0" end="0.73" lift="1.3" drag="1.3" />
+		<stall aoa="15" width="2" peak="1.5"/>
+		<flap0 start="0" end="0.829" lift="1.5" drag="1.5"/>
 		<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true" />
 		<control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true" />
 		<control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1" />
@@ -86,14 +86,14 @@
 	<fuselage ax="-4.753" ay="-2.915" az="-1.074" bx="-10.746" by="-2.915" bz="-1.242" width="2.1" taper="0.55" midpoint="0.0" />
 
 	<!-- Actual engine definitions -->
-	<jet x="-7.342" y="2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="33.0" n1-max="102.0" n2-idle="53.0" n2-max="103.0" tsfc="0.4" egt="1050.0" epr="3.0" exhaust-speed="1555.0" spool-time="3.0">
+	<jet x="-7.342" y="2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="29.5" n1-max="106.7" n2-idle="66.3" n2-max="113.8" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
 		<control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST" />
 		<control-output control="REVERSE_THRUST" prop="/engines/engine[0]/reverser-pos-norm" />
 		<control-speed control="REVERSE_THRUST" transition-time="1.0" />
 		<actionpt x="-10.746" y="2.915" z="-1.242" />
 	</jet>
-	<jet x="-7.342" y="-2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="33.0" n1-max="102.0" n2-idle="53.0" n2-max="103.0" tsfc="0.4" egt="1050.0" epr="3.0" exhaust-speed="1555.0" spool-time="3.0">
+	<jet x="-7.342" y="-2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="29.5" n1-max="106.7" n2-idle="66.3" n2-max="113.8" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
 		<control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST" />
 		<control-output control="REVERSE_THRUST" prop="/engines/engine[1]/reverser-pos-norm" />

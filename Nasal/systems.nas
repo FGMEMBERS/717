@@ -45,6 +45,9 @@ setlistener("sim/signals/fdm-initialized", func
  {
  var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
  itaf.ap_init();
+ setprop("/engines/engine[0]/epr-limit", 2.02);
+ setprop("/engines/engine[1]/epr-limit", 2.02);
+ setprop("/it-autoflight/fd_mastersw", 1);
  settimer(systems.init, 2);
  }, 0, 0);
 # call init() if the simulator resets
