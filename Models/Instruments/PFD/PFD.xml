@@ -1226,6 +1226,38 @@ Syd Adams
 	</animation>
 	
     <text>
+        <name>GS</name>
+        <offsets>
+            <x-m>0.004</x-m>
+            <y-m>0.038</y-m>
+            <z-m>0.075</z-m>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">G/S</format>
+		<property>autopilot/serviceable</property>
+        <font>helvetica_bold.txf</font>
+        <character-size>0.0075</character-size>
+        <character-aspect-ratio type="double">1.4</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+    </text>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GS</object-name>
+		<condition>
+			<equals>
+				<property>it-autoflight/apvertmode</property>
+				<value>2</value>
+			</equals>
+		</condition>
+	</animation>
+	
+    <text>
         <name>CLBFLCH</name>
         <offsets>
             <x-m>0.004</x-m>
