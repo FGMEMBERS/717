@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Beta 4
+# V3.0.0 Beta 6
 
 var ap_init = func {
 	ap_logic_init();
@@ -23,7 +23,7 @@ var ap_init = func {
 	ap_refresh();
 	at_refresh();
 	setprop("/it-autoflight/apvertset", 4);
-	print("IT-AUTOFLIGHT ... OK!");
+	print("IT-AUTOFLIGHT ... Initialized!");
 }
 
 var update_arms = func {
@@ -211,28 +211,19 @@ var at_refresh = func {
 }
 
 var ap_off = func {
+	var apstat = getprop("/it-autoflight/ap_master");
+	var apswitch = getprop("/it-autoflight/ap_mastersw");
+	if (apstat == 1) {
+		if (apswitch == 0) {
+			setprop("/it-autoflight/apoffsound", 1);
+		}
+	}
 	setprop("/it-autoflight/ap_master", 0);
 	setprop("/it-autoflight/locks/lateral", 0);
 	setprop("/it-autoflight/locks/pitch", 0);
-	var ap = getprop("/it-autoflight/ap_master");
-	if (ap) {
-		setprop("/it-autoflight/apoffsound", 1);
-	}
-	setprop("/it-autoflight/apoffsound", 1);
-	hdg_master();
-	nav_master();
-	alt_master();
-	vs_master();
-	altcap_master();
-	flch_master();
-	vnav_master();
-	land_master();
 }
 
 var at_off = func {
 	setprop("/it-autoflight/at_master", 0);
 	setprop("/it-autoflight/locks/throttle", 0);
-	thr_master();
-	idle_master();
-	clb_master();
 }

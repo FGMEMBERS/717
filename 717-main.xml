@@ -65,15 +65,14 @@
 			</config>
 		</view>
 		<view n="100">
-			<name>Wing View</name>
+			<name>Copilot View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
-				<x-offset-m archive="y">2</x-offset-m>
-				<y-offset-m archive="y">-1</y-offset-m>
-				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>270</heading-offset-deg>
+				<x-offset-m archive="y">0.5</x-offset-m>
+				<y-offset-m archive="y">-0.7</y-offset-m>
+				<z-offset-m archive="y">-16</z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
@@ -90,14 +89,15 @@
 			</config>
 		</view>
 		<view n="102">
-			<name>Copilot View</name>
+			<name>Wing View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
-				<x-offset-m archive="y">0.5</x-offset-m>
-				<y-offset-m archive="y">-0.7</y-offset-m>
-				<z-offset-m archive="y">-16</z-offset-m>
+				<x-offset-m archive="y">2</x-offset-m>
+				<y-offset-m archive="y">-1</y-offset-m>
+				<z-offset-m archive="y">2</z-offset-m>
+				<heading-offset-deg>270</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
@@ -210,18 +210,6 @@
 				<name>=</name>
 				<desc>cycle autobrake setting</desc>
 			</key>
-			<key>
-				<name>Ctrl-z</name>
-				<desc>toggle autopilot master arm switch</desc>
-			</key>
-			<key>
-				<name>Ctrl-y</name>
-				<desc>toggle autothrottle switch</desc>
-			</key>
-			<key>
-				<name>Ctrl-o</name>
-				<desc>toggle autothrottle TO/GA hold</desc>
-			</key>
 			<line>Autobrake help:</line>
 			<line>-------------------------</line>
 			<line>RTO........activate emergency brake if throttles are idle during takeoff</line>
@@ -271,24 +259,6 @@
 			</config>
 			<step type="int">-1</step>
 		</autobrake>
-
-		<settings>
-			<autothrottle type="bool">false</autothrottle>
-			<engaged type="bool">false</engaged>
-			<altitude>altitude-hold</altitude>
-			<heading>dg-heading-hold</heading>
-			<speed-mode>knots</speed-mode>
-			<heading-mode>magnetic</heading-mode>
-			<heading-bug-deg type="double">360</heading-bug-deg>
-			<target-speed-kt type="double">200</target-speed-kt>
-			<target-speed-mach type="double">0</target-speed-mach>
-			<target-altitude-ft type="double">10000</target-altitude-ft>
-			<vertical-speed-fpm type="double">1800</vertical-speed-fpm>
-			<minimum-bank-deg type="double">-25</minimum-bank-deg>
-			<maximum-bank-deg type="double">25</maximum-bank-deg>
-		</settings>
-
-		<disengaged-btn type="int">0</disengaged-btn>
 	</autopilot>
 
 	<controls>
