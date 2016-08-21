@@ -19,7 +19,7 @@ Syd Adams
         <object-name>Off</object-name>
         <condition>
             <less-than>
-				<property>systems/electrical/outputs/efis</property>
+				<property>systems/electrical/bus/dcL</property>
 				<value>15</value>
             </less-than>
         </condition>
@@ -178,7 +178,7 @@ Syd Adams
 	
     <animation>
         <type>select</type>
-        <object-name>apoff</object-name>
+        <object-name>apoff0</object-name>
 	    <object-name>apofft</object-name>
         <condition>
 		<and>
@@ -399,6 +399,21 @@ Syd Adams
             <entry><ind>-80</ind><dep>-0.0510</dep></entry>
         </interpolation>
     </animation-->
+	
+    <animation>
+        <type>select</type>
+        <object-name>SpeedTarget</object-name>
+        <condition>
+			<!--less-than>
+   				<property>instrumentation/pfd/speed-trend-up</property>
+				<value>0.239</value>
+			</less-than-->
+			<equals>
+			<property>items/unused</property>
+			<value>999</value>
+			</equals>
+		</condition>
+    </animation>
 
     <!--animation>
         <object-name>StallSpeedInd</object-name>
@@ -853,6 +868,17 @@ Syd Adams
             <z>1</z>
         </axis>
         <factor>0.000142</factor>
+    </animation>
+	
+    <animation>
+        <type>select</type>
+        <object-name>AltitudeCursor</object-name>
+        <condition>
+			<equals>
+			<property>items/unused</property>
+			<value>999</value>
+			</equals>
+		</condition>
     </animation>
 
 <!-- Alt Ind -->
@@ -1536,7 +1562,7 @@ Syd Adams
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">%2.0f</format>
-        <property>/it-autoflight/settings/target-altitude-ft</property>
+        <property>/it-autoflight/settings/target-altitude-ft-actual</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.0095</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -1557,7 +1583,7 @@ Syd Adams
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">%03.0f</format>
-        <property>/it-autoflight/settings/target-altitude-ft</property>
+        <property>/it-autoflight/settings/target-altitude-ft-actual</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.0095</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -2382,20 +2408,28 @@ Syd Adams
         <type>select</type>
         <object-name>speedtrend.up</object-name>
         <condition>
-			<less-than>
+			<!--less-than>
    				<property>instrumentation/pfd/speed-trend-up</property>
 				<value>0.239</value>
-			</less-than>
+			</less-than-->
+			<equals>
+			<property>items/unused</property>
+			<value>999</value>
+			</equals>
 		</condition>
     </animation>
     <animation>
         <type>select</type>
         <object-name>speedtrend.down</object-name>
         <condition>
-			<greater-than>
+			<!--greater-than>
 				<property>instrumentation/pfd/speed-trend-down</property>
 				<value>-0.239</value>
-			</greater-than>
+			</greater-than-->
+			<equals>
+			<property>items/unused</property>
+			<value>999</value>
+			</equals>
 		</condition>
     </animation>
 </PropertyList>

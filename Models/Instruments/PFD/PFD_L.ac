@@ -92,7 +92,6 @@ OBJECT poly
 name "Off"
 loc 0.00446135 0.00815288 0.00327463
 crease 45.000000
-hidden
 numvert 4
 0 0.0931997 0.09508
 0 -0.0931997 0.09508
@@ -488,7 +487,7 @@ refs 4
 2 1.00067 0.000756443
 kids 0
 OBJECT poly
-name "apoff"
+name "apoff0"
 loc 0.000984626 0.0733507 0.0353034
 data 10
 enginepane
