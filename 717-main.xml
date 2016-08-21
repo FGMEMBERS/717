@@ -34,10 +34,6 @@
 				<path>Aircraft/717/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
-				<name>Autopilot helpers</name>
-				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-			</autopilot>
-			<autopilot>
 				<name>Autobrake</name>
 				<path>Aircraft/717/Systems/717-autobrake.xml</path>
 			</autopilot>
@@ -441,8 +437,7 @@
 			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
 		</B717>
 		<itaf>
-			<file>Aircraft/717/Nasal/autoflight.nas</file>
-			<file>Aircraft/717/Nasal/autoflight-logic.nas</file>
+			<file>Aircraft/717/Nasal/it-autoflight.nas</file>
 		</itaf>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
