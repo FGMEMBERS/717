@@ -51,7 +51,7 @@
 	</model>
 	<model>
 		<name>PFD R</name>
-		<path>Aircraft/717/Models/Instruments/PFD/PFD.xml</path>
+		<path>Aircraft/717/Models/Instruments/PFD/PFD2.xml</path>
 		<offsets>
 			<x-m>-1.789</x-m>
 			<y-m>0.607</y-m>

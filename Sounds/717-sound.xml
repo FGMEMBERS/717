@@ -3,16 +3,29 @@
 
 <PropertyList>
 <fx>
+
   <apoff>
    <name>apoff</name>
    <path>/Aircraft/717/Sounds/apoff.wav</path>
    <condition>
-     <property>/it-autoflight/apoffsound</property>
+	 <property>/it-autoflight/apoffsound</property>
    </condition>
    <volume>
     <factor>10.0</factor>
    </volume>
   </apoff>
+  
+  <apoff>
+   <name>apoff2</name>
+   <path>/Aircraft/717/Sounds/apoff.wav</path>
+   <condition>
+	 <property>/it-autoflight/apoffsound2</property>
+   </condition>
+   <volume>
+    <factor>10.0</factor>
+   </volume>
+  </apoff>
+
   <engine>
     <name>left jet</name>
     <path>Aircraft/717/Sounds/eng/jet.wav</path>

@@ -48,6 +48,7 @@ setlistener("sim/signals/fdm-initialized", func
  setprop("/engines/engine[0]/epr-limit", 2.02);
  setprop("/engines/engine[1]/epr-limit", 2.02);
  setprop("/it-autoflight/fd_mastersw", 1);
+ setprop("/it-autoflight/fd_mastersw2", 1);
  settimer(systems.init, 2);
  }, 0, 0);
 # call init() if the simulator resets
