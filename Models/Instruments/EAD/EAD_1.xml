@@ -27,6 +27,7 @@
 		<object-name>n1.1</object-name>
 		<object-name>egt.1</object-name>
 		<object-name>n2.1</object-name>
+		<object-name>EPR_1</object-name>
 		<object-name>N1_1</object-name>
 		<object-name>EGT_1</object-name>
 		<object-name>N2_1</object-name>
@@ -166,6 +167,7 @@
 		<object-name>n1.2</object-name>
 		<object-name>egt.2</object-name>
 		<object-name>n2.2</object-name>
+		<object-name>EPR_2</object-name>
 		<object-name>N1_2</object-name>
 		<object-name>EGT_2</object-name>
 		<object-name>N2_2</object-name>

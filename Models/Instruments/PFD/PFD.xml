@@ -158,10 +158,27 @@ Syd Adams
         <type>select</type>
         <object-name>SPD-THRUST</object-name>
         <condition>
+		<and>
 		<not-equals>
 		<property>/it-autoflight/apvertmode</property>		
 		<value>4</value>
 		</not-equals>
+		<not-equals>
+		<property>/it-autoflight/retard</property>		
+		<value>1</value>
+		</not-equals>
+		</and>
+        </condition>
+    </animation>
+	
+    <animation>
+        <type>select</type>
+        <object-name>SPD-RETARD</object-name>
+        <condition>
+		<equals>
+		<property>/it-autoflight/retard</property>		
+		<value>1</value>
+		</equals>
         </condition>
     </animation>
 	
@@ -1025,6 +1042,23 @@ Syd Adams
 	</text>
 	
     <text>
+        <name>SPD-RETARD</name>
+        <offsets>
+            <x-m>0.004</x-m>
+            <y-m>-0.038</y-m>
+            <z-m>0.075</z-m>
+		</offsets>
+		<alignment>right-center</alignment>
+		<axis-alignment>yz-plane</axis-alignment>
+		<type type="string">text-value</type>
+		<format type="string">RETARD</format>
+		<property>autopilot/serviceable</property>
+		<font>helvetica_bold.txf</font>
+		<character-size>0.007</character-size>
+		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
+	</text>
+	
+    <text>
         <name>SPD-PITCH</name>
         <offsets>
             <x-m>0.004</x-m>
@@ -1814,9 +1848,12 @@ Syd Adams
         <object-name>HDG-annun</object-name>
         <object-name>IAS-annun</object-name>
         <object-name>SPD-THRUST</object-name>
+        <object-name>SPD-RETARD</object-name>
         <object-name>SPD-PITCH</object-name>
         <object-name>MACH-annun</object-name>
         <object-name>min-mode</object-name>
+        <object-name>ALT-annunFL</object-name>
+        <object-name>ALT-annun100</object-name>
         <emission>
             <red>1</red>
             <green>1</green>
@@ -1841,8 +1878,6 @@ Syd Adams
 
     <animation>
         <type>material</type><!--magenta-->
-        <object-name>ALT-annunFL</object-name>
-        <object-name>ALT-annun100</object-name>
         <object-name>TRK-annun</object-name>
         <object-name>NAV</object-name>
         <emission>

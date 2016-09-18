@@ -85,7 +85,7 @@
 			</config>
 		</view>
 		<view n="102">
-			<name>Wing right</name>
+			<name>Wing Right</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
@@ -107,7 +107,7 @@
 				<x-offset-m archive="y">-2</x-offset-m>
 				<y-offset-m archive="y">-1</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>70</heading-offset-deg>
+				<heading-offset-deg>90</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>

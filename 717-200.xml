@@ -135,11 +135,11 @@
 	<!-- FUEL AND PAYLOAD -->
 	<!-- Total fuel capacity: 3,670 gallons (22,754 pounds) -->
 	<!-- Left wing fuel tank -->
-	<tank x="-1.05" y="6.75" z="-2.2" jet="true" capacity="7584" />
+	<tank x="-1.05" y="6.75" z="-2.2" jet="true" capacity="7585" />
 	<!-- Right wing fuel tank -->
 	<tank x="-1.05" y="-6.75" z="-2.2" jet="true" capacity="7585" />
 	<!-- Main fuel tank -->
-	<tank x="0.85" y="0.0" z="-2.15" jet="true" capacity="7584" />
+	<tank x="0.85" y="0.0" z="-2.15" jet="true" capacity="7585" />
 
 	<!-- Ballast to adjust center of gravity -->
 	<ballast x="16.0" y="0.0" z="-2.0" mass="10000.0" />

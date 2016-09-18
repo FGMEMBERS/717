@@ -71,7 +71,7 @@
 	</model>
 	<model>
 		<name>SD</name>
-		<path>Aircraft/717/Models/Instruments/EAD/EAD_1.xml</path>
+		<path>Aircraft/717/Models/Instruments/EAD/SD.xml</path>
 		<offsets>
 			<x-m>-1.81</x-m>
 			<y-m>0.101</y-m>
