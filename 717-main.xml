@@ -30,8 +30,12 @@
 				<path></path>
 			</electrical>
 			<autopilot>
-				<name>Autopilot</name>
+				<name>IT-AUTOFLIGHT</name>
 				<path>Aircraft/717/Systems/it-autoflight.xml</path>
+			</autopilot>
+			<autopilot>
+				<name>IT-AUTOTHRUST</name>
+				<path>Aircraft/717/Systems/it-autothrust.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autobrake</name>

@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Milestone 2 Build 18
+# V3.0.0 Milestone 2 Build 20
 
 print("IT-AUTOFLIGHT: Please Wait!");
 setprop("/it-autoflight/settings/retard-enable", 1);  # Do not change this here! See IT-AUTOFLIGHT's Help.txt
@@ -322,6 +322,14 @@ var atoffchk = func{
   var altpos = getprop("/position/altitude-agl-ft");
   if (altpos <= 15) {
 	setprop("/it-autoflight/at_mastersw", 0);
+	setprop("/controls/engines/engine[0]/throttle", 0);
+	setprop("/controls/engines/engine[1]/throttle", 0);
+	setprop("/controls/engines/engine[2]/throttle", 0);
+	setprop("/controls/engines/engine[3]/throttle", 0);
+	setprop("/controls/engines/engine[4]/throttle", 0);
+	setprop("/controls/engines/engine[5]/throttle", 0);
+	setprop("/controls/engines/engine[6]/throttle", 0);
+	setprop("/controls/engines/engine[7]/throttle", 0);
 	atofft.stop();
   }
 }
