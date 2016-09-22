@@ -2,7 +2,7 @@
 
 <PropertyList>
 	<sim>
-		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/GPWS/Systems), Gabriel Hernandez (Effects/Systems failures/Fix Some Sounds etc)</author>
+		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/Instruments/GPWS/Systems/Autoflight), Gabriel Hernandez (Effects/Systems Failures/Fix Sounds etc)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
@@ -115,7 +115,7 @@
 				<x-offset-m archive="y">-2</x-offset-m>
 				<y-offset-m archive="y">-2</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>88</heading-offset-deg>
+				<heading-offset-deg>92</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
