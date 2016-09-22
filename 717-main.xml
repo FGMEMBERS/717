@@ -2,7 +2,7 @@
 
 <PropertyList>
 	<sim>
-		<author>Gary Neely (3d, cockpit shell), Skyop (3d, FDM, systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit), Gabriel Hernandez (GPWS and Effects)</author>
+		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/GPWS/Systems), Gabriel Hernandez (Effects)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
@@ -44,6 +44,10 @@
 			<autopilot>
 				<name>Pushback</name>
 				<path>Aircraft/717/Systems/pushback.xml</path>
+			</autopilot>
+			<autopilot>
+				<name>Custom Engine Values</name>
+				<path>Aircraft/717/Systems/engine-timing.xml</path>
 			</autopilot>
             <property-rule n="101">
                 <path>Aircraft/717/Systems/PFD.xml</path>
@@ -241,10 +245,17 @@
 			<line>Down.......speedbrakes down (off)</line>
 			<line>Arm........deploy speedbrakes on touchdown</line>
 			<line>Up.........deploy speedbrakes</line>
-			<line />
-			<line>Autopilot key commands listed here apply to the 717 only.</line>
-			<line>For a full list of autopilot key commands not specific to this aircraft, check the documentation included with FlightGear.</line>
 		</help>
+		
+  <multiplay>
+    <generic>
+      <float n="0" alias="/engines/engine[0]/reverser-pos-norm"/>
+      <float n="1" alias="/engines/engine[1]/reverser-pos-norm"/>
+      <float n="2" alias="/controls/flight/aileron"/>
+      <float n="3" alias="/controls/flight/elevator"/>
+      <float n="4" alias="/controls/flight/elevator-trim"/>
+    </generic>
+  </multiplay>
 		
 		<instrument-options>
 			<canvas-popup-enable type="bool">true</canvas-popup-enable>

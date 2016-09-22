@@ -13,8 +13,8 @@
 
 <airplane mass="69830">
 	<approach speed="132" aoa="5.0" fuel="0.2">
-		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.6" />
-		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.6" />
+		<control-setting axis="/controls/engines/engine[0]/throttle-fdm" value="0.6" />
+		<control-setting axis="/controls/engines/engine[1]/throttle-fdm" value="0.6" />
 		<control-setting axis="/controls/flight/flaps" value="1.0" />
 		<control-setting axis="/controls/gear/gear-down" value="1.0" />
 		<solve-weight idx="0" weight="600" />
@@ -22,8 +22,8 @@
 	</approach>
 
 	<cruise speed="438" alt="34200" fuel="0.8">
-		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.8" />
-		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.8" />
+		<control-setting axis="/controls/engines/engine[0]/throttle-fdm" value="0.8" />
+		<control-setting axis="/controls/engines/engine[1]/throttle-fdm" value="0.8" />
 		<control-setting axis="/controls/flight/flaps" value="0.0" />
 		<control-setting axis="/controls/gear/gear-down" value="0.0" />
 		<solve-weight idx="0" weight="600" />
@@ -86,15 +86,15 @@
 	<fuselage ax="-4.753" ay="-2.915" az="-1.074" bx="-10.746" by="-2.915" bz="-1.242" width="2.1" taper="0.55" midpoint="0.0" />
 
 	<!-- Actual engine definitions -->
-	<jet x="-7.342" y="2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="29.5" n1-max="106.7" n2-idle="66.3" n2-max="113.8" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
-		<control-input axis="/controls/engines/engine[0]/throttle-lever" control="THROTTLE" />
+	<jet x="-7.342" y="2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="26.4" n2-idle="67.7" n1-max="102.7" n2-max="110.6" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
+		<control-input axis="/controls/engines/engine[0]/throttle-fdm" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST" />
 		<control-output control="REVERSE_THRUST" prop="/engines/engine[0]/reverser-pos-norm" />
 		<control-speed control="REVERSE_THRUST" transition-time="1.0" />
 		<actionpt x="-10.746" y="2.915" z="-1.242" />
 	</jet>
-	<jet x="-7.342" y="-2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="29.5" n1-max="106.7" n2-idle="66.3" n2-max="113.8" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
-		<control-input axis="/controls/engines/engine[1]/throttle-lever" control="THROTTLE" />
+	<jet x="-7.342" y="-2.915" z="-1.257" mass="4912.0" thrust="21000.0" afterburner="0.0" rotate="0.0" n1-idle="26.4" n2-idle="67.7" n1-max="102.7" n2-max="110.6" tsfc="0.4" egt="655" epr="2.16" exhaust-speed="1555.0" spool-time="3.0">
+		<control-input axis="/controls/engines/engine[1]/throttle-fdm" control="THROTTLE" />
 		<control-input axis="/controls/engines/engine[1]/reverser" control="REVERSE_THRUST" />
 		<control-output control="REVERSE_THRUST" prop="/engines/engine[1]/reverser-pos-norm" />
 		<control-speed control="REVERSE_THRUST" transition-time="1.0" />

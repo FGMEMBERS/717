@@ -44,10 +44,10 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>epr.1</object-name>
-    <property>engines/engine[0]/epr</property>
+    <property>engines/engine[0]/epr-actual</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>2.16</ind><dep>151</dep></entry>
+<entry><ind>1.59</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -64,10 +64,10 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>limit1</object-name>
-    <property>engines/engine[0]/epr-limit</property>
+    <property>/engines/engine[0]/epr-limit</property>
 <interpolation>
-<entry><ind>1</ind><dep>80</dep></entry>
-<entry><ind>2.16</ind><dep>150</dep></entry>
+<entry><ind>1</ind><dep>79</dep></entry>
+<entry><ind>1.59</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -84,10 +84,10 @@
   	  <animation>
     <type>rotate</type>
 		<object-name>throttle.position.1</object-name>
-        <property>controls/engines/engine/throttle-lever</property>
+        <property>controls/engines/engine/throttle-fdm</property>
 <interpolation>
-<entry><ind>0</ind><dep>79</dep></entry>
-<entry><ind>1</ind><dep>147</dep></entry>
+<entry><ind>0</ind><dep>81</dep></entry>
+<entry><ind>1</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -124,7 +124,7 @@
     	  <animation>
     <type>rotate</type>
 		<object-name>egt.1</object-name>
-    <property>engines/engine[0]/egt-degf</property>
+    <property>engines/engine[0]/egt-actual</property>
 <interpolation>
 <entry><ind>0</ind><dep>0</dep></entry>
 <entry><ind>800</ind><dep>180</dep></entry>
@@ -184,10 +184,10 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>epr.2</object-name>
-    <property>engines/engine[1]/epr</property>
+    <property>engines/engine[1]/epr-actual</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>2.16</ind><dep>151</dep></entry>
+<entry><ind>1.59</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -204,10 +204,10 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>limit2</object-name>
-    <property>engines/engine[1]/epr-limit</property>
+    <property>/engines/engine[1]/epr-limit</property>
 <interpolation>
-<entry><ind>1</ind><dep>80</dep></entry>
-<entry><ind>2.16</ind><dep>150</dep></entry>
+<entry><ind>1</ind><dep>79</dep></entry>
+<entry><ind>1.59</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -224,10 +224,10 @@
     	  <animation>
     <type>rotate</type>
 		<object-name>throttle.position.2</object-name>
-        <property>controls/engines/engine[1]/throttle-lever</property>
+        <property>controls/engines/engine[1]/throttle-fdm</property>
 <interpolation>
-<entry><ind>0</ind><dep>79</dep></entry>
-<entry><ind>1</ind><dep>147</dep></entry>
+<entry><ind>0</ind><dep>81</dep></entry>
+<entry><ind>1</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -264,7 +264,7 @@
     	  <animation>
     <type>rotate</type>
 		<object-name>egt.2</object-name>
-    <property>engines/engine[1]/egt-degf</property>
+    <property>engines/engine[1]/egt-actual</property>
 <interpolation>
 <entry><ind>0</ind><dep>0</dep></entry>
 <entry><ind>800</ind><dep>180</dep></entry>
@@ -473,7 +473,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
     <format type="string">%1.2f</format>
-    <property>engines/engine[0]/epr</property>
+    <property>engines/engine[0]/epr-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -490,7 +490,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
     <format type="string">%1.2f</format>
-    <property>engines/engine[1]/epr</property>
+    <property>engines/engine[1]/epr-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -541,7 +541,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
     <format type="string">%2.0f</format>
-    <property>engines/engine[0]/egt-degf</property>
+    <property>engines/engine[0]/egt-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -558,7 +558,7 @@
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
     <format type="string">%2.0f</format>
-    <property>engines/engine[1]/egt-degf</property>
+    <property>engines/engine[1]/egt-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -609,8 +609,8 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-    <format type="string">%4.1f</format>
-    <property>engines/engine[0]/fuel-flow-gph</property>
+    <format type="string">%2.0f</format>
+    <property>engines/engine[0]/fuel-flow-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -626,8 +626,8 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">number-value</type>
-    <format type="string">%4.1f</format>
-    <property>engines/engine[1]/fuel-flow-gph</property>
+    <format type="string">%2.0f</format>
+    <property>engines/engine[1]/fuel-flow-actual</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
 		<character-aspect-ratio type="double">1.2</character-aspect-ratio>

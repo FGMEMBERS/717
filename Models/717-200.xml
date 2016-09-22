@@ -234,8 +234,8 @@
 		<object-name>ElTabAntifloatL</object-name>
 		<object-name>ElTabGearedL</object-name>
 		<object-name>ElTabControlL</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>15</factor>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>10</factor>
 		<axis>
 			<x1-m>18.744</x1-m>
 			<y1-m>-6.075</y1-m>
@@ -252,8 +252,8 @@
 		<object-name>ElTabAntifloatR</object-name>
 		<object-name>ElTabGearedR</object-name>
 		<object-name>ElTabControlR</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>15</factor>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>10</factor>
 		<axis>
 			<x1-m>16.308</x1-m>
 			<y1-m>0.542</y1-m>
@@ -263,6 +263,38 @@
 			<z2-m>3.385</z2-m>
 		</axis>
 	</animation>
+	
+	<!-- Disabled since it makes odd elevator effects, will fix eventually  -it0uchpods -->
+	<!--animation> 
+		<type>rotate</type>
+		<object-name>HStabilizerL</object-name>
+		<object-name>ElevatorL</object-name>
+		<object-name>ElTabAntifloatL</object-name>
+		<object-name>ElTabGearedL</object-name>
+		<object-name>ElTabControlL</object-name>
+		<object-name>HStabilizerR</object-name>
+		<object-name>ElevatorR</object-name>
+		<object-name>ElTabAntifloatR</object-name>
+		<object-name>ElTabGearedR</object-name>
+		<object-name>ElTabControlR</object-name>
+		<property>sim/multiplay/generic/float[4]</property>
+		<interpolation>
+			<entry><ind>1.0</ind><dep>6.0</dep></entry>
+			<entry><ind>0.0</ind><dep>0.0</dep></entry>
+			<entry><ind>-1.0</ind><dep>-6.0</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>15.60</x-m>
+			<y-m>0</y-m>
+			<z-m>3.64</z-m>
+		</center>
+	</animation-->
+	
 
 	<!-- Rudder -->
 	<animation>
@@ -790,7 +822,7 @@
 		<name>Left reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpL</object-name>
-		<property>engines/engine[0]/reverser-pos-norm</property>
+		<property>sim/multiplay/generic/float[0]</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
@@ -825,7 +857,7 @@
 		<name>Right reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpR</object-name>
-		<property>engines/engine[1]/reverser-pos-norm</property>
+		<property>sim/multiplay/generic/float[1]</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>

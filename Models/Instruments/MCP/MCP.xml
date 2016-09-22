@@ -463,6 +463,11 @@
 			<property>/it-autoflight/ap_mastersw</property>
 			<value>0</value>
 			</binding>
+			<binding>
+			<command>property-assign</command>
+			<property>/it-autoflight/ap_mastersw2</property>
+			<value>0</value>
+			</binding>
 		</action>
 	</animation>
 
@@ -721,6 +726,15 @@
 		<type>pick</type>
 		<object-name>VSknb</object-name>
 		<action>
+			<button>0</button>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/it-autoflight/apvertset</property>
+				<value>1</value>
+			</binding>
+		</action>
+		<action>
 			<button>4</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
@@ -729,11 +743,6 @@
 				<step type="double">100</step>
 				<max>9999</max>
 			</binding>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/apvertset</property>
-				<value>1</value>
-				</binding>
 		</action>
 		<action>
 			<button>3</button>
@@ -744,11 +753,6 @@
 				<step type="double">-100</step>
 				<min>-9999</min>
 			</binding>
-				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/apvertset</property>
-				<value>1</value>
-				</binding>
 		</action>
 	</animation>
 

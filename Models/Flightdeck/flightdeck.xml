@@ -178,6 +178,8 @@
 		<object-name>YokeR</object-name>
 		<object-name>YokeTrimL</object-name>
 		<object-name>YokeTrimR</object-name>
+		<object-name>apoff</object-name>
+		<object-name>apoff2</object-name>
 		<object-name>Overhead panel</object-name>
 		<emission>
 			<red>0.5</red>
@@ -299,8 +301,12 @@
 		<type>rotate</type>
 		<object-name>YokeColL</object-name>
 		<object-name>YokeL</object-name>
+		<object-name>YokeTrimL</object-name>
+		<object-name>apoff</object-name>
 		<object-name>YokeColR</object-name>
 		<object-name>YokeR</object-name>
+		<object-name>YokeTrimR</object-name>
+		<object-name>apoff2</object-name>
 		<property>controls/flight/elevator</property>
 		<factor>10</factor>
 		<axis>
@@ -318,6 +324,8 @@
 		<name>Left yoke aileron</name>
 		<type>rotate</type>
 		<object-name>YokeL</object-name>
+		<object-name>YokeTrimL</object-name>
+		<object-name>apoff</object-name>
 		<property>controls/flight/aileron</property>
 		<factor>90</factor>
 		<axis>
@@ -335,6 +343,8 @@
 		<name>Right yoke aileron</name>
 		<type>rotate</type>
 		<object-name>YokeR</object-name>
+		<object-name>YokeTrimR</object-name>
+		<object-name>apoff2</object-name>
 		<property>controls/flight/aileron</property>
 		<factor>90</factor>
 		<axis>
@@ -348,6 +358,98 @@
 			<z-m>0.857</z-m>
 		</center>
 	</animation>
+	
+<animation>
+  <type>pick</type>
+  <object-name>apoff</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+	<binding>
+		<command>property-assign</command>
+		<property>/it-autoflight/ap_mastersw</property>
+		<value>0</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/it-autoflight/ap_mastersw2</property>
+		<value>0</value>
+	</binding>
+    <binding>
+        <command>property-assign</command>
+        <property>/controls/flight/apoff</property>
+        <value>1</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command>property-assign</command>
+            <property>/controls/flight/apoff</property>
+            <value>0</value>
+        </binding>
+    </mod-up>
+  </action>
+</animation>
+
+<animation>
+  <type>translate</type>
+  <object-name>apoff</object-name>
+  <property>controls/flight/apoff</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>-0.001</dep></entry>
+    <entry><ind>1</ind><dep> 0.001</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>apoff2</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+	<binding>
+		<command>property-assign</command>
+		<property>/it-autoflight/ap_mastersw</property>
+		<value>0</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>/it-autoflight/ap_mastersw2</property>
+		<value>0</value>
+	</binding>
+    <binding>
+        <command>property-assign</command>
+        <property>/controls/flight/apoff2</property>
+        <value>1</value>
+    </binding>
+    <mod-up>
+        <binding>
+            <command>property-assign</command>
+            <property>/controls/flight/apoff2</property>
+            <value>0</value>
+        </binding>
+    </mod-up>
+  </action>
+</animation>
+
+<animation>
+  <type>translate</type>
+  <object-name>apoff2</object-name>
+  <property>controls/flight/apoff2</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>-0.001</dep></entry>
+    <entry><ind>1</ind><dep> 0.001</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
 
 	<!-- Rudder pedals -->
 	<animation>
@@ -478,43 +580,27 @@
 
 	<!-- Throttle quadrant -->
 	<animation>
-		<name>Left throttle reverser pick</name>
-		<type>pick</type>
-		<object-name>ThrottleRevL</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-				 B717.engine1.reverse_thrust();
-				</script>
-			</binding>
-		</action>
-	</animation>
-	<animation>
 		<name>Left throttle pick</name>
 		<type>pick</type>
 		<object-name>ThrottleL</object-name>
+		<object-name>ThrottleRevL</object-name>
 		<action>
-			<button>0</button>
 			<button>3</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine[0]/throttle</property>
-				<step type="double">0.01</step>
+				<step type="double">0.1</step>
 				<max>1</max>
 			</binding>
 		</action>
 		<action>
-			<button>1</button>
 			<button>4</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine[0]/throttle</property>
-				<step type="double">-0.01</step>
+				<step type="double">-0.1</step>
 				<min>0</min>
 			</binding>
 		</action>
@@ -524,7 +610,7 @@
 		<type>rotate</type>
 		<object-name>ThrottleL</object-name>
 		<object-name>ThrottleRevL</object-name>
-		<property>controls/engines/engine[0]/throttle</property>
+		<property>controls/engines/engine[0]/throttle-fdm</property>
 		<factor>50</factor>
 		<axis>
 			<x>0</x>
@@ -556,43 +642,27 @@
 	</animation>
 
 	<animation>
-		<name>Right throttle reverser pick</name>
-		<type>pick</type>
-		<object-name>ThrottleRevR</object-name>
-		<action>
-			<button>0</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-				 B717.engine2.reverse_thrust();
-				</script>
-			</binding>
-		</action>
-	</animation>
-	<animation>
 		<name>Right throttle pick</name>
 		<type>pick</type>
 		<object-name>ThrottleR</object-name>
+		<object-name>ThrottleRevR</object-name>
 		<action>
-			<button>0</button>
 			<button>3</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine[1]/throttle</property>
-				<step type="double">0.01</step>
+				<step type="double">0.1</step>
 				<max>1</max>
 			</binding>
 		</action>
 		<action>
-			<button>1</button>
 			<button>4</button>
 			<repeatable type="bool">true</repeatable>
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine[1]/throttle</property>
-				<step type="double">-0.01</step>
+				<step type="double">-0.1</step>
 				<min>0</min>
 			</binding>
 		</action>
@@ -602,7 +672,7 @@
 		<type>rotate</type>
 		<object-name>ThrottleR</object-name>
 		<object-name>ThrottleRevR</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>controls/engines/engine[1]/throttle-fdm</property>
 		<factor>50</factor>
 		<axis>
 			<x>0</x>
