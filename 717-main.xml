@@ -2,7 +2,7 @@
 
 <PropertyList>
 	<sim>
-		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/GPWS/Systems), Gabriel Hernandez (Effects)</author>
+		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/GPWS/Systems), Gabriel Hernandez (Effects/Systems failures/Fix Some Sounds etc)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
@@ -99,9 +99,9 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">2</x-offset-m>
-				<y-offset-m archive="y">-1</y-offset-m>
+				<y-offset-m archive="y">-2</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>270</heading-offset-deg>
+				<heading-offset-deg>268</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
@@ -113,9 +113,9 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">-2</x-offset-m>
-				<y-offset-m archive="y">-1</y-offset-m>
+				<y-offset-m archive="y">-2</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>90</heading-offset-deg>
+				<heading-offset-deg>88</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
@@ -254,6 +254,15 @@
       <float n="2" alias="/controls/flight/aileron"/>
       <float n="3" alias="/controls/flight/elevator"/>
       <float n="4" alias="/controls/flight/elevator-trim"/>
+      <int n="0" alias="/systems/electrical/outputs/strobe"/>
+      <int n="1" alias="/systems/electrical/outputs/beacon"/>
+      <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
+      <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
+      <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>          
+      <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
+      <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
+      <float  alias="/controls/cabin-door/position-norm"/>
+      <float  n="1" alias="/surface-positions/speedbrake-pos-norm"/>
     </generic>
   </multiplay>
 		
@@ -395,7 +404,7 @@
 			<speaker>
 				<max-dist>2</max-dist>
 				<reference-dist>1</reference-dist>
-				<volume>0.4</volume>
+				<volume>0.8</volume>
 			</speaker>
 		</mk-viii>
 		<!-- See http://wiki.flightgear.org/index.php/TCAS -->
@@ -428,7 +437,17 @@
 					</script>
 				</binding>
 			</key>
-			<key n="2">
+		
+		 <key n="268">
+              <name>F12</name>
+                 <desc>Pop radio stack</desc>
+                 <binding>
+                 <command>nasal</command>
+                 <script>dialogs.radio.toggle()</script>
+                 </binding>
+                 </key>
+                 
+	          	<key n="2">
 				<name>Ctrl-b</name>
 				<desc>Cycle speedbrake setting</desc>
 				<binding>
@@ -458,6 +477,16 @@
 		</keyboard>
 	</input>
 
+         <transponder>
+          <id-code>1200</id-code>
+         </transponder>
+
+         <airport>
+           <runways>
+            <start-offset-m>50</start-offset-m>
+            </runways>
+          </airport>
+         
 	<nasal>
 		<B717>
 			<file>Aircraft/717/Nasal/engines.nas</file>
