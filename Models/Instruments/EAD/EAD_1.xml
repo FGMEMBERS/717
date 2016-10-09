@@ -47,7 +47,7 @@
     <property>engines/engine[0]/epr-actual</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>1.59</ind><dep>150</dep></entry>
+<entry><ind>1.49</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -67,7 +67,7 @@
     <property>/engines/engine[0]/epr-limit</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>1.59</ind><dep>150</dep></entry>
+<entry><ind>1.49</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -187,7 +187,7 @@
     <property>engines/engine[1]/epr-actual</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>1.59</ind><dep>150</dep></entry>
+<entry><ind>1.49</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -207,7 +207,7 @@
     <property>/engines/engine[1]/epr-limit</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
-<entry><ind>1.59</ind><dep>150</dep></entry>
+<entry><ind>1.49</ind><dep>150</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>

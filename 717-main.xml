@@ -261,8 +261,6 @@
       <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>          
       <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
       <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
-      <float  alias="/controls/cabin-door/position-norm"/>
-      <float  n="1" alias="/surface-positions/speedbrake-pos-norm"/>
     </generic>
   </multiplay>
 		

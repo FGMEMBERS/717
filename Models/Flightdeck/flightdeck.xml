@@ -610,7 +610,7 @@
 		<type>rotate</type>
 		<object-name>ThrottleL</object-name>
 		<object-name>ThrottleRevL</object-name>
-		<property>controls/engines/engine[0]/throttle-fdm</property>
+		<property>controls/engines/engine[0]/throttle-lever</property>
 		<factor>50</factor>
 		<axis>
 			<x>0</x>
@@ -672,7 +672,7 @@
 		<type>rotate</type>
 		<object-name>ThrottleR</object-name>
 		<object-name>ThrottleRevR</object-name>
-		<property>controls/engines/engine[1]/throttle-fdm</property>
+		<property>controls/engines/engine[1]/throttle-lever</property>
 		<factor>50</factor>
 		<axis>
 			<x>0</x>
