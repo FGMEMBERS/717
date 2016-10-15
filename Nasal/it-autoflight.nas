@@ -282,7 +282,7 @@ var minmax = func {
   if (dif < 100 and dif > -100) {
       setprop("/it-autoflight/internal/max-pitch", 8);
       setprop("/it-autoflight/internal/min-pitch", -4);
-	  setprop("/it-autoflight/txtlatmode", "ALT HLD");
+	  setprop("/it-autoflight/txtvertmode", "ALT HLD");
 	  minmaxtimer.stop();
   }
 }
