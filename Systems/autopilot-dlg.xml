@@ -166,7 +166,7 @@
 			<layout>hbox</layout>
 			<text>
 				<border>1</border>
-				<label>99999</label>
+				<label>999999</label>
 				<valign>center</valign>
 				<property>/it-autoflight/txtthrmode</property>
 				<live>1</live>
