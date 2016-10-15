@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT System Controller by Joshua Davidson (it0uchpods/411).
-# V3.0.0 Milestone 2 Build 44F
+# V3.0.0 Milestone 2 Build 45W
 
 print("IT-AUTOFLIGHT: Please Wait!");
 setprop("/it-autoflight/settings/retard-enable", 1);  # Do not change this here! See IT-AUTOFLIGHT's Help.txt
@@ -203,11 +203,6 @@ setlistener("/it-autoflight/apvertset", func {
 var flch_on = func {
   setprop("/it-autoflight/appr-armed", 0);
   setprop("/it-autoflight/apvertmode", 4);
-  if (getprop("/it-autoflight/apthrmode") == 0) {
-	setprop("/it-autoflight/txtvertmode", "SPEED");
-  } else if (getprop("/it-autoflight/apthrmode") == 0) {
-	setprop("/it-autoflight/txtvertmode", "MACH");
-  }
   flchtimer.start();
 }
 var alt_on = func {
@@ -223,19 +218,9 @@ setlistener("/it-autoflight/apthrmode", func {
 	if (modez == 0) {
 		var iasnow = int(getprop("/instrumentation/airspeed-indicator/indicated-speed-kt")+0.5);
 		setprop("/it-autoflight/settings/target-speed-kt", iasnow);
-		if (getprop("/it-autoflight/apvertmode") == 4) {
-	      setprop("/it-autoflight/txtvertmode", "SPEED");
-		} else {
-	      setprop("/it-autoflight/txtthrmode", "SPEED");
-		}
 	} else if (modez == 1) {
 		var machnow = (int(1000*getprop("/velocities/mach")))*0.001;
 		setprop("/it-autoflight/settings/target-mach", machnow);
-		if (getprop("/it-autoflight/apvertmode") == 4) {
-	      setprop("/it-autoflight/txtvertmode", "MACH");
-		} else {
-	      setprop("/it-autoflight/txtthrmode", "MACH");
-		}
 	}
 });
 
@@ -271,26 +256,20 @@ var flchthrust = func {
   if (vertm == 4) {
     if (calt < alt) {
 	  setprop("/it-autoflight/apthrmode2", 2);
-	  setprop("/it-autoflight/txtthrmode", "CLIMB");
+	  setprop("/it-autoflight/txtthrmode", "PITCH");
+	    setprop("/it-autoflight/txtvertmode", "THR CLB");
     } else if (calt > alt) {
       setprop("/it-autoflight/apthrmode2", 1);
-	  setprop("/it-autoflight/txtthrmode", "IDLE");
+	  setprop("/it-autoflight/txtthrmode", "PITCH");
+	    setprop("/it-autoflight/txtvertmode", "THR IDLE");
     } else {
 	  setprop("/it-autoflight/apthrmode2", 0);
-	  if (getprop("/it-autoflight/apthrmode") == 0) {
-	    setprop("/it-autoflight/txtthrmode", "SPEED");
-	  } else if (getprop("/it-autoflight/apthrmode") == 0) {
-	    setprop("/it-autoflight/txtthrmode", "MACH");
-	  }
+	  setprop("/it-autoflight/txtthrmode", "THR");
 	  setprop("/it-autoflight/apvertset", 3);
 	}
   } else {
 	setprop("/it-autoflight/apthrmode2", 0);
-	if (getprop("/it-autoflight/apthrmode") == 0) {
-	  setprop("/it-autoflight/txtthrmode", "SPEED");
-	} else if (getprop("/it-autoflight/apthrmode") == 0) {
-	  setprop("/it-autoflight/txtthrmode", "MACH");
-	}
+	  setprop("/it-autoflight/txtthrmode", "THR");
 	flchtimer.stop();
   }
 }
