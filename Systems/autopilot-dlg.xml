@@ -7,7 +7,7 @@
 
 	<name>autopilot</name>
 	<layout>vbox</layout>
-    <pref-width>230</pref-width>
+    <pref-width>260</pref-width>
 
     <group>
         <layout>hbox</layout>
@@ -132,7 +132,7 @@
 				<stretch type="bool">true</stretch>
 			</hrule>
 			<text>
-				<label>Mode Indicators</label>
+				<label>Flight Modes</label>
 			</text>
 			<hrule>
 				<stretch type="bool">true</stretch>
@@ -141,165 +141,36 @@
 		
 		<group>
 			<layout>hbox</layout>
-
 			<text>
-				<label>SPD</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtthrmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>MACH</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtarmmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>THR</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode2</property>
-						<value>0</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>99999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtlatmode</property>
+				<live>1</live>
 			</text>
-
+			<vrule/>
 			<text>
-				<label>IDLE</label>
-				<visible>
-					<or>
-						<equals>
-							<property>/it-autoflight/apthrmode2</property>
-							<value>1</value>
-						</equals>
-						<equals>
-							<property>/it-autoflight/retard</property>
-							<value>1</value>
-						</equals>
-					</or>
-				</visible>
-			</text>
-			
-			<text>
-				<label>CLB</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apthrmode2</property>
-						<value>2</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HDG</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>LNAV</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>        </label>
-			</text>
-			<text>
-				<label>LOC</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/it-autoflight/loc1</property>
-						<value>1</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/aplatmode</property>
-						<value>2</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/loc1</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-		</group>
-		
-		<group>
-			<layout>hbox</layout>
-			<text>
-				<label>HLD</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>FLCH</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>4</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>VS</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>G/S</label>
-				<visible>
-					<or>
-					<equals>
-						<property>/it-autoflight/apvertmode</property>
-						<value>2</value>
-					</equals>
-					<equals>
-						<property>/it-autoflight/app1</property>
-						<value>1</value>
-					</equals>
-					</or>
-				</visible>
-			</text>
-			<text>
-				<label>ARM</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/app1</property>
-						<value>1</value>
-					</equals>
-				</visible>
+				<border>1</border>
+				<label>9999999</label>
+				<valign>center</valign>
+				<property>/it-autoflight/txtvertmode</property>
+				<live>1</live>
 			</text>
 		</group>
 
@@ -339,16 +210,6 @@
 				<command>property-assign</command>
 				<property>/it-autoflight/apthrmode</property>
 				<value>1</value>
-				</binding>
-			</button>
-			
-			<button>
-				<row>2</row>
-				<col>1</col>
-				<legend>ARM</legend>
-				<binding>
-				<command>property-toggle</command>
-				<property>/it-autoflight/autothrarm</property>
 				</binding>
 			</button>
 		</group>
@@ -759,7 +620,7 @@
 			
 			<button>
                 <pref-width>65</pref-width>
-				<legend>APPR</legend>
+				<legend>ILS</legend>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/apvertset</property>
