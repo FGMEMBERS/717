@@ -48,6 +48,7 @@ setlistener("sim/signals/fdm-initialized", func
  setprop("/it-autoflight/settings/retard-enable", 1);  # Enable or disable automatic autothrottle retard.
  setprop("/it-autoflight/settings/retard-ft", 35);     # Add this to change the retard altitude, default is 50ft AGL.
  setprop("/it-autoflight/settings/land-flap", 0.7);    # Define the landing flaps here. This is needed for autoland, and retard.
+ setprop("/it-autoflight/settings/land-enable", 0);    # Enable or disable automatic landing.
  setprop("/engines/engine[0]/epr-limit", 1.47);
  setprop("/engines/engine[1]/epr-limit", 1.47);
  setprop("/it-autoflight/fd_mastersw", 1);
