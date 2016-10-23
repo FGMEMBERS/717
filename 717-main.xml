@@ -390,19 +390,27 @@
 				<category-8>3</category-8>	<!-- RADIO_ALTITUDE_INPUT_SELECT -->
 				<category-9>3</category-9>	<!-- NAVIGATION_INPUT_SELECT -->
 				<category-10>6</category-10>	<!-- ATTITUDE_INPUT_SELECT -->
-				<category-13>7</category-13>	<!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+				<category-13>5</category-13>	<!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
 				<category-14>0</category-14>	<!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<inputs>
 				<arinc429>
 					<decision-height-ncd>false</decision-height-ncd>
-					<decision-height>200</decision-height>
+					<decision-height>250</decision-height>
 				</arinc429>
 			</inputs>
+	        <input-feeders>    <!-- disable some internal default feeders -->
+	            <discretes>
+	                <!-- will provide custom (nasal) sources for the following input feeders -->
+	                <glideslope-inhibit> false </glideslope-inhibit>
+	                <landing-gear> false </landing-gear>
+	                <landing-flaps> false </landing-flaps>
+	            </discretes>
+	        </input-feeders>
 			<speaker>
 				<max-dist>2</max-dist>
 				<reference-dist>1</reference-dist>
-				<volume>0.8</volume>
+				<volume>2</volume>
 			</speaker>
 		</mk-viii>
 		<!-- See http://wiki.flightgear.org/index.php/TCAS -->
