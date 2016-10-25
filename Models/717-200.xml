@@ -111,7 +111,6 @@
         </offsets>
 </model>
 
-
 <model>
 	<path>Aircraft/717/Models/Effects/tyre-smoke-left.xml</path>
 	<name>tyre-smoke-l</name>
@@ -132,31 +131,78 @@
 	</offsets>
 </model>
 
-	<!-- Engine fire -->
-	<model>
-		<name>Left engine fire</name>
-		<path>Aircraft/717/Models/Effects/enginefire.xml</path>
-		<condition>
-			<property>engines/engine[0]/on-fire</property>
-		</condition>
-		<offsets>
-			<x-m>6.947</x-m>
-			<y-m>-2.915</y-m>
-			<z-m>-1.244</z-m>
-		</offsets>
-	</model>
-	<model>
-		<name>Right engine fire</name>
-		<path>Aircraft/717/Models/Effects/enginefire.xml</path>
-		<condition>
-			<property>engines/engine[1]/on-fire</property>
-		</condition>
-		<offsets>
-			<x-m>6.947</x-m>
-			<y-m>2.915</y-m>
-			<z-m>-1.244</z-m>
-		</offsets>
-	</model>
+	<!-- Engine Fire -->
+
+<model>
+ <path>Aircraft/717-200/Models/Effects/fire.xml</path>
+ <condition>
+	<equals>
+		<property>/controls/fires/fire/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>fire_1</name>
+ <offsets>
+  <x-m>10.746</x-m>
+  <y-m>-2.915</y-m>
+  <z-m>-1.242</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<model>
+ <path>Aircraft/717-200/Models/Effects/fire.xml</path>
+ <condition>
+	<equals>
+		<property>/controls/fires/fire[1]/phase</property>
+		<value>fire</value>
+	</equals>
+ </condition>
+ <name>~fire_1</name>
+ <offsets>
+  <x-m>13.146</x-m>
+  <y-m>2.915</y-m>
+  <z-m>-1.242</z-m>
+  <heading-deg>0</heading-deg>
+ </offsets>
+</model>
+
+<!-- Fuel Dump animations -->
+
+  <!-- Particules OSG -->
+
+  <model>
+    <path>Aircraft/717-200/Models/Effects/fueldump.xml</path>
+   <offsets>
+		<x-m>10.746</x-m>
+                <y-m>-2.915</y-m>
+                <z-m>-1.242</z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+<condition>
+<property>/services/fuel-dump/clean</property>
+</condition>
+  </model>
+
+  <model>
+    <path>Aircraft/717-200/Models/Effects/fueldump.xml</path>
+    <offsets>
+		<x-m>13.146</x-m>
+                <y-m>2.915</y-m>
+                <z-m>-1.242</z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+<condition>
+<property>/services/fuel-dump/clean</property>
+</condition>
+  </model>
+
+
+
 	<!-- ANIMATIONS -->
 	<!-- Engine fan disks -->
 	<animation>
