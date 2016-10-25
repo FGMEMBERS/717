@@ -99,7 +99,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">2</x-offset-m>
-				<y-offset-m archive="y">1</y-offset-m>
+				<y-offset-m archive="y">-2</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
 				<heading-offset-deg>268</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
@@ -113,7 +113,7 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">-2</x-offset-m>
-				<y-offset-m archive="y">1</y-offset-m>
+				<y-offset-m archive="y">-2</y-offset-m>
 				<z-offset-m archive="y">2</z-offset-m>
 				<heading-offset-deg>92</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
@@ -187,7 +187,7 @@
 						</binding>
 					</item>
 					<item>
-						<label>System Failures</label>
+						<label>Failures</label>
 						<binding>
 							<command>nasal</command>
 							<script>
@@ -206,17 +206,6 @@
 		       </script>
 		      </binding>
           </item> 
-             <item>
-		      <label>Fuel Dump</label>
-		      <binding>
-		       <command>nasal</command>
-		       <script>
-			  var mal = gui.Dialog.new("/sim/gui/dialogs/dump/menu/dialog", "Aircraft/717/Dialogs/fueldump-dialog.xml");
-			mal.open();
-		       </script>
-		      </binding>
-		</item>
-
 		</menu>
 		</default>
 		</menubar>
@@ -491,63 +480,6 @@
 					<value>5</value>
 				</binding>
 			</key>
-                        <key n="50">
-  <name>2</name>
-  <desc>Decrease flaps.</desc>
-  <binding>
-   <command>nasal</command>
-   <script>controls.flapsDown(-1)</script>
-  </binding>
-  <mod-up>
-   <binding>
-    <command>nasal</command>
-    <script>controls.flapsDown(0)</script>
-   </binding>
-  </mod-up>
- </key>
-
- <key n="49">
-  <name>1</name>
-  <desc>Increase flaps.</desc>
-  <binding>
-   <command>nasal</command>
-   <script>controls.flapsDown(1)</script>
-  </binding>
-  <mod-up>
-   <binding>
-    <command>nasal</command>
-    <script>controls.flapsDown(0)</script>
-   </binding>
-  </mod-up>
- </key>
- 
-<key n="121">
-  <name>y</name>
-  <desc>toggle yokes</desc>
-  <binding>
-      <command>property-toggle</command>
-      <property>sim/yokes-visible</property>
-  </binding>
-</key>
-
-<key n="263">
-	<name>F7</name>
-	<desc>Show map</desc>
-	<binding>
-	<command>dialog-show</command>
-	<dialog-name>map</dialog-name>
-	</binding>
-</key>
-
-<key n="264">
-	<name>F8</name>
-	<desc>Show router manager</desc>
-	<binding>
-	<command>dialog-show</command>
-	<dialog-name>route-manager</dialog-name>
-	</binding>
-</key>
-
 		</keyboard>
 	</input>
 
@@ -568,9 +500,7 @@
 			<file>Aircraft/717/Nasal/v-speeds.nas</file>
 			<file>Aircraft/717/Nasal/systems.nas</file>
 			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
-                        <file>Aircraft/717/Nasal/engine-fire.nas</file> 
-                        <file>Aircraft/717/Nasal/fuel-dump.nas</file>		
-                </B717>
+		</B717>
 		<itaf>
 			<file>Aircraft/717/Nasal/it-autoflight.nas</file>
 		</itaf>

@@ -744,7 +744,80 @@
   </condition>
   <volume>3</volume>
   </80kt>
-    
+  
+  <v1>
+    <name>v1</name>
+    <mode>once</mode>
+    <path>Aircraft/717/Sounds/avn/v1.wav</path>
+    <type>avionics</type>
+    <condition>
+      <greater-than>
+	<property>/velocities/airspeed-kt</property>
+	<value>125</value>
+      </greater-than>
+      <less-than>
+	<property>/surface/positions/flap-pos-norm</property>
+	<value>0.5</value>
+      </less-than>
+      <not>
+	<property>/surface/positions/left-reverser-pos-norm</property>
+	<property>/surface/positions/right-reverser-pos-norm</property>
+      </not>
+      <property>/gears/gear/wow</property>
+    </condition>
+    <volume>3</volume>
+  </v1>
+  
+  <vr>
+    <name>rotate</name>
+    <mode>once</mode>
+    <path>Aircraft/717/Sounds/avn/vr.wav</path>
+    <type>avionics</type>
+    <condition>
+      <greater-than>
+	<property>/velocities/airspeed-kt</property>
+	<value>133</value>
+      </greater-than>
+      <less-than>
+	<property>/surface/positions/flap-pos-norm</property>
+	<value>0.5</value>
+      </less-than>
+      <not>
+	<property>/surface/positions/left-reverser-pos-norm</property>
+	<property>/surface/positions/right-reverser-pos-norm</property>
+      </not>
+      <or>
+	<property>/gears/gear[0]/wow</property>
+	<property>/gears/gear[1]/wow</property>
+	<property>/gears/gear[2]/wow</property>
+      </or>
+    </condition>
+    <volume>3</volume>
+  </vr>
+  
+  <v2>
+    <name>v2</name>
+    <mode>once</mode>
+    <path>Aircraft/717/Sounds/avn/vr.wav</path>
+    <type>avionics</type>
+    <condition>
+      <greater-than>
+	<property>/velocities/airspeed-kt</property>
+	<value>147</value>
+      </greater-than>
+      <less-than>
+	<property>/surface/positions/flap-pos-norm</property>
+	<value>0.5</value>
+      </less-than>
+      <not>
+	<property>/surface/positions/left-reverser-pos-norm</property>
+	<property>/surface/positions/right-reverser-pos-norm</property>
+	<property>/gears/gear/wow</property>
+      </not>
+    </condition>
+    <volume>3</volume>
+  </v2>
+  
   <config-err>
     <name>config-err</name>
     <mode>once</mode>
@@ -767,7 +840,6 @@
     </condition>
     <volume>3</volume>
   </config-err-->
-
   <announcement>
 			<name>welcome</name>
 			<path>Aircraft/717/Sounds/announce/welcome.wav</path>
