@@ -446,11 +446,11 @@
 		
 		 <key n="268">
               <name>F12</name>
-                 <desc>Pop radio stack</desc>
+                 <desc>Open radio stack</desc>
                  <binding>
-                 <command>nasal</command>
-                 <script>dialogs.radio.toggle()</script>
-                 </binding>
+				<command>dialog-show</command>
+				<dialog-name>radios</dialog-name>
+				</binding>
                  </key>
                  
 	          	<key n="2">
