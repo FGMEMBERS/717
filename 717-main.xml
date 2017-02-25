@@ -33,9 +33,9 @@
 				<name>IT-AUTOFLIGHT</name>
 				<path>Aircraft/717/Systems/it-autoflight.xml</path>
 			</autopilot>
+			<!-- Uses a custom EPR based autothrottle -->
 			<autopilot>
-				<name>IT-AUTOTHRUST</name>
-				<path>Aircraft/717/Systems/it-autothrust.xml</path>
+				<path>Aircraft/717/Systems/custom-autothrust.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autobrake</name>
@@ -134,15 +134,13 @@
 			<max-lb>11700</max-lb>
 			<min-lb>0</min-lb>
 		</weight>
-		<flaps>
-			<setting>0.000</setting>
-			<setting>0.125</setting>
-			<setting>0.200</setting>
-			<setting>0.300</setting>
-			<setting>0.500</setting>
-			<setting>0.700</setting>
-			<setting>1.000</setting>
-		</flaps>
+  <flaps>
+    <setting>0.00</setting>
+    <setting>0.285</setting> <!-- 13 deg (standard takeoff) -->
+    <setting>0.385</setting> <!-- 18 deg (standard takeoff)-->
+    <setting>0.690</setting>   <!-- 25 deg (standard landing) -->
+    <setting>1.00</setting>  <!-- 40 deg (standard landing) -->
+  </flaps>
 
 		<menubar>
 			<default>
@@ -269,6 +267,53 @@
 		</instrument-options>
 		
 	</sim>
+	
+<it-autoflight>
+	<config>
+		<roll>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>0.06</kp>
+			<kp-vloc>0.09</kp-vloc>
+			<ti>10.0</ti>
+			<td>0.00001</td>
+			<kp-cws>0.09</kp-cws>
+		</roll>
+		<pitch>
+			<umin>-0.40</umin>
+			<umax>0.40</umax>
+			<kp>-0.08</kp>
+			<ti>10.0</ti>
+			<td>0.0001</td>
+			<kp-cws>-0.07</kp-cws>
+		</pitch>
+		<cmd>
+			<roll-scale>6.5</roll-scale>
+			<vorloc>-5.0</vorloc>
+			<alt>0.03</alt>
+			<vs>0.07</vs>
+			<fpa>0.30</fpa>
+			<flch>-0.35</flch>
+			<gs>0.11</gs>
+		</cmd>
+		<autoland>
+			<kp-roll>0.10</kp-roll>
+			<kp-pitch>0.07</kp-pitch>
+			<kp-rudder>-0.3</kp-rudder>
+		</autoland>
+	</config>
+	<settings>
+		<enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
+		<flare-altitude>25</flare-altitude> <!-- Autoland Flare AGL -->
+		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
+		<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
+		<retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
+		<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
+		<togaspd>158</togaspd> <!-- V2 + 10kts -->
+		<lat-agl-ft>200</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
+		<reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
+	</settings>
+</it-autoflight>
 
 	<consumables>
 		<fuel>
@@ -295,6 +340,16 @@
 	</autopilot>
 
 	<controls>
+		<engines n="0">
+			<kp>0.03</kp>
+			<kp-spd>0.12</kp-spd>
+			  <engine n="0">
+				<throttle-fdm type="double">0.04</throttle-fdm>
+			  </engine>
+			  <engine n="1">
+				<throttle-fdm type="double">0.04</throttle-fdm>
+			  </engine>
+		</engines>
 		<flight>
 			<speedbrake-lever type="int">0</speedbrake-lever>
 		</flight>
@@ -500,10 +555,14 @@
 			<file>Aircraft/717/Nasal/v-speeds.nas</file>
 			<file>Aircraft/717/Nasal/systems.nas</file>
 			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
+			<file>Aircraft/717/Nasal/PFD_FMA.nas</file>
 		</B717>
 		<itaf>
 			<file>Aircraft/717/Nasal/it-autoflight.nas</file>
 		</itaf>
+		<thrust>
+			<file>Aircraft/717/Nasal/thrust.nas</file>
+		</thrust>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>

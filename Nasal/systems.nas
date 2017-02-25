@@ -45,14 +45,8 @@ setlistener("sim/signals/fdm-initialized", func
  {
  var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
  itaf.ap_init();
- setprop("/it-autoflight/settings/retard-enable", 1);  # Enable or disable automatic autothrottle retard.
- setprop("/it-autoflight/settings/retard-ft", 35);     # Add this to change the retard altitude, default is 50ft AGL.
- setprop("/it-autoflight/settings/land-flap", 0.7);    # Define the landing flaps here. This is needed for autoland, and retard.
- setprop("/it-autoflight/settings/land-enable", 0);    # Enable or disable automatic landing.
- setprop("/engines/engine[0]/epr-limit", 1.47);
- setprop("/engines/engine[1]/epr-limit", 1.47);
- setprop("/it-autoflight/fd_mastersw", 1);
- setprop("/it-autoflight/fd_mastersw2", 1);
+ setprop("/it-autoflight/input/fd1", 1);
+ setprop("/it-autoflight/input/fd2", 1);
  settimer(systems.init, 2);
  }, 0, 0);
 # call init() if the simulator resets
@@ -363,3 +357,73 @@ setlistener("controls/flight/speedbrake-lever", func
   setprop("controls/flight/speedbrake", 1);
   }
  }, 0, 0);
+
+var pos_flaps	= props.globals.getNode("/controls/flight/flaps");
+var pos_slats	= props.globals.getNode("/controls/flight/slats");
+
+# Custom Flap/Slat System by Joshua Davidson (it0uchpods/411)
+# Dial a Flap will be added as soon as I can find enough infos about it
+
+setprop("/controls/flight/flap-lever", 0);
+
+controls.flapsDown = func(step) {
+	if (step == 1) {
+		if (getprop("/controls/flight/flap-lever") == 0) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.000);
+			setprop("/controls/flight/flap-lever", 1);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 1) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.285);
+			setprop("/controls/flight/flap-lever", 2);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 2) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.385);
+			setprop("/controls/flight/flap-lever", 3);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 3) {
+			setprop("/controls/flight/slats", 1.000);
+			setprop("/controls/flight/flaps", 0.700);
+			setprop("/controls/flight/flap-lever", 4);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 4) {
+			setprop("/controls/flight/slats", 1.000);
+			setprop("/controls/flight/flaps", 1.000);
+			setprop("/controls/flight/flap-lever", 5);
+			return;
+		}
+	} else if (step == -1) {
+		if (getprop("/controls/flight/flap-lever") == 5) {
+			setprop("/controls/flight/slats", 1.000);
+			setprop("/controls/flight/flaps", 0.700);
+			setprop("/controls/flight/flap-lever", 4);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 4) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.385);
+			setprop("/controls/flight/flap-lever", 3);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 3) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.285);
+			setprop("/controls/flight/flap-lever", 2);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 2) {
+			setprop("/controls/flight/slats", 0.750);
+			setprop("/controls/flight/flaps", 0.000);
+			setprop("/controls/flight/flap-lever", 1);
+			return;
+		} else if (getprop("/controls/flight/flap-lever") == 1) {
+			setprop("/controls/flight/slats", 0.000);
+			setprop("/controls/flight/flaps", 0.000);
+			setprop("/controls/flight/flap-lever", 0);
+			return;
+		}
+	} else {
+		return 0;
+	}
+}
+ 
+ 

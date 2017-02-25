@@ -20,7 +20,7 @@
             </less-than>
         </condition>
     </animation>
-
+	
 			<animation>
 		<type>select</type>
 		<object-name>epr.1</object-name>
@@ -36,7 +36,7 @@
 		<condition>
 <greater-than>
     <property>engines/engine[0]/n2</property>
-    <value>1</value>
+    <value>5</value>
 </greater-than>
 </condition>
 	</animation>
@@ -64,7 +64,7 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>limit1</object-name>
-    <property>/engines/engine[0]/epr-limit</property>
+    <property>/controls/engines/eprlim</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
 <entry><ind>1.49</ind><dep>150</dep></entry>
@@ -84,10 +84,10 @@
   	  <animation>
     <type>rotate</type>
 		<object-name>throttle.position.1</object-name>
-        <property>controls/engines/engine/throttle-fdm</property>
+        <property>controls/engines/engine/throttle-lever</property>
 <interpolation>
 <entry><ind>0</ind><dep>81</dep></entry>
-<entry><ind>1</ind><dep>150</dep></entry>
+<entry><ind>1</ind><dep>125</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -176,7 +176,7 @@
 		<condition>
 <greater-than>
     <property>engines/engine[1]/n2</property>
-    <value>1</value>
+    <value>5</value>
 </greater-than>
 </condition>
 	</animation>
@@ -204,7 +204,7 @@
 	  <animation>
     <type>rotate</type>
 		<object-name>limit2</object-name>
-    <property>/engines/engine[1]/epr-limit</property>
+    <property>/controls/engines/eprlim</property>
 <interpolation>
 <entry><ind>1</ind><dep>79</dep></entry>
 <entry><ind>1.49</ind><dep>150</dep></entry>
@@ -224,10 +224,10 @@
     	  <animation>
     <type>rotate</type>
 		<object-name>throttle.position.2</object-name>
-        <property>controls/engines/engine[1]/throttle-fdm</property>
+        <property>controls/engines/engine[1]/throttle-lever</property>
 <interpolation>
 <entry><ind>0</ind><dep>81</dep></entry>
-<entry><ind>1</ind><dep>150</dep></entry>
+<entry><ind>1</ind><dep>125</dep></entry>
 </interpolation>
     <center>
       <x-m></x-m>
@@ -345,7 +345,7 @@
 		<alignment>center-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
-		<format type="string">TGT</format>
+		<format type="string">EGT</format>
 		<property>autopilot/serviceable</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.005</character-size>
@@ -431,7 +431,7 @@
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">%1.2f T/O LIM</format>
-        <property>engines/engine[1]/epr-limit</property>
+		<property>/controls/engines/eprlim</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.0065</character-size>
         <character-aspect-ratio type="double">1.2</character-aspect-ratio>
@@ -839,11 +839,11 @@
     <condition>
     <and>
     <greater-than>
-		<property>engines/engine[0]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm</property>
 		<value>0.01</value>
 		</greater-than>
     <less-than>
-		<property>engines/engine[0]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm</property>
 		<value>0.99</value>
 		</less-than>
 		</and>
@@ -855,7 +855,7 @@
 		<object-name>REV_1</object-name>
     <condition>
     <greater-than>
-		<property>engines/engine[0]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm</property>
 		<value>0.99</value>
 		</greater-than>
     </condition>
@@ -867,11 +867,11 @@
     <condition>
     <and>
     <greater-than>
-		<property>engines/engine[1]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm[1]</property>
 		<value>0.01</value>
 		</greater-than>
     <less-than>
-		<property>engines/engine[1]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm[1]</property>
 		<value>0.99</value>
 		</less-than>
 		</and>
@@ -883,7 +883,7 @@
 		<object-name>REV_2</object-name>
     <condition>
     <greater-than>
-		<property>engines/engine[1]/reverser-pos-norm</property>
+		<property>surface-positions/reverser-norm[1]</property>
 		<value>0.99</value>
 		</greater-than>
     </condition>
