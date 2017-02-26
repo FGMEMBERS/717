@@ -1,6 +1,6 @@
 # IT AUTOFLIGHT System Controller
 # Joshua Davidson (it0uchpods)
-# V3.0.0 Build 141
+# V3.0.0 Build 132
 # This program is 100% GPL!
 
 print("IT-AUTOFLIGHT: Please Wait!");
@@ -35,7 +35,6 @@ var ap_init = func {
 	setprop("/it-autoflight/output/retard", 0);
 	setprop("/it-autoflight/output/lat", 5);
 	setprop("/it-autoflight/output/vert", 7);
-	setprop("/it-autoflight/output/prof-vert", 0);
 	setprop("/it-autoflight/settings/min-pitch", -8);
 	setprop("/it-autoflight/settings/max-pitch", 8);
 	setprop("/it-autoflight/settings/use-nav2-radio", 0);
@@ -54,6 +53,7 @@ var ap_init = func {
 	setprop("/it-autoflight/input/spd-kts", 200);
 	setprop("/it-autoflight/input/spd-mach", 0.68);
 	thrustmode();
+	update_arms();
 	print("IT-AUTOFLIGHT: Done!");
 }
 
@@ -184,7 +184,8 @@ var lateral = func {
 	} else if (latset == 2) {
 		setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 		setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
-		loc_armt.start();
+		setprop("/it-autoflight/output/loc-armed", 1);
+		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/mode/arm", "LOC");
 	} else if (latset == 3) {
 		alandt.stop();
@@ -235,7 +236,6 @@ var vertical = func {
 	if (vertset == 0) {
 		alandt.stop();
 		alandt1.stop();
-		prof_maint.stop();
 		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/output/vert", 0);
 		setprop("/it-autoflight/mode/vert", "ALT HLD");
@@ -251,12 +251,11 @@ var vertical = func {
 	} else if (vertset == 1) {
 		alandt.stop();
 		alandt1.stop();
-		prof_maint.stop();
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var vsnow = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
 		setprop("/it-autoflight/input/vs", vsnow);
+		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/output/vert", 1);
 		setprop("/it-autoflight/mode/vert", "V/S");
 		if (getprop("/it-autoflight/output/loc-armed")) {
@@ -276,13 +275,11 @@ var vertical = func {
 		setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
 		setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
 		setprop("/it-autoflight/output/appr-armed", 1);
-		appr_armt.start();
 		setprop("/it-autoflight/mode/arm", "ILS");
 		setprop("/it-autoflight/autoland/target-vs", "-650");
 	} else if (vertset == 3) {
 		alandt.stop();
 		alandt1.stop();
-		prof_maint.stop();
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 		var alt = getprop("/it-autoflight/internal/alt");
 		var dif = calt - alt;
@@ -299,8 +296,6 @@ var vertical = func {
 	} else if (vertset == 4) {
 		alandt.stop();
 		alandt1.stop();
-		prof_maint.stop();
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
@@ -319,16 +314,15 @@ var vertical = func {
 	} else if (vertset == 5) {
 		alandt.stop();
 		alandt1.stop();
-		prof_maint.stop();
 		fpa_calct.start();
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var fpanow = (int(10*getprop("/it-autoflight/internal/fpa")))*0.1;
 		setprop("/it-autoflight/input/fpa", fpanow);
+		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/output/vert", 5);
 		setprop("/it-autoflight/mode/vert", "FPA");
-		if (getprop("/it-autoflight/output/loc-armed") == 1) {
+		if (getprop("/it-autoflight/output/loc-armed")) {
 			setprop("/it-autoflight/mode/arm", "LOC");
 		} else {
 			setprop("/it-autoflight/mode/arm", " ");
@@ -343,28 +337,13 @@ var vertical = func {
 		alandt1.start();
 		setprop("/it-autoflight/autoland/target-vs", "-650");
 	} else if (vertset == 7) {
-		alandt.stop();
-		alandt1.stop();
 		setprop("/it-autoflight/output/vert", 7);
 		setprop("/it-autoflight/mode/arm", " ");
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		prof_maint.stop();
 		thrustmodet.start();
-	} else if (vertset == 8) {
 		alandt.stop();
 		alandt1.stop();
-		setprop("/it-autoflight/output/appr-armed", 0);
-		setprop("/it-autoflight/output/vert", 8);
-		var altinput = getprop("/it-autoflight/input/alt");
-		setprop("/it-autoflight/internal/alt", altinput);
-		if (getprop("/it-autoflight/output/loc-armed")) {
-			setprop("/it-autoflight/mode/arm", "LOC");
-		} else {
-			setprop("/it-autoflight/mode/arm", " ");
-		}
-		prof_maint.start();
-		thrustmodet.start();
 	}
 }
 
@@ -480,8 +459,6 @@ setlistener("/it-autoflight/output/vert", func {
 	} else if (vertm == 7) {
 		altcaptt.start();
 		fpa_calct.stop();
-	} else if (vertm == 8) {
-		fpa_calct.stop();
 	} else {
 		altcaptt.stop();
 		fpa_calct.stop();
@@ -543,15 +520,6 @@ var minmax = func {
 		}
 		minmaxtimer.stop();
 	}
-}
-
-# Profile Climb/Descend
-var prof_main = func {
-	prof_loop();
-}
-
-var prof_loop = func {
-	
 }
 
 # Thrust Mode Selector
@@ -631,29 +599,43 @@ var atoffchk = func{
 }
 
 # LOC and G/S arming
+var update_arms = func {
+	update_locarmelec();
+	update_apparmelec();
+	settimer(update_arms, 0.5);
+}
 
-var loc_arm = func {
-	if (getprop("/it-autoflight/output/loc-armed") == 1) {
-		var locdefl = getprop("instrumentation/nav[0]/heading-needle-deflection-norm");
-		var locdefl_b = getprop("instrumentation/nav[1]/heading-needle-deflection-norm");
-		if ((locdefl < 0.9233) and (getprop("instrumentation/nav[0]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
-			loc_active();
-		} else if ((locdefl_b < 0.9233) and (getprop("instrumentation/nav[1]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
-			loc_active();
-		} else {
-			return 0;
-		}
-	} else if (getprop("/it-autoflight/output/loc-armed") == 0) {
-		loc_armt.stop();
-		if (getprop("/it-autoflight/output/appr-armed") == 1) {
-			# Do nothing because G/S is armed
-		} else {
-			setprop("/it-autoflight/mode/arm", " ");
-		}
+var update_locarmelec = func {
+	var loca = getprop("/it-autoflight/output/loc-armed");
+	if (loca) {
+		locarmcheck();
+	} else {
+		return 0;
 	}
 }
 
-var loc_active = func {
+var update_apparmelec = func {
+	var appra = getprop("/it-autoflight/output/appr-armed");
+	if (appra) {
+		apparmcheck();
+	} else {
+		return 0;
+	}
+}
+
+var locarmcheck = func {
+	var locdefl = getprop("instrumentation/nav[0]/heading-needle-deflection-norm");
+	var locdefl_b = getprop("instrumentation/nav[1]/heading-needle-deflection-norm");
+	if ((locdefl < 0.9233) and (getprop("instrumentation/nav[0]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
+		make_loc_active();
+	} else if ((locdefl_b < 0.9233) and (getprop("instrumentation/nav[1]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
+		make_loc_active();
+	} else {
+		return 0;
+	}
+}
+
+var make_loc_active = func {
 	setprop("/it-autoflight/output/loc-armed", 0);
 	setprop("/it-autoflight/output/lat", 2);
 	setprop("/it-autoflight/mode/lat", "LOC");
@@ -664,33 +646,27 @@ var loc_active = func {
 	}
 }
 
-var appr_arm = func {
-	if (getprop("/it-autoflight/output/appr-armed") == 1) {
-		var signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
-		var signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
-		if ((signal <= -0.000000001) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
-			appr_active();
-		} else if ((signal_b <= -0.000000001) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
-			appr_active();
-		} else {
-			return 0;
-		}
-	} else if (getprop("/it-autoflight/output/appr-armed") == 0) {
-		appr_armt.stop();
-		setprop("/it-autoflight/mode/arm", " ");
+var apparmcheck = func {
+	var signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
+	var signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
+	if ((signal <= -0.000000001) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
+		make_appr_active();
+	} else if ((signal_b <= -0.000000001) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
+		make_appr_active();
+	} else {
+		return 0;
 	}
 }
 
-var appr_active = func {
+var make_appr_active = func {
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);
 	setprop("/it-autoflight/mode/vert", "G/S");
 	setprop("/it-autoflight/mode/arm", " ");
-	if (getprop("/it-autoflight/settings/land-enable") == 1) {
+	if (getprop("/it-autoflight/settings/land-enable") == 1){
 		alandt.start();
 	}
 	thrustmode();
-	prof_maint.stop();
 }
 
 # Autoland Stage 1 Logic (Land)
@@ -771,8 +747,6 @@ setlistener("/it-autoflight/input/hdg", func {
 var altcaptt = maketimer(0.5, altcapt);
 var thrustmodet = maketimer(0.5, thrustmode);
 var minmaxtimer = maketimer(0.5, minmax);
-var loc_armt = maketimer(0.5, loc_arm);
-var appr_armt = maketimer(0.5, appr_arm);
 var retardt = maketimer(0.5, retardchk);
 var atofft = maketimer(0.5, atoffchk);
 var alandt = maketimer(0.5, aland);
@@ -783,4 +757,3 @@ var reduct = maketimer(0.5, toga_reduc);
 var latarmt = maketimer(0.5, latarms);
 var fpa_calct = maketimer(0.1, fpa_calc);
 var lnavwptt = maketimer(1, lnavwpt);
-var prof_maint = maketimer(0.5, prof_main);

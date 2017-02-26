@@ -956,8 +956,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-20.9</min>
-					<max>20.9</max>
+					<min>-9.9</min>
+					<max>9.9</max>
 					<step>-1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -971,8 +971,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-20.9</min>
-					<max>20.9</max>
+					<min>-9.9</min>
+					<max>9.9</max>
 					<step>-0.1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -998,8 +998,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-20.9</min>
-					<max>20.9</max>
+					<min>-9.9</min>
+					<max>9.9</max>
 					<step>0.1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -1014,8 +1014,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-20.9</min>
-					<max>20.9</max>
+					<min>-9.9</min>
+					<max>9.9</max>
 					<step>1</step>
 					<wrap>false</wrap>
 				</binding>
