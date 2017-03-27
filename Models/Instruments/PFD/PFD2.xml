@@ -166,8 +166,8 @@
 		<value>0</value>
 		</equals>
 		<equals>
-		<property>/it-autoflight/output/vert</property>		
-		<value>4</value>
+		<property>/it-autoflight/mode/thr</property>		
+		<value> PITCH</value>
 		</equals>
 		</and>
         </condition>
@@ -183,8 +183,8 @@
 		<value>0</value>
 		</equals>
 		<equals>
-		<property>/it-autoflight/output/vert</property>		
-		<value>4</value>
+		<property>/it-autoflight/mode/thr</property>		
+		<value> PITCH</value>
 		</equals>
 		</and>
         </condition>
@@ -205,8 +205,8 @@
 		<value>0</value>
 		</equals>
 		<not-equals>
-		<property>/it-autoflight/output/vert</property>		
-		<value>4</value>
+		<property>/it-autoflight/mode/thr</property>		
+		<value> PITCH</value>
 		</not-equals>
 		</and>
         </condition>
@@ -222,8 +222,8 @@
 		<value>0</value>
 		</equals>
 		<not-equals>
-		<property>/it-autoflight/output/vert</property>		
-		<value>4</value>
+		<property>/it-autoflight/mode/thr</property>		
+		<value> PITCH</value>
 		</not-equals>
 		</and>
         </condition>

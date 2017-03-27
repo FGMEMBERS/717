@@ -273,27 +273,28 @@
 		<roll>
 			<umin>-0.50</umin>
 			<umax>0.50</umax>
-			<kp>0.06</kp>
+			<kp>0.05</kp>
 			<kp-vloc>0.09</kp-vloc>
 			<ti>10.0</ti>
 			<td>0.00001</td>
 			<kp-cws>0.09</kp-cws>
 		</roll>
 		<pitch>
-			<umin>-0.40</umin>
-			<umax>0.40</umax>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
 			<kp>-0.08</kp>
 			<ti>10.0</ti>
 			<td>0.0001</td>
 			<kp-cws>-0.07</kp-cws>
 		</pitch>
 		<cmd>
-			<roll-scale>6.5</roll-scale>
+			<roll-kp>-1.9</roll-kp>
+			<roll-scale>1.5</roll-scale>
 			<vorloc>-5.0</vorloc>
 			<alt>0.03</alt>
-			<vs>0.07</vs>
+			<vs>0.10</vs>
 			<fpa>0.30</fpa>
-			<flch>-0.35</flch>
+			<flch>-4.0</flch>
 			<gs>0.11</gs>
 		</cmd>
 		<autoland>
@@ -309,7 +310,7 @@
 		<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
 		<retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
 		<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-		<togaspd>158</togaspd> <!-- V2 + 10kts -->
+		<togaspd>168</togaspd> <!-- V2 + 10kts -->
 		<lat-agl-ft>200</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
 		<reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
 	</settings>

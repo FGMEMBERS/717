@@ -13,8 +13,8 @@
 
 <airplane mass="69830">
 	<approach speed="132" aoa="5.0" fuel="0.2">
-		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.6" />
-		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.6" />
+		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.4" />
+		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.4" />
 		<control-setting axis="/controls/flight/flaps" value="1.0" />
 		<control-setting axis="/controls/gear/gear-down" value="1.0" />
 		<solve-weight idx="0" weight="600" />
