@@ -289,7 +289,7 @@
 		</pitch>
 		<cmd>
 			<roll-kp>-1.9</roll-kp>
-			<roll-scale>1.5</roll-scale>
+			<roll-scale>1.0</roll-scale>
 			<vorloc>-5.0</vorloc>
 			<alt>0.03</alt>
 			<vs>0.10</vs>
