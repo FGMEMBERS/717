@@ -634,7 +634,7 @@
 	</text>
 	
 			<text>
-		<name>D/L_1</name>
+		<name>U/L_1</name>
 		<offsets>
 			<x-m>0.0013</x-m>
 			<y-m>-0.032</y-m>
@@ -643,7 +643,7 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
-		<format type="string">D/L</format>
+		<format type="string">U/L</format>
 		<property>autopilot/serviceable</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
@@ -668,7 +668,7 @@
 	</text>
 	
 				<text>
-		<name>D/L_2</name>
+		<name>U/L_2</name>
 		<offsets>
 			<x-m>0.0013</x-m>
 			<y-m>0.048</y-m>
@@ -677,7 +677,7 @@
 		<alignment>right-center</alignment>
 		<axis-alignment>yz-plane</axis-alignment>
 		<type type="string">text-value</type>
-		<format type="string">D/L</format>
+		<format type="string">U/L</format>
 		<property>autopilot/serviceable</property>
 		<font>helvetica_bold.txf</font>
 		<character-size>0.007</character-size>
@@ -835,7 +835,7 @@
 	
     <animation>
 		<type>select</type>
-		<object-name>D/L_1</object-name>
+		<object-name>U/L_1</object-name>
     <condition>
     <and>
     <greater-than>
@@ -863,7 +863,7 @@
 	
 	    <animation>
 		<type>select</type>
-		<object-name>D/L_2</object-name>
+		<object-name>U/L_2</object-name>
     <condition>
     <and>
     <greater-than>
@@ -923,8 +923,8 @@
 	
 	        <animation>
         <type>material</type><!--yellow-->
-        <object-name>D/L_1</object-name>
-        <object-name>D/L_2</object-name>
+        <object-name>U/L_1</object-name>
+        <object-name>U/L_2</object-name>
 		<object-name>CONFIG</object-name>
         <emission>
             <red>1</red>
