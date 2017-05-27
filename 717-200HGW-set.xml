@@ -5,6 +5,20 @@
 	<sim>
 		<description>Boeing 717-200 (High Gross Weight)</description>
 		<aero>717-200HGW</aero>
+		<variant-of>717-200</variant-of>
+		<tags>
+			<tag>boeing</tag>
+			<tag>low-wing</tag>
+			<tag>tricycle</tag>
+			<tag>retractable-gear</tag>
+			<tag>twin-engine</tag>
+			<tag>jet</tag>
+			<tag>transport</tag>
+			<tag>t-tail</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>ifr</tag>
+		</tags>
 	</sim>
 
 	<instrumentation>
