@@ -277,7 +277,6 @@
 			<kp-vloc>0.09</kp-vloc>
 			<ti>10.0</ti>
 			<td>0.00001</td>
-			<kp-cws>0.09</kp-cws>
 		</roll>
 		<pitch>
 			<umin>-0.50</umin>
@@ -285,7 +284,6 @@
 			<kp>-0.08</kp>
 			<ti>10.0</ti>
 			<td>0.0001</td>
-			<kp-cws>-0.07</kp-cws>
 		</pitch>
 		<cmd>
 			<roll-kp>-1.9</roll-kp>
@@ -300,7 +298,6 @@
 	</config>
 	<settings>
 		<default-bank-limit>30</default-bank-limit> <!-- Set the Default Bank Limit -->
-		<enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
 		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
 		<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
 		<retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
