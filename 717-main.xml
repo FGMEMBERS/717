@@ -2,7 +2,7 @@
 
 <PropertyList>
 	<sim>
-		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (it0uchpods/411) (Cockpit/Instruments/GPWS/Systems/Autoflight), Gabriel Hernandez (Effects/Systems Failures/Fix Sounds etc)</author>
+		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (Instruments/Systems/Autoflight), Gabriel Hernandez (Effects/Systems Failures/Fix Sounds etc)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
