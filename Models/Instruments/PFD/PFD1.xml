@@ -1182,9 +1182,9 @@
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
         <format type="string">%0.0f</format>
-        <offset>3.1</offset> <!--avoid some quirky "-0" indications-->
+        <offset>0.1</offset> <!--avoid some quirky "-0" indications-->
         <truncate type="bool">true</truncate>
-        <property>position/altitude-agl-ft</property>
+        <property>position/gear-agl-ft</property>
         <font>helvetica_bold.txf</font>
         <character-size>0.006</character-size>
         <character-aspect-ratio type="double">1.4</character-aspect-ratio>

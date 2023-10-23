@@ -12,7 +12,7 @@
 -->
 
 <airplane mass="69830">
-	<approach speed="132" aoa="5.0" fuel="0.2">
+	<approach speed="120" aoa="6.0" fuel="0.2">
 		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.4" />
 		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.4" />
 		<control-setting axis="/controls/flight/flaps" value="1.0" />
@@ -64,7 +64,7 @@
 
 	<!-- ELEVATORS -->
 	<hstab x="-15.729" y="0.22" z="3.694" length="6.5" chord="3.602" twist="-1.0" taper="0.4" sweep="25.0" idrag="1.0" camber="0.09">
-		<stall aoa="15" width="4" peak="1.5"/>
+		<stall aoa="20" width="4" peak="1.5"/>
 		<flap0 start="0" end="1" lift="1.3" drag="1.3"/>
 		<control-input axis="/controls/flight/elevator" control="FLAP0" />
 		<control-input axis="/controls/flight/elevator-trim" control="FLAP0" />

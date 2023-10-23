@@ -335,13 +335,13 @@
 
 	<controls>
 		<engines n="0">
-			<kp>0.03</kp>
-			<kp-spd>0.12</kp-spd>
+			<kp>0.02</kp>
+			<kp-spd>0.3</kp-spd>
 			  <engine n="0">
-				<throttle-fdm type="double">0.04</throttle-fdm>
+				<throttle-fdm type="double">0</throttle-fdm>
 			  </engine>
 			  <engine n="1">
-				<throttle-fdm type="double">0.04</throttle-fdm>
+				<throttle-fdm type="double">0</throttle-fdm>
 			  </engine>
 		</engines>
 		<flight>
