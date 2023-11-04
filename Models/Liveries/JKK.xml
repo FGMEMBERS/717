@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>SpainAir</name>
-				<texture>JKK.png</texture>
+				<texture>Liveries/JKK.png</texture>
 			</livery>
 		</model>
 	</sim>
