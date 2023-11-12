@@ -254,23 +254,3 @@ setlistener("sim/model/start-idling", func(idle)
   shutdown();
   }
  }, 0, 0);
- 
-var throttle0 = props.globals.getNode("controls/engines/engine[0]/throttle");
-var throttle0_fdm = props.globals.getNode("controls/engines/engine[0]/throttle-fdm");
-var throttle1 = props.globals.getNode("controls/engines/engine[1]/throttle");
-var throttle1_fdm = props.globals.getNode("controls/engines/engine[1]/throttle-fdm");
-
-setlistener("controls/engines/engine[0]/throttle", func {
-	throttle0_fdm.setValue(throttle0.getValue()*0.96+0.04);
-});
-setlistener("controls/engines/engine[1]/throttle", func {
-	throttle1_fdm.setValue(throttle1.getValue()*0.96+0.04);
-});
- 
-  setlistener("engines/engine[0]/epr-actual", func {
-    setprop("engines/engine[0]/epr-actualx100", (getprop("engines/engine[0]/epr-actual") * 100));
-  });
-  setlistener("engines/engine[1]/epr-actual", func {
-  	setprop("engines/engine[1]/epr-actualx100", (getprop("engines/engine[1]/epr-actual") * 100));
-  });
-  

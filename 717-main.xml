@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <PropertyList>
+
 	<sim>
-		<author>Gary Neely (3D/Cockpit Shell), Skyop (3D/FDM/Systems, etc.), Joshua Davidson (Instruments/Systems/Autoflight), Gabriel Hernandez (Effects/Systems Failures/Fix Sounds etc)</author>
+		<author>Gary Neely (3d, cockpit shell), Skyop (3d, FDM, systems, etc.)</author>
 		<status>beta</status>
 		<flight-model>yasim</flight-model>
 
@@ -11,6 +12,14 @@
 			<livery>
 				<file>TRS</file>
 			</livery>
+			<B717>
+				<heading-bug-pfd-deg type="double">0</heading-bug-pfd-deg>
+				<heading-bug-deg type="double">0</heading-bug-deg>
+				<nav1-bug-deg type="double">0</nav1-bug-deg>
+				<nav2-bug-deg type="double">0</nav2-bug-deg>
+				<adf-bug-deg type="double">0</adf-bug-deg>
+				<unimplemented-controls type="bool">false</unimplemented-controls>
+			</B717>
 			<pushback>
 				<kp type="double">-0.05</kp>
 				<ti type="double">10</ti>
@@ -19,9 +28,7 @@
 		</model>
 
 		<startup>
-		  <splash-texture>Aircraft/717/splash/splash-1.png</splash-texture>
-		  <splash-texture>Aircraft/717/splash/splash-2.png</splash-texture>
-		  <splash-texture>Aircraft/717/splash/splash-3.png</splash-texture>
+			<splash-texture>Aircraft/717/splash.png</splash-texture>
 		</startup>
 
 		<systems>
@@ -30,12 +37,12 @@
 				<path></path>
 			</electrical>
 			<autopilot>
-				<name>IT-AUTOFLIGHT</name>
-				<path>Aircraft/717/Systems/it-autoflight.xml</path>
+				<name>Autopilot</name>
+				<path>Aircraft/717/Systems/717-autopilot.xml</path>
 			</autopilot>
-			<!-- Uses a custom EPR based autothrottle -->
 			<autopilot>
-				<path>Aircraft/717/Systems/custom-autothrust.xml</path>
+				<name>Autopilot helpers</name>
+				<path>Aircraft/Generic/generic-autopilot-helper.xml</path>
 			</autopilot>
 			<autopilot>
 				<name>Autobrake</name>
@@ -45,13 +52,6 @@
 				<name>Pushback</name>
 				<path>Aircraft/717/Systems/pushback.xml</path>
 			</autopilot>
-			<autopilot>
-				<name>Custom Engine Values</name>
-				<path>Aircraft/717/Systems/engine-timing.xml</path>
-			</autopilot>
-            <property-rule n="101">
-                <path>Aircraft/717/Systems/PFD.xml</path>
-            </property-rule>
 		</systems>
 
 		<instrumentation>
@@ -69,14 +69,15 @@
 			</config>
 		</view>
 		<view n="100">
-			<name>Copilot View</name>
+			<name>Wing View</name>
 			<type>lookfrom</type>
-			<internal archive="y">true</internal>
+			<internal archive="y">false</internal>
 			<config>
 				<from-model type="bool">true</from-model>
-				<x-offset-m archive="y">0.5</x-offset-m>
-				<y-offset-m archive="y">-0.7</y-offset-m>
-				<z-offset-m archive="y">-16</z-offset-m>
+				<x-offset-m archive="y">2</x-offset-m>
+				<y-offset-m archive="y">-1</y-offset-m>
+				<z-offset-m archive="y">2</z-offset-m>
+				<heading-offset-deg>270</heading-offset-deg>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
@@ -93,33 +94,17 @@
 			</config>
 		</view>
 		<view n="102">
-			<name>Wing Right</name>
+			<name>Copilot View</name>
 			<type>lookfrom</type>
 			<internal archive="y">true</internal>
 			<config>
 				<from-model type="bool">true</from-model>
-				<x-offset-m archive="y">2</x-offset-m>
-				<y-offset-m archive="y">-2</y-offset-m>
-				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>268</heading-offset-deg>
+				<x-offset-m archive="y">0.5</x-offset-m>
+				<y-offset-m archive="y">-0.7</y-offset-m>
+				<z-offset-m archive="y">-16</z-offset-m>
 				<pitch-offset-deg>0</pitch-offset-deg>
 			</config>
 		</view>
-		
-		<view n="103">
-			<name>Wing Left</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<x-offset-m archive="y">-2</x-offset-m>
-				<y-offset-m archive="y">-2</y-offset-m>
-				<z-offset-m archive="y">2</z-offset-m>
-				<heading-offset-deg>92</heading-offset-deg>
-				<pitch-offset-deg>0</pitch-offset-deg>
-			</config>
-		</view>
-		
 		<chase-distance-m>-45</chase-distance-m>
 
 		<weight n="0">
@@ -134,16 +119,28 @@
 			<max-lb>11700</max-lb>
 			<min-lb>0</min-lb>
 		</weight>
-  <flaps>
-    <setting>0.00</setting>
-    <setting>0.285</setting> <!-- 13 deg (standard takeoff) -->
-    <setting>0.385</setting> <!-- 18 deg (standard takeoff)-->
-    <setting>0.690</setting>   <!-- 25 deg (standard landing) -->
-    <setting>1.00</setting>  <!-- 40 deg (standard landing) -->
-  </flaps>
+		<flaps>
+			<setting>0.000</setting>
+			<setting>0.125</setting>
+			<setting>0.250</setting>
+			<setting>1.000</setting>
+		</flaps>
 
 		<menubar>
 			<default>
+				<menu n="3">
+					<item>
+						<name>autopilot</name>
+						<label>Autopilot Settings</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/717/Systems/autopilot-dlg.xml");
+							 autopilot.open();
+							</script>
+						</binding>
+					</item>
+				</menu>
 				<menu n="100">
 					<label>Boeing 717-200</label>
 					<enabled type="bool">true</enabled>
@@ -194,23 +191,15 @@
 							</script>
 						</binding>
 					</item>
-					<item>
-		      <label>Announcements</label>
-		      <binding>
-					<command>nasal</command>
-					<script>
-						var mal = gui.Dialog.new("/sim/gui/dialogs/announcements/menu/dialog", "Aircraft/717/systems/announcements-dialog.xml");
-						mal.open();
-		       </script>
-		      </binding>
-          </item> 
-		</menu>
-		</default>
+				</menu>
+			</default>
 		</menubar>
-         	<sound>
-			<path>Aircraft/717/Sounds/717-sound.xml</path>
-			<no-smoking-sign type="bool">false</no-smoking-sign>
-			<seatbelt-sign type="bool">false</seatbelt-sign>
+
+		<sound>
+			<path>Aircraft/717/717-sound.xml</path>
+
+                        <no-smoking-sign type="bool">false</no-smoking-sign>
+                        <seatbelt-sign type="bool">false</seatbelt-sign>
 		</sound>
 
 		<help>
@@ -226,6 +215,18 @@
 			<key>
 				<name>=</name>
 				<desc>cycle autobrake setting</desc>
+			</key>
+			<key>
+				<name>Ctrl-z</name>
+				<desc>toggle autopilot master arm switch</desc>
+			</key>
+			<key>
+				<name>Ctrl-y</name>
+				<desc>toggle autothrottle switch</desc>
+			</key>
+			<key>
+				<name>Ctrl-o</name>
+				<desc>toggle autothrottle TO/GA hold</desc>
 			</key>
 			<line>Autobrake help:</line>
 			<line>-------------------------</line>
@@ -243,71 +244,11 @@
 			<line>Down.......speedbrakes down (off)</line>
 			<line>Arm........deploy speedbrakes on touchdown</line>
 			<line>Up.........deploy speedbrakes</line>
+			<line />
+			<line>Autopilot key commands listed here apply to the 717 only.</line>
+			<line>For a full list of autopilot key commands not specific to this aircraft, check the documentation included with FlightGear.</line>
 		</help>
-		
-  <multiplay>
-    <generic>
-      <float n="0" alias="/engines/engine[0]/reverser-pos-norm"/>
-      <float n="1" alias="/engines/engine[1]/reverser-pos-norm"/>
-      <float n="2" alias="/controls/flight/aileron"/>
-      <float n="3" alias="/controls/flight/elevator"/>
-      <float n="4" alias="/controls/flight/elevator-trim"/>
-      <int n="0" alias="/systems/electrical/outputs/strobe"/>
-      <int n="1" alias="/systems/electrical/outputs/beacon"/>
-      <int n="2" alias="/systems/electrical/outputs/taxi-lights"/>
-      <int n="3" alias="/systems/electrical/outputs/landing-light[0]"/>
-      <int n="4" alias="/systems/electrical/outputs/landing-light[1]"/>          
-      <int n="5" alias="/systems/electrical/outputs/recog-lights"/>
-      <int n="6" alias="/systems/electrical/outputs/nav-lights"/>
-    </generic>
-  </multiplay>
-		
-		<instrument-options>
-			<canvas-popup-enable type="bool">true</canvas-popup-enable>
-		</instrument-options>
-		
 	</sim>
-	
-<it-autoflight>
-	<config>
-		<roll>
-			<umin>-0.50</umin>
-			<umax>0.50</umax>
-			<kp>0.05</kp>
-			<kp-vloc>0.09</kp-vloc>
-			<ti>10.0</ti>
-			<td>0.00001</td>
-		</roll>
-		<pitch>
-			<umin>-0.50</umin>
-			<umax>0.50</umax>
-			<kp>-0.08</kp>
-			<ti>10.0</ti>
-			<td>0.0001</td>
-		</pitch>
-		<cmd>
-			<roll-kp>-1.9</roll-kp>
-			<roll-scale>1.0</roll-scale>
-			<vorloc>-3.0</vorloc>
-			<vs>0.01</vs>
-		</cmd>
-		<autoland>
-			<kp-pitch>0.05</kp-pitch>
-			<kp-rudder>-0.1</kp-rudder>
-		</autoland>
-	</config>
-	<settings>
-		<auto-bank-max-deg>25</auto-bank-max-deg> <!-- Maximum Auto Bank Limit -->
-		<land-enable>1</land-enable> <!-- Enable/Disable Autoland -->
-		<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
-		<retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
-		<retard-enable>1</retard-enable> <!-- AGL to Thrust Retard -->
-		<togaspd>164</togaspd> <!-- V2 + 10kts -->
-		<lat-agl-ft>200</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
-		<reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
-		<autoland-without-ap>0</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
-	</settings>
-</it-autoflight>
 
 	<consumables>
 		<fuel>
@@ -331,19 +272,27 @@
 			</config>
 			<step type="int">-1</step>
 		</autobrake>
+
+		<settings>
+			<autothrottle type="bool">false</autothrottle>
+			<engaged type="bool">false</engaged>
+			<altitude>altitude-hold</altitude>
+			<heading>dg-heading-hold</heading>
+			<speed-mode>knots</speed-mode>
+			<heading-mode>magnetic</heading-mode>
+			<heading-bug-deg type="double">360</heading-bug-deg>
+			<target-speed-kt type="double">200</target-speed-kt>
+			<target-speed-mach type="double">0</target-speed-mach>
+			<target-altitude-ft type="double">10000</target-altitude-ft>
+			<vertical-speed-fpm type="double">1800</vertical-speed-fpm>
+			<minimum-bank-deg type="double">-25</minimum-bank-deg>
+			<maximum-bank-deg type="double">25</maximum-bank-deg>
+		</settings>
+
+		<disengaged-btn type="int">0</disengaged-btn>
 	</autopilot>
 
 	<controls>
-		<engines n="0">
-			<kp>0.02</kp>
-			<kp-spd>0.3</kp-spd>
-			  <engine n="0">
-				<throttle-fdm type="double">0</throttle-fdm>
-			  </engine>
-			  <engine n="1">
-				<throttle-fdm type="double">0</throttle-fdm>
-			  </engine>
-		</engines>
 		<flight>
 			<speedbrake-lever type="int">0</speedbrake-lever>
 		</flight>
@@ -421,9 +370,9 @@
 		<fmc>
 			<to-flap type="double">5</to-flap>
 			<vspeeds>
-				<V1 type="double">120</V1>
-				<VR type="double">135</VR>
-				<V2 type="double">151</V2>
+				<V1 type="double">0</V1>
+				<VR type="double">0</VR>
+				<V2 type="double">0</V2>
 			</vspeeds>
 		</fmc>
 		<!-- See http://wiki.flightgear.org/index.php/GPWS -->
@@ -439,27 +388,19 @@
 				<category-8>3</category-8>	<!-- RADIO_ALTITUDE_INPUT_SELECT -->
 				<category-9>3</category-9>	<!-- NAVIGATION_INPUT_SELECT -->
 				<category-10>6</category-10>	<!-- ATTITUDE_INPUT_SELECT -->
-				<category-13>5</category-13>	<!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
+				<category-13>7</category-13>	<!-- INPUT_OUTPUT_DISCRETE_TYPE_SELECT -->
 				<category-14>0</category-14>	<!-- AUDIO_OUTPUT_LEVEL -->
 			</configuration-module>
 			<inputs>
 				<arinc429>
 					<decision-height-ncd>false</decision-height-ncd>
-					<decision-height>250</decision-height>
+					<decision-height>200</decision-height>
 				</arinc429>
 			</inputs>
-	        <input-feeders>    <!-- disable some internal default feeders -->
-	            <discretes>
-	                <!-- will provide custom (nasal) sources for the following input feeders -->
-	                <glideslope-inhibit> false </glideslope-inhibit>
-	                <landing-gear> false </landing-gear>
-	                <landing-flaps> false </landing-flaps>
-	            </discretes>
-	        </input-feeders>
 			<speaker>
 				<max-dist>2</max-dist>
 				<reference-dist>1</reference-dist>
-				<volume>2</volume>
+				<volume>0.4</volume>
 			</speaker>
 		</mk-viii>
 		<!-- See http://wiki.flightgear.org/index.php/TCAS -->
@@ -492,17 +433,7 @@
 					</script>
 				</binding>
 			</key>
-		
-		 <key n="268">
-              <name>F12</name>
-                 <desc>Open radio stack</desc>
-                 <binding>
-				<command>dialog-show</command>
-				<dialog-name>radios</dialog-name>
-				</binding>
-                 </key>
-                 
-	          	<key n="2">
+			<key n="2">
 				<name>Ctrl-b</name>
 				<desc>Cycle speedbrake setting</desc>
 				<binding>
@@ -529,34 +460,108 @@
 					<value>5</value>
 				</binding>
 			</key>
+
+			<!-- Custom autopilot hotkeys -->
+			<key n="15">
+				<name>Ctrl-O</name>
+				<desc>Toggle TO/GA lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 autopilot.set_speed("speed-to-ga");
+					</script>
+				</binding>
+			</key>
+			<key n="26">
+				<name>Ctrl-Z</name>
+				<desc>Toggle master autopilot switch</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>autopilot/settings/engaged</property>
+				</binding>
+			</key>
+			<key n="25">
+				<name>Ctrl-Y</name>
+				<desc>Toggle autothrottle switch</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>autopilot/settings/autothrottle</property>
+				</binding>
+			</key>
+
+			<!-- Default autopilot hotkeys -->
+			<key n="1">
+				<name>Ctrl-A</name>
+				<desc>toggle autopilot altitude lock</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>autopilot/settings/altitude</property>
+					<value>altitude-hold</value>
+				</binding>
+			</key>
+			<key n="7">
+				<name>Ctrl-G</name>
+				<desc>Toggle autopilot glide slope lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 autopilot.set_pitch("gs1-hold");
+					 autopilot.set_heading("nav1-hold");
+					</script>
+				</binding>
+			</key>
+			<key n="8">
+				<name>Ctrl-H</name>
+				<desc>Toggle autopilot heading lock</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>autopilot/settings/heading</property>
+					<value>dg-heading-hold</value>
+				</binding>
+			</key>
+			<key n="14">
+				<name>Ctrl-N</name>
+				<desc>Toggle autopilot nav1 lock</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 autopilot.set_heading("nav1-hold");
+					</script>
+				</binding>
+			</key>
+			<key n="262">
+				<name>F6</name>
+				<desc>Toggle Autopilot Heading Mode</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 autopilot.set_heading("true-heading-hold");
+					</script>
+				</binding>
+			</key>
+			<key n="267">
+				<name>F11</name>
+				<desc>Open autopilot dialog</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					 autopilot.open_dialog();
+					</script>
+				</binding>
+			</key>
 		</keyboard>
 	</input>
 
-         <transponder>
-          <id-code>1200</id-code>
-         </transponder>
-
-         <airport>
-           <runways>
-            <start-offset-m>50</start-offset-m>
-            </runways>
-          </airport>
-         
 	<nasal>
 		<B717>
 			<file>Aircraft/717/Nasal/engines.nas</file>
 			<file>Aircraft/717/Nasal/electrical.nas</file>
 			<file>Aircraft/717/Nasal/v-speeds.nas</file>
 			<file>Aircraft/717/Nasal/systems.nas</file>
-			<file>Aircraft/717/Models/Instruments/ND/ND.nas</file>
-			<file>Aircraft/717/Nasal/PFD_FMA.nas</file>
 		</B717>
-		<itaf>
-			<file>Aircraft/717/Nasal/it-autoflight.nas</file>
-		</itaf>
-		<thrust>
-			<file>Aircraft/717/Nasal/thrust.nas</file>
-		</thrust>
+		<autopilot>
+			<file>Aircraft/717/Nasal/autopilot.nas</file>
+		</autopilot>
 		<cdu>
 			<file>Aircraft/Instruments-3d/cdu/boeing.nas</file>
 		</cdu>
@@ -570,4 +575,5 @@
 		</door>
 		<jetway-hood-deg type="double">3</jetway-hood-deg>
 	</aircraft>
+
 </PropertyList>

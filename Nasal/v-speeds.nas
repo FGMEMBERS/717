@@ -29,13 +29,12 @@ var vspeeds = func {
 	setprop("/instrumentation/fmc/vspeeds/V1",V1);
 	setprop("/instrumentation/fmc/vspeeds/VR",VR);
 	setprop("/instrumentation/fmc/vspeeds/V2",V2);
-	setprop("/it-autoflight/settings/togaspd",V2+10);
 
        # Repeat the function each second
 	settimer(vspeeds, 1);
 }
 
 # Only start the function 2 seconds after the FDM is initialized, to prevent the problem of not-yet-created properties.
-setlistener("/sim/signals/fdm-initialized", func {
+_setlistener("/sim/signals/fdm-initialized", func {
 	settimer(vspeeds, 2);
 });

@@ -5,7 +5,7 @@
 		<model>
 			<livery>
 				<name>AirTran Airways</name>
-				<texture>Liveries/TRS.png</texture>
+				<texture>TRS.png</texture>
 			</livery>
 		</model>
 	</sim>

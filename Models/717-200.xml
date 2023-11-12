@@ -83,7 +83,7 @@
 
 	<!-- Contrails -->
 	<model>
-		<path>Aircraft/717/Models/Effects/Contrail/contrail.xml</path>
+		<path>Aircraft/717/Models/Effects/contrail-eng1.xml</path>
 		<offsets>
 			<x-m>10.746</x-m>
 			<y-m>-2.915</y-m>
@@ -91,7 +91,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Aircraft/717/Models/Effects/Contrail/contrail.xml</path>
+		<path>Aircraft/717/Models/Effects/contrail-eng2.xml</path>
 		<offsets>
 			<x-m>13.146</x-m>
 			<y-m>2.915</y-m>
@@ -99,38 +99,61 @@
 		</offsets>
 	</model>
 
-	<!-- Tyre Smoke -->
-
-<model>
-	<path>Aircraft/717/Models/Effects/tyre-smoke-nose.xml</path>
-	<name>tyre-smoke-n</name>
-	<offsets>
-           <x-m>-16.67</x-m>
-           <y-m>0</y-m>
-           <z-m>-4.245</z-m>
-        </offsets>
-</model>
-
-
-<model>
-	<path>Aircraft/717/Models/Effects/tyre-smoke-left.xml</path>
-	<name>tyre-smoke-l</name>
-	<offsets>
-		<x-m>0.99</x-m>
-		<y-m>2.125</y-m>
-		<z-m>-4.412</z-m>
-	</offsets>
-</model>
-
-<model>
-	<path>Aircraft/717/Models/Effects/tyre-smoke-right.xml</path>
-	<name>tyre-smoke-r</name>
-	<offsets>
-		<x-m>0.99</x-m>
-		<y-m>-2.125</y-m>
-		<z-m>-4.412</z-m>
-	</offsets>
-</model>
+	<!-- Tire smoke -->
+	<model>
+		<name>tyre-smoke-n</name>
+		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+		<offsets>
+			<x-m>-16.67</x-m>
+			<y-m>0</y-m>
+			<z-m>-4.245</z-m>
+		</offsets>
+	</model>
+        <model>
+                <name>rain-n</name>
+                <path>Aircraft/Generic/Effects/rain-nose.xml</path>
+                <offsets>
+                        <x-m>-16.67</x-m>
+                        <y-m>0</y-m>
+                        <z-m>-4.245</z-m>
+                </offsets>
+        </model>
+	<model>
+		<name>tyre-smoke-p</name>
+		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<offsets>
+			<x-m>0.99</x-m>
+			<y-m>-2.125</y-m>
+			<z-m>-4.412</z-m>
+		</offsets>
+	</model>
+        <model>
+                <name>rain-p</name>
+                <path>Aircraft/Generic/Effects/rain-port.xml</path>
+                <offsets>
+                        <x-m>0.99</x-m>
+                        <y-m>-2.125</y-m>
+                        <z-m>-4.412</z-m>
+                </offsets>
+        </model>
+	<model>
+		<name>tyre-smoke-s</name>
+		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<offsets>
+			<x-m>0.99</x-m>
+			<y-m>2.125</y-m>
+			<z-m>-4.412</z-m>
+		</offsets>
+	</model>
+        <model>
+                <name>rain-s</name>
+                <path>Aircraft/Generic/Effects/rain-stbd.xml</path>
+                <offsets>
+                        <x-m>0.99</x-m>
+                        <y-m>2.125</y-m>
+                        <z-m>-4.412</z-m>
+                </offsets>
+        </model>
 
 	<!-- Engine fire -->
 	<model>
@@ -157,6 +180,19 @@
 			<z-m>-1.244</z-m>
 		</offsets>
 	</model>
+	<model>
+		<name>APU fire</name>
+		<path>Aircraft/717/Models/Effects/enginefire.xml</path>
+		<condition>
+			<property>engines/apu/on-fire</property>
+		</condition>
+		<offsets>
+			<x-m>13</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.6</z-m>
+		</offsets>
+	</model>
+
 	<!-- ANIMATIONS -->
 	<!-- Engine fan disks -->
 	<animation>
@@ -234,8 +270,8 @@
 		<object-name>ElTabAntifloatL</object-name>
 		<object-name>ElTabGearedL</object-name>
 		<object-name>ElTabControlL</object-name>
-		<property>sim/multiplay/generic/float[3]</property>
-		<factor>10</factor>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>15</factor>
 		<axis>
 			<x1-m>18.744</x1-m>
 			<y1-m>-6.075</y1-m>
@@ -252,8 +288,8 @@
 		<object-name>ElTabAntifloatR</object-name>
 		<object-name>ElTabGearedR</object-name>
 		<object-name>ElTabControlR</object-name>
-		<property>sim/multiplay/generic/float[3]</property>
-		<factor>10</factor>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>15</factor>
 		<axis>
 			<x1-m>16.308</x1-m>
 			<y1-m>0.542</y1-m>
@@ -263,38 +299,6 @@
 			<z2-m>3.385</z2-m>
 		</axis>
 	</animation>
-	
-	<!-- Disabled since it makes odd elevator effects, will fix eventually  -it0uchpods -->
-	<!--animation> 
-		<type>rotate</type>
-		<object-name>HStabilizerL</object-name>
-		<object-name>ElevatorL</object-name>
-		<object-name>ElTabAntifloatL</object-name>
-		<object-name>ElTabGearedL</object-name>
-		<object-name>ElTabControlL</object-name>
-		<object-name>HStabilizerR</object-name>
-		<object-name>ElevatorR</object-name>
-		<object-name>ElTabAntifloatR</object-name>
-		<object-name>ElTabGearedR</object-name>
-		<object-name>ElTabControlR</object-name>
-		<property>sim/multiplay/generic/float[4]</property>
-		<interpolation>
-			<entry><ind>1.0</ind><dep>6.0</dep></entry>
-			<entry><ind>0.0</ind><dep>0.0</dep></entry>
-			<entry><ind>-1.0</ind><dep>-6.0</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-		<center>
-			<x-m>15.60</x-m>
-			<y-m>0</y-m>
-			<z-m>3.64</z-m>
-		</center>
-	</animation-->
-	
 
 	<!-- Rudder -->
 	<animation>
@@ -822,7 +826,7 @@
 		<name>Left reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpL</object-name>
-		<property>sim/multiplay/generic/float[0]</property>
+		<property>engines/engine[0]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
@@ -857,7 +861,7 @@
 		<name>Right reverse thrust up</name>
 		<type>rotate</type>
 		<object-name>ReverserUpR</object-name>
-		<property>sim/multiplay/generic/float[1]</property>
+		<property>engines/engine[1]/reverser-pos-norm</property>
 		<factor>65</factor>
 		<axis>
 			<x>0</x>
